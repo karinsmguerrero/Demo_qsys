@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/software/reloj/obj/default/runtime/sim/mentor
+vreloj_soc_REG_BUTTON
+!s110 1747175627
+!i10b 1
+!s100 bn>44e_jKa7mMAK8aY[:e1
+Ig;XnY_9RhWcD8TSR=b:f32
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1747172369
+8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_REG_BUTTON.v
+FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_REG_BUTTON.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1747175627.000000
+!s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_REG_BUTTON.v|
+!s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_REG_BUTTON.v|-work|REG_BUTTON|
+!i113 1
+o-work REG_BUTTON
+tCvgOpt 0
+nreloj_soc_@r@e@g_@b@u@t@t@o@n

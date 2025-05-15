@@ -1,0 +1,560 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/software/reloj/obj/default/runtime/sim/mentor
+vreloj_soc_NIOSII_cpu
+Z1 !s110 1747175626
+!i10b 1
+!s100 zMcf0mVn40`JdOKIfk`zB3
+IR3i=8n@mD2>b5fQ2bPN?>2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1747172381
+Z4 8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu.v
+Z5 FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu.v
+L0 2834
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1747175626.000000
+Z8 !s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu.v|
+Z9 !s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu.v|-work|cpu|
+!i113 1
+Z10 o-work cpu
+Z11 tCvgOpt 0
+nreloj_soc_@n@i@o@s@i@i_cpu
+vreloj_soc_NIOSII_cpu_debug_slave_sysclk
+R1
+!i10b 1
+!s100 f[z7LM]g3aR9zd<bA;_BK2
+I2DW<Ac<]Ygc_NJ4belOFo2
+R2
+R0
+R3
+8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v
+FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v
+Z12 L0 21
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v|-work|cpu|
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_debug_slave_sysclk
+vreloj_soc_NIOSII_cpu_debug_slave_tck
+R1
+!i10b 1
+!s100 Hkz]jDCWBmcE]YIV]O_BS3
+Ih^zzBWmffAme_1A:cQYj53
+R2
+R0
+R3
+8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v
+FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v|-work|cpu|
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_debug_slave_tck
+vreloj_soc_NIOSII_cpu_debug_slave_wrapper
+R1
+!i10b 1
+!s100 <Ze^_I5e^alH9lTU3ZGO^1
+IW:ki[L`55;V4j]=jkLhG:1
+R2
+R0
+R3
+8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v
+FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v|-work|cpu|
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_debug_slave_wrapper
+vreloj_soc_NIOSII_cpu_nios2_avalon_reg
+R1
+!i10b 1
+!s100 GhZEnHI1kSAM3KfYDQ^oX0
+IS4AlI_0`5J1T]R83NLl?I1
+R2
+R0
+R3
+R4
+R5
+L0 2023
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_avalon_reg
+vreloj_soc_NIOSII_cpu_nios2_oci
+R1
+!i10b 1
+!s100 K87L^hPHajHLAL[9zDSR;2
+I>Pj8PZ1LXz>FaoAXH<P@13
+R2
+R0
+R3
+R4
+R5
+L0 2362
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci
+vreloj_soc_NIOSII_cpu_nios2_oci_break
+R1
+!i10b 1
+!s100 1@]G[IP>lVU1ffnYzDhgj2
+ILV5A2:K8Vm[D=NOjDbJ@n3
+R2
+R0
+R3
+R4
+R5
+L0 295
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_break
+vreloj_soc_NIOSII_cpu_nios2_oci_compute_input_tm_cnt
+R1
+!i10b 1
+!s100 EoF]obhDm:T6jU6D^8QL[1
+IWnFle0idDDR`;zfTe3KlQ3
+R2
+R0
+R3
+R4
+R5
+L0 1265
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_compute_input_tm_cnt
+vreloj_soc_NIOSII_cpu_nios2_oci_dbrk
+R1
+!i10b 1
+!s100 jZNbNIdKSmaLD<7KH[ac91
+IMAJJdY3T?3zZCl?0@DLDK3
+R2
+R0
+R3
+R4
+R5
+L0 795
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_dbrk
+vreloj_soc_NIOSII_cpu_nios2_oci_debug
+R1
+!i10b 1
+!s100 TC@z_=cVc]26Q7T;Sk5]^1
+IN8R_O;QG:Tc@[17=mzUn_2
+R2
+R0
+R3
+R4
+R5
+L0 153
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_debug
+vreloj_soc_NIOSII_cpu_nios2_oci_dtrace
+R1
+!i10b 1
+!s100 <6``Jnge;Ee93[=jCQ<z10
+I]HB<2Wzi4e[72bHjFKYOn2
+R2
+R0
+R3
+R4
+R5
+L0 1183
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_dtrace
+vreloj_soc_NIOSII_cpu_nios2_oci_fifo
+R1
+!i10b 1
+!s100 <F_K2@KSYA?1IAKVZEjJe1
+IG@UT5Wm^WlBba7ET^;bDD0
+R2
+R0
+R3
+R4
+R5
+L0 1427
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_fifo
+vreloj_soc_NIOSII_cpu_nios2_oci_fifo_cnt_inc
+R1
+!i10b 1
+!s100 zk@l`Q:O9n28YF`IS1RDZ1
+IWQ1RRgY7_Cff0IFPmnZd[2
+R2
+R0
+R3
+R4
+R5
+L0 1380
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_fifo_cnt_inc
+vreloj_soc_NIOSII_cpu_nios2_oci_fifo_wrptr_inc
+R1
+!i10b 1
+!s100 ldm^gh4amPVWbCT6?fKan2
+IFVc3fB?VR@S?]DeXzO9AJ2
+R2
+R0
+R3
+R4
+R5
+L0 1337
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_fifo_wrptr_inc
+vreloj_soc_NIOSII_cpu_nios2_oci_im
+R1
+!i10b 1
+!s100 eh5zE2;8KBkfK8nHnV43W1
+I6RiKhm1^OGajR3ZBP0d[L0
+R2
+R0
+R3
+R4
+R5
+L0 1936
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_im
+vreloj_soc_NIOSII_cpu_nios2_oci_itrace
+R1
+!i10b 1
+!s100 _H1;_9;DTESeRG_If0YdS1
+ImWg?i;W<jBa`z3@]VSOnJ0
+R2
+R0
+R3
+R4
+R5
+L0 982
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_itrace
+vreloj_soc_NIOSII_cpu_nios2_oci_pib
+R1
+!i10b 1
+!s100 Bhn3lSlPg:8JT2LKBA0m91
+I0k7`3=?91OSmjlZ@H>a>M2
+R2
+R0
+R3
+R4
+R5
+L0 1913
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_pib
+vreloj_soc_NIOSII_cpu_nios2_oci_td_mode
+R1
+!i10b 1
+!s100 H[SlQA`hOm10XFGA`PcXP2
+IZe1MhUQS]]^cH0SUF1dF`1
+R2
+R0
+R3
+R4
+R5
+L0 1115
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_td_mode
+vreloj_soc_NIOSII_cpu_nios2_oci_xbrk
+R1
+!i10b 1
+!s100 RiNGPUJfA6f1S5;BgH4EJ0
+I=>Ci;Bh@DG1<VS<3EAe_^1
+R2
+R0
+R3
+R4
+R5
+L0 588
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_oci_xbrk
+vreloj_soc_NIOSII_cpu_nios2_ocimem
+R1
+!i10b 1
+!s100 TUKIR0e60?jlZ4j3j4ajg3
+IzTa`8Ui6S@e6znQ2>EW2d3
+R2
+R0
+R3
+R4
+R5
+L0 2181
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_ocimem
+vreloj_soc_NIOSII_cpu_nios2_performance_monitors
+R1
+!i10b 1
+!s100 XeYli1g`LZ5dZJ41GI<SU1
+ICZWa690XkYZX_AB@1cG3g1
+R2
+R0
+R3
+R4
+R5
+L0 2006
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_nios2_performance_monitors
+vreloj_soc_NIOSII_cpu_ociram_sp_ram_module
+R1
+!i10b 1
+!s100 Ib@7=>jd32iX4d7l5QC>D3
+IYXMcANVDmz=c2jKI6BIJO2
+R2
+R0
+R3
+R4
+R5
+L0 2116
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_ociram_sp_ram_module
+vreloj_soc_NIOSII_cpu_register_bank_a_module
+R1
+!i10b 1
+!s100 4[HDQF[C6SB@Je^7m]X542
+IW4fJEmAJBi42j3Gd7NMd_0
+R2
+R0
+R3
+R4
+R5
+R12
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_register_bank_a_module
+vreloj_soc_NIOSII_cpu_register_bank_b_module
+R1
+!i10b 1
+!s100 X>l_X@Z0>e<J9Z>kO]aV?1
+I_XY[GMCM`fcf=I93BTP]A1
+R2
+R0
+R3
+R4
+R5
+L0 87
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_register_bank_b_module
+vreloj_soc_NIOSII_cpu_test_bench
+R1
+!i10b 1
+!s100 =n8DSHeXNS:aZ^25]zGPV0
+IeV0S4gZkFR[MhDB??7P1d1
+R2
+R0
+R3
+8C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v
+FC:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v|
+!s90 -reportprogress|300|C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/reloj_soc/testbench/reloj_soc_tb/simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v|-work|cpu|
+!i113 1
+R10
+R11
+nreloj_soc_@n@i@o@s@i@i_cpu_test_bench
