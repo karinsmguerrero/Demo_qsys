@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="reloj_soc" kind="reloj_soc" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.05.21.13:47:23 -->
+ <!-- 2025.05.21.21:25:06 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1747856843</value>
+  <value>1747884306</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>5CSXFC6D6F31C6</value>
+  <value>5CSTFD5D5F31I7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -41,7 +41,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE_SPEEDGRADE">
   <type>java.lang.String</type>
-  <value>6_H6</value>
+  <value>7_H5</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2228,7 +2228,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>5CSXFC6D6F31C6</value>
+   <value>5CSTFD5D5F31I7</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2237,7 +2237,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE_SPEEDGRADE">
    <type>java.lang.String</type>
-   <value>6_H6</value>
+   <value>7_H5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>

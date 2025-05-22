@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>21/05/2025 02:06:41 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1747858001238</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>13/05/2025 03:47:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1747172847598</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\USER\Documents\TEC\2025\Quartus\Reloj\software\reloj_bsp</BspGeneratedLocation>
-        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\reloj_soc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>NIOSII</Cpu>

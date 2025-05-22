@@ -5,8 +5,8 @@ JedecChain;
 
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
-	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/USER/Documents/TEC/2025/Quartus/Reloj/output_files/") File("Reloj.sof") MfrSpec(OpMask(1));
+	P ActionCode(Ign)
+		Device PartName(5CSTFD5D5F31) MfrSpec(OpMask(0) FullPath("/home/tefa/Documents/test/Demo_qsys/output_files/Reloj.sof"));
 
 ChainEnd;
 
