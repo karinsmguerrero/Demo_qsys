@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Ign)
-		Device PartName(5CSTFD5D5F31) MfrSpec(OpMask(0) FullPath("/home/tefa/Documents/test/Demo_qsys/output_files/Reloj.sof"));
+		Device PartName(5CSTFD5D5) MfrSpec(OpMask(0));
 
 ChainEnd;
 

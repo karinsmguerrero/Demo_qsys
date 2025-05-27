@@ -1,0 +1,238 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation --family="Cyclone V" --part=5CSTFD5D5F31I7
+Progress: Loading Demo_qsys/reloj_soc.qsys
+Progress: Reading input file
+Progress: Adding CLK [clock_source 18.1]
+Progress: Parameterizing module CLK
+Progress: Adding NIOSII [altera_nios2_gen2 18.1]
+Progress: Parameterizing module NIOSII
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding REG_BUTTON [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_BUTTON
+Progress: Adding REG_LEDS [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_LEDS
+Progress: Adding TIMER [altera_avalon_timer 18.1]
+Progress: Parameterizing module TIMER
+Progress: Adding UART [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module UART
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: reloj_soc.REG_BUTTON: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: reloj_soc.UART: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: reloj_soc: Generating reloj_soc "reloj_soc" for SIM_VERILOG
+Info: NIOSII: "reloj_soc" instantiated altera_nios2_gen2 "NIOSII"
+Info: RAM: Starting RTL generation for module 'reloj_soc_RAM'
+Info: RAM:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=reloj_soc_RAM --dir=/tmp/alt0235_7430972054699160280.dir/0002_RAM_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0002_RAM_gen//reloj_soc_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0002_RAM_gen/  ]
+Info: RAM: Done RTL generation for module 'reloj_soc_RAM'
+Info: RAM: "reloj_soc" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: REG_BUTTON: Starting RTL generation for module 'reloj_soc_REG_BUTTON'
+Info: REG_BUTTON:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=reloj_soc_REG_BUTTON --dir=/tmp/alt0235_7430972054699160280.dir/0003_REG_BUTTON_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0003_REG_BUTTON_gen//reloj_soc_REG_BUTTON_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0003_REG_BUTTON_gen/  ]
+Info: REG_BUTTON: Done RTL generation for module 'reloj_soc_REG_BUTTON'
+Info: REG_BUTTON: "reloj_soc" instantiated altera_avalon_pio "REG_BUTTON"
+Info: REG_LEDS: Starting RTL generation for module 'reloj_soc_REG_LEDS'
+Info: REG_LEDS:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=reloj_soc_REG_LEDS --dir=/tmp/alt0235_7430972054699160280.dir/0004_REG_LEDS_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0004_REG_LEDS_gen//reloj_soc_REG_LEDS_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0004_REG_LEDS_gen/  ]
+Info: REG_LEDS: Done RTL generation for module 'reloj_soc_REG_LEDS'
+Info: REG_LEDS: "reloj_soc" instantiated altera_avalon_pio "REG_LEDS"
+Info: TIMER: Starting RTL generation for module 'reloj_soc_TIMER'
+Info: TIMER:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64//perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=reloj_soc_TIMER --dir=/tmp/alt0235_7430972054699160280.dir/0005_TIMER_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0005_TIMER_gen//reloj_soc_TIMER_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0005_TIMER_gen/  ]
+Info: TIMER: Done RTL generation for module 'reloj_soc_TIMER'
+Info: TIMER: "reloj_soc" instantiated altera_avalon_timer "TIMER"
+Info: UART: Starting RTL generation for module 'reloj_soc_UART'
+Info: UART:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=reloj_soc_UART --dir=/tmp/alt0235_7430972054699160280.dir/0006_UART_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0006_UART_gen//reloj_soc_UART_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0006_UART_gen/  ]
+Info: UART: Done RTL generation for module 'reloj_soc_UART'
+Info: UART: "reloj_soc" instantiated altera_avalon_jtag_uart "UART"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "reloj_soc" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "reloj_soc" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "reloj_soc" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'reloj_soc_NIOSII_cpu'
+Info: cpu:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64//eperlcmd -I /opt/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=reloj_soc_NIOSII_cpu --dir=/tmp/alt0235_7430972054699160280.dir/0009_cpu_gen/ --quartus_bindir=/opt/intelFPGA_lite/18.1/quartus/linux64/ --verilog --config=/tmp/alt0235_7430972054699160280.dir/0009_cpu_gen//reloj_soc_NIOSII_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0235_7430972054699160280.dir/0009_cpu_gen/  ]
+Info: cpu: # 2025.05.26 21:27:30 (*) Starting Nios II generation
+Info: cpu: # 2025.05.26 21:27:30 (*)   Checking for plaintext license.
+Info: cpu: # 2025.05.26 21:27:30 (*)   Couldn't query license setup in Quartus directory /opt/intelFPGA_lite/18.1/quartus/linux64/
+Info: cpu: # 2025.05.26 21:27:30 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.05.26 21:27:30 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.05.26 21:27:30 (*)   Plaintext license not found.
+Info: cpu: # 2025.05.26 21:27:30 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2025.05.26 21:27:30 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.05.26 21:27:31 (*)   Creating all objects for CPU
+Info: cpu: # 2025.05.26 21:27:31 (*)   Creating '/tmp/alt0235_7430972054699160280.dir/0009_cpu_gen//reloj_soc_NIOSII_cpu_nios2_waves.do'
+Info: cpu: # 2025.05.26 21:27:31 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.05.26 21:27:31 (*)   Creating plain-text RTL
+Info: cpu: # 2025.05.26 21:27:32 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'reloj_soc_NIOSII_cpu'
+Info: cpu: "NIOSII" instantiated altera_nios2_gen2_unit "cpu"
+Info: NIOSII_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "NIOSII_data_master_translator"
+Info: UART_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "UART_avalon_jtag_slave_translator"
+Info: NIOSII_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "NIOSII_data_master_agent"
+Info: UART_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "UART_avalon_jtag_slave_agent"
+Info: UART_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "UART_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: reloj_soc: Done "reloj_soc" with 29 modules, 49 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/reloj_soc.spd --output-directory=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/reloj_soc.spd --output-directory=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	28 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc.qsys --block-symbol-file --output-directory=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc --family="Cyclone V" --part=5CSTFD5D5F31I7
+Progress: Loading Demo_qsys/reloj_soc.qsys
+Progress: Reading input file
+Progress: Adding CLK [clock_source 18.1]
+Progress: Parameterizing module CLK
+Progress: Adding NIOSII [altera_nios2_gen2 18.1]
+Progress: Parameterizing module NIOSII
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding REG_BUTTON [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_BUTTON
+Progress: Adding REG_LEDS [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_LEDS
+Progress: Adding TIMER [altera_avalon_timer 18.1]
+Progress: Parameterizing module TIMER
+Progress: Adding UART [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module UART
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: reloj_soc.REG_BUTTON: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: reloj_soc.UART: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc.qsys --synthesis=VERILOG --output-directory=/home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/synthesis --family="Cyclone V" --part=5CSTFD5D5F31I7
+Progress: Loading Demo_qsys/reloj_soc.qsys
+Progress: Reading input file
+Progress: Adding CLK [clock_source 18.1]
+Progress: Parameterizing module CLK
+Progress: Adding NIOSII [altera_nios2_gen2 18.1]
+Progress: Parameterizing module NIOSII
+Progress: Adding RAM [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module RAM
+Progress: Adding REG_BUTTON [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_BUTTON
+Progress: Adding REG_LEDS [altera_avalon_pio 18.1]
+Progress: Parameterizing module REG_LEDS
+Progress: Adding TIMER [altera_avalon_timer 18.1]
+Progress: Parameterizing module TIMER
+Progress: Adding UART [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module UART
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: reloj_soc.REG_BUTTON: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: reloj_soc.UART: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: reloj_soc: Generating reloj_soc "reloj_soc" for QUARTUS_SYNTH
+Info: NIOSII: "reloj_soc" instantiated altera_nios2_gen2 "NIOSII"
+Info: RAM: Starting RTL generation for module 'reloj_soc_RAM'
+Info: RAM:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=reloj_soc_RAM --dir=/tmp/alt0235_7430972054699160280.dir/0028_RAM_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0028_RAM_gen//reloj_soc_RAM_component_configuration.pl  --do_build_sim=0  ]
+Info: RAM: Done RTL generation for module 'reloj_soc_RAM'
+Info: RAM: "reloj_soc" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: REG_BUTTON: Starting RTL generation for module 'reloj_soc_REG_BUTTON'
+Info: REG_BUTTON:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=reloj_soc_REG_BUTTON --dir=/tmp/alt0235_7430972054699160280.dir/0029_REG_BUTTON_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0029_REG_BUTTON_gen//reloj_soc_REG_BUTTON_component_configuration.pl  --do_build_sim=0  ]
+Info: REG_BUTTON: Done RTL generation for module 'reloj_soc_REG_BUTTON'
+Info: REG_BUTTON: "reloj_soc" instantiated altera_avalon_pio "REG_BUTTON"
+Info: REG_LEDS: Starting RTL generation for module 'reloj_soc_REG_LEDS'
+Info: REG_LEDS:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=reloj_soc_REG_LEDS --dir=/tmp/alt0235_7430972054699160280.dir/0030_REG_LEDS_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0030_REG_LEDS_gen//reloj_soc_REG_LEDS_component_configuration.pl  --do_build_sim=0  ]
+Info: REG_LEDS: Done RTL generation for module 'reloj_soc_REG_LEDS'
+Info: REG_LEDS: "reloj_soc" instantiated altera_avalon_pio "REG_LEDS"
+Info: TIMER: Starting RTL generation for module 'reloj_soc_TIMER'
+Info: TIMER:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64//perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=reloj_soc_TIMER --dir=/tmp/alt0235_7430972054699160280.dir/0031_TIMER_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0031_TIMER_gen//reloj_soc_TIMER_component_configuration.pl  --do_build_sim=0  ]
+Info: TIMER: Done RTL generation for module 'reloj_soc_TIMER'
+Info: TIMER: "reloj_soc" instantiated altera_avalon_timer "TIMER"
+Info: UART: Starting RTL generation for module 'reloj_soc_UART'
+Info: UART:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=reloj_soc_UART --dir=/tmp/alt0235_7430972054699160280.dir/0032_UART_gen/ --quartus_dir=/opt/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt0235_7430972054699160280.dir/0032_UART_gen//reloj_soc_UART_component_configuration.pl  --do_build_sim=0  ]
+Info: UART: Done RTL generation for module 'reloj_soc_UART'
+Info: UART: "reloj_soc" instantiated altera_avalon_jtag_uart "UART"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "reloj_soc" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "reloj_soc" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "reloj_soc" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'reloj_soc_NIOSII_cpu'
+Info: cpu:   Generation command is [exec /opt/intelFPGA_lite/18.1/quartus/linux64//eperlcmd -I /opt/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/intelFPGA_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=reloj_soc_NIOSII_cpu --dir=/tmp/alt0235_7430972054699160280.dir/0035_cpu_gen/ --quartus_bindir=/opt/intelFPGA_lite/18.1/quartus/linux64/ --verilog --config=/tmp/alt0235_7430972054699160280.dir/0035_cpu_gen//reloj_soc_NIOSII_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2025.05.26 21:27:37 (*) Starting Nios II generation
+Info: cpu: # 2025.05.26 21:27:37 (*)   Checking for plaintext license.
+Info: cpu: # 2025.05.26 21:27:37 (*)   Couldn't query license setup in Quartus directory /opt/intelFPGA_lite/18.1/quartus/linux64/
+Info: cpu: # 2025.05.26 21:27:37 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.05.26 21:27:37 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.05.26 21:27:37 (*)   Plaintext license not found.
+Info: cpu: # 2025.05.26 21:27:37 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2025.05.26 21:27:37 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.05.26 21:27:38 (*)   Creating all objects for CPU
+Info: cpu: # 2025.05.26 21:27:38 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.05.26 21:27:38 (*)   Creating plain-text RTL
+Info: cpu: # 2025.05.26 21:27:39 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'reloj_soc_NIOSII_cpu'
+Info: cpu: "NIOSII" instantiated altera_nios2_gen2_unit "cpu"
+Info: NIOSII_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "NIOSII_data_master_translator"
+Info: UART_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "UART_avalon_jtag_slave_translator"
+Info: NIOSII_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "NIOSII_data_master_agent"
+Info: UART_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "UART_avalon_jtag_slave_agent"
+Info: UART_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "UART_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /home/tefa/Documents/GitHub/Demo_qsys/reloj_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: reloj_soc: Done "reloj_soc" with 29 modules, 42 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

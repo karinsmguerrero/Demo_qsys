@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon May 26 21:23:53 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Reloj
+Top-level Entity Name : soc_top
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 1040
+Total pins : 18
+Total virtual pins : 0
+Total block memory bits : 76,800
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

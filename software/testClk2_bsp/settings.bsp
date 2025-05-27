@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 21, 2025 9:00:04 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1747882804234</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/tefa/Documents/test/Demo_qsys/software/testClk2_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>May 26, 2025 7:45:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1748310327693</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>/home/tefa/Documents/GitHub/Demo_qsys/software/testClk2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../reloj_soc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
