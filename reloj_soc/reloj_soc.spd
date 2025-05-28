@@ -29,13 +29,13 @@
    type="SYSTEM_VERILOG"
    library="rsp_demux" />
  <file
-   path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux_001.sv"
+   path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_001" />
+   library="cmd_mux_002" />
  <file
    path="simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_001" />
+   library="cmd_mux_002" />
  <file
    path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv"
    type="SYSTEM_VERILOG"
@@ -53,9 +53,9 @@
    type="SYSTEM_VERILOG"
    library="cmd_demux" />
  <file
-   path="simulation/submodules/reloj_soc_mm_interconnect_0_router_003.sv"
+   path="simulation/submodules/reloj_soc_mm_interconnect_0_router_004.sv"
    type="SYSTEM_VERILOG"
-   library="router_003" />
+   library="router_004" />
  <file
    path="simulation/submodules/reloj_soc_mm_interconnect_0_router_002.sv"
    type="SYSTEM_VERILOG"
@@ -71,15 +71,15 @@
  <file
    path="simulation/submodules/altera_avalon_sc_fifo.v"
    type="VERILOG"
-   library="UART_avalon_jtag_slave_agent_rsp_fifo" />
+   library="audio_0_avalon_audio_slave_agent_rsp_fifo" />
  <file
    path="simulation/submodules/altera_merlin_slave_agent.sv"
    type="SYSTEM_VERILOG"
-   library="UART_avalon_jtag_slave_agent" />
+   library="audio_0_avalon_audio_slave_agent" />
  <file
    path="simulation/submodules/altera_merlin_burst_uncompressor.sv"
    type="SYSTEM_VERILOG"
-   library="UART_avalon_jtag_slave_agent" />
+   library="audio_0_avalon_audio_slave_agent" />
  <file
    path="simulation/submodules/altera_merlin_master_agent.sv"
    type="SYSTEM_VERILOG"
@@ -87,7 +87,7 @@
  <file
    path="simulation/submodules/altera_merlin_slave_translator.sv"
    type="SYSTEM_VERILOG"
-   library="UART_avalon_jtag_slave_translator" />
+   library="audio_0_avalon_audio_slave_translator" />
  <file
    path="simulation/submodules/altera_merlin_master_translator.sv"
    type="SYSTEM_VERILOG"
@@ -176,6 +176,30 @@
    path="simulation/submodules/reloj_soc_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
+ <file
+   path="simulation/submodules/altera_up_audio_bit_counter.v"
+   type="VERILOG"
+   library="audio_0" />
+ <file
+   path="simulation/submodules/altera_up_audio_in_deserializer.v"
+   type="VERILOG"
+   library="audio_0" />
+ <file
+   path="simulation/submodules/altera_up_audio_out_serializer.v"
+   type="VERILOG"
+   library="audio_0" />
+ <file
+   path="simulation/submodules/altera_up_clock_edge.v"
+   type="VERILOG"
+   library="audio_0" />
+ <file
+   path="simulation/submodules/altera_up_sync_fifo.v"
+   type="VERILOG"
+   library="audio_0" />
+ <file
+   path="simulation/submodules/reloj_soc_audio_0.v"
+   type="VERILOG"
+   library="audio_0" />
  <file
    path="simulation/submodules/reloj_soc_UART.v"
    type="VERILOG"

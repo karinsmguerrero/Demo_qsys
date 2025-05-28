@@ -83,9 +83,10 @@
 #include "sys/alt_irq.h"
 
 
-#define LEDS_BASE    0x4000
+#define LEDS_BASE    0x4040
 #define BUTTON_BASE  0x4010
 #define TIMER_BASE   0x4020
+#define AUDIO_BASE	 0x4000
 
 unsigned int elapsed_ms;
 

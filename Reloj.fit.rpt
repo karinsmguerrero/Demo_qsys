@@ -1,5 +1,5 @@
 Fitter report for Reloj
-Mon May 26 21:24:44 2025
+Tue May 27 18:41:44 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Mon May 26 21:24:44 2025       ;
+; Fitter Status                   ; Successful - Tue May 27 18:41:44 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Reloj                                       ;
 ; Top-level Entity Name           ; soc_top                                     ;
@@ -154,18 +154,18 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.15        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.6%      ;
-;     Processor 3            ;   2.4%      ;
-;     Processor 4            ;   2.3%      ;
-;     Processor 5            ;   2.1%      ;
-;     Processor 6            ;   2.1%      ;
-;     Processor 7            ;   2.1%      ;
-;     Processor 8            ;   2.0%      ;
+;     Processor 2            ;   2.5%      ;
+;     Processor 3            ;   2.3%      ;
+;     Processor 4            ;   2.2%      ;
+;     Processor 5            ;   2.0%      ;
+;     Processor 6            ;   2.0%      ;
+;     Processor 7            ;   1.9%      ;
+;     Processor 8            ;   1.9%      ;
 +----------------------------+-------------+
 
 
@@ -2167,7 +2167,7 @@ Info (332111): Found 1 clocks
     Info (332111):   33.333 altera_reserved_tck
 Info (176235): Finished register packing
     Extra Info (176218): Packed 8 registers into blocks of type Block RAM
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:11
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:08
@@ -2179,19 +2179,19 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 12% of the available device resources in the region that extends from location X11_Y0 to location X21_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:06
-Info (11888): Total time spent on timing analysis during the Fitter is 1.75 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:07
+Info (11888): Total time spent on timing analysis during the Fitter is 1.66 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:06
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
 Info (144001): Generated suppressed messages file /home/tefa/Documents/GitHub/Demo_qsys/Reloj.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 2785 megabytes
-    Info: Processing ended: Mon May 26 21:24:45 2025
-    Info: Elapsed time: 00:00:52
-    Info: Total CPU time (on all processors): 00:03:03
+    Info: Peak virtual memory: 2776 megabytes
+    Info: Processing ended: Tue May 27 18:41:45 2025
+    Info: Elapsed time: 00:00:54
+    Info: Total CPU time (on all processors): 00:03:05
 
 
 +----------------------------+

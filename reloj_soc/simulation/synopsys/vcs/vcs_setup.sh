@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2025.05.26.21:27:32
+# ACDS 18.1 625 linux 2025.05.27.21:06:22
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 linux 2025.05.26.21:27:32
+# ACDS 18.1 625 linux 2025.05.27.21:06:22
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="reloj_soc"
@@ -161,11 +161,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_mux.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_demux.sv \
-  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_001.sv \
+  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux_001.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux.sv \
-  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_003.sv \
+  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_004.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_002.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_001.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router.sv \
@@ -184,6 +184,12 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/submodules/reloj_soc_irq_mapper.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/altera_up_audio_bit_counter.v \
+  $QSYS_SIMDIR/submodules/altera_up_audio_in_deserializer.v \
+  $QSYS_SIMDIR/submodules/altera_up_audio_out_serializer.v \
+  $QSYS_SIMDIR/submodules/altera_up_clock_edge.v \
+  $QSYS_SIMDIR/submodules/altera_up_sync_fifo.v \
+  $QSYS_SIMDIR/submodules/reloj_soc_audio_0.v \
   $QSYS_SIMDIR/submodules/reloj_soc_UART.v \
   $QSYS_SIMDIR/submodules/reloj_soc_TIMER.v \
   $QSYS_SIMDIR/submodules/reloj_soc_REG_LEDS.v \

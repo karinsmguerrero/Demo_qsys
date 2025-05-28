@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="reloj_soc:dut" name="dut">
       <assignment_values>
-        <assignment_value text="QSYS_NAME reloj_soc HAS_SOPCINFO 1 GENERATION_ID 1748313028"/>
+        <assignment_value text="QSYS_NAME reloj_soc HAS_SOPCINFO 1 GENERATION_ID 1748316453"/>
       </assignment_values>
       <parameters/>
     </sld_info>
