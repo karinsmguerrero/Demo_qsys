@@ -1,5 +1,5 @@
 Flow report for Reloj
-Tue May 27 21:15:01 2025
+Tue May 27 22:26:08 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Tue May 27 21:15:01 2025      ;
+; Flow Status                 ; Flow Failed - Tue May 27 22:26:08 2025      ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Reloj                                       ;
 ; Top-level Entity Name       ; soc_top                                     ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/27/2025 21:14:45 ;
+; Start date & time ; 05/27/2025 22:25:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Reloj               ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 246337685012443.174840208511679                             ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 246337685012443.174840635113470                             ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                             ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                                         ; --            ; --          ; --             ;
@@ -87,7 +87,7 @@ refer to the applicable agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                       ; --            ; --          ; --             ;
 ; SLD_FILE                            ; reloj_soc/synthesis/reloj_soc.regmap                        ; --            ; --          ; --             ;
 ; SLD_FILE                            ; reloj_soc/synthesis/reloj_soc.debuginfo                     ; --            ; --          ; --             ;
-; SLD_INFO                            ; QSYS_NAME reloj_soc HAS_SOPCINFO 1 GENERATION_ID 1748401583 ; --            ; reloj_soc   ; --             ;
+; SLD_INFO                            ; QSYS_NAME reloj_soc HAS_SOPCINFO 1 GENERATION_ID 1748406332 ; --            ; reloj_soc   ; --             ;
 ; SOPCINFO_FILE                       ; reloj_soc/synthesis/../../reloj_soc.sopcinfo                ; --            ; --          ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --          ; --             ;
 ; TOP_LEVEL_ENTITY                    ; soc_top                                                     ; Reloj         ; --          ; --             ;

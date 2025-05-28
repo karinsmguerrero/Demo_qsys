@@ -161,7 +161,7 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface
-   name="audio"
+   name="audio_0_external_interface"
    internal="audio_0.external_interface"
    type="conduit"
    dir="end" />

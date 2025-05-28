@@ -4,13 +4,13 @@
 
 `timescale 1 ps / 1 ps
 module reloj_soc (
-		input  wire        audio_BCLK,     //   audio.BCLK
-		output wire        audio_DACDAT,   //        .DACDAT
-		input  wire        audio_DACLRCK,  //        .DACLRCK
-		input  wire [31:0] buttons_export, // buttons.export
-		input  wire        clk_clk,        //     clk.clk
-		output wire [31:0] leds_export,    //    leds.export
-		input  wire        reset_reset_n   //   reset.reset_n
+		input  wire        audio_0_external_interface_BCLK,    // audio_0_external_interface.BCLK
+		output wire        audio_0_external_interface_DACDAT,  //                           .DACDAT
+		input  wire        audio_0_external_interface_DACLRCK, //                           .DACLRCK
+		input  wire [31:0] buttons_export,                     //                    buttons.export
+		input  wire        clk_clk,                            //                        clk.clk
+		output wire [31:0] leds_export,                        //                       leds.export
+		input  wire        reset_reset_n                       //                      reset.reset_n
 	);
 
 	wire  [31:0] niosii_data_master_readdata;                             // mm_interconnect_0:NIOSII_data_master_readdata -> NIOSII:d_readdata
@@ -168,9 +168,9 @@ module reloj_soc (
 		.writedata   (mm_interconnect_0_audio_0_avalon_audio_slave_writedata),  //                   .writedata
 		.readdata    (mm_interconnect_0_audio_0_avalon_audio_slave_readdata),   //                   .readdata
 		.irq         (irq_mapper_receiver0_irq),                                //          interrupt.irq
-		.AUD_BCLK    (audio_BCLK),                                              // external_interface.export
-		.AUD_DACDAT  (audio_DACDAT),                                            //                   .export
-		.AUD_DACLRCK (audio_DACLRCK)                                            //                   .export
+		.AUD_BCLK    (audio_0_external_interface_BCLK),                         // external_interface.export
+		.AUD_DACDAT  (audio_0_external_interface_DACDAT),                       //                   .export
+		.AUD_DACLRCK (audio_0_external_interface_DACLRCK)                       //                   .export
 	);
 
 	reloj_soc_mm_interconnect_0 mm_interconnect_0 (

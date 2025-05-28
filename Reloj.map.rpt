@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Reloj
-Tue May 27 21:15:01 2025
+Tue May 27 22:26:08 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -194,7 +194,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Tue May 27 21:15:01 2025           ;
+; Analysis & Elaboration Status ; Failed - Tue May 27 22:26:08 2025           ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; Reloj                                       ;
 ; Top-level Entity Name         ; soc_top                                     ;
@@ -3431,17 +3431,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+--------+----------+-------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reloj_soc:dut"                                                                                                                                                      ;
-+--------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port               ; Type    ; Severity         ; Details                                                                                                                                      ;
-+--------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; leds_export[31..8] ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; audio_pwm_export   ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
-; audio_BCLK         ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; audio_DACDAT       ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; audio_DACLRCK      ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+--------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reloj_soc:dut"                                                                                                                                                                      ;
++------------------------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                               ; Type    ; Severity         ; Details                                                                                                                                      ;
++------------------------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; leds_export[31..8]                 ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; audio_pwm_export                   ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; audio_0_external_interface_BCLK    ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; audio_0_external_interface_DACDAT  ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; audio_0_external_interface_DACLRCK ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------+
@@ -3450,7 +3450,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 27 21:14:44 2025
+    Info: Processing started: Tue May 27 22:25:51 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Reloj -c Reloj --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -3801,7 +3801,7 @@ Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity
 Info (144001): Generated suppressed messages file /home/tefa/Documents/GitHub/Demo_qsys/Reloj.map.smsg
 Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 2 warnings
     Error: Peak virtual memory: 1438 megabytes
-    Error: Processing ended: Tue May 27 21:15:01 2025
+    Error: Processing ended: Tue May 27 22:26:08 2025
     Error: Elapsed time: 00:00:17
     Error: Total CPU time (on all processors): 00:00:35
 

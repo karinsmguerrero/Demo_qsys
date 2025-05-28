@@ -9,21 +9,21 @@ sw[4] => buttons_export[4].IN1
 sw[5] => buttons_export[5].IN1
 sw[6] => buttons_export[6].IN1
 sw[7] => buttons_export[7].IN1
-leds[0] <= reloj_soc:dut.leds_export
-leds[1] <= reloj_soc:dut.leds_export
-leds[2] <= reloj_soc:dut.leds_export
-leds[3] <= reloj_soc:dut.leds_export
-leds[4] <= reloj_soc:dut.leds_export
-leds[5] <= reloj_soc:dut.leds_export
-leds[6] <= reloj_soc:dut.leds_export
-leds[7] <= reloj_soc:dut.leds_export
-audio_out <= reloj_soc:dut.audio_pwm_export
+leds[0] << reloj_soc:dut.leds_export
+leds[1] << reloj_soc:dut.leds_export
+leds[2] << reloj_soc:dut.leds_export
+leds[3] << reloj_soc:dut.leds_export
+leds[4] << reloj_soc:dut.leds_export
+leds[5] << reloj_soc:dut.leds_export
+leds[6] << reloj_soc:dut.leds_export
+leds[7] << reloj_soc:dut.leds_export
+audio_out << reloj_soc:dut.audio_pwm_export
 
 
 |soc_top|reloj_soc:dut
-audio_BCLK => audio_BCLK.IN1
-audio_DACDAT <= reloj_soc_audio_0:audio_0.AUD_DACDAT
-audio_DACLRCK => audio_DACLRCK.IN1
+audio_0_external_interface_BCLK => audio_0_external_interface_BCLK.IN1
+audio_0_external_interface_DACDAT <= reloj_soc_audio_0:audio_0.AUD_DACDAT
+audio_0_external_interface_DACLRCK => audio_0_external_interface_DACLRCK.IN1
 buttons_export[0] => buttons_export[0].IN1
 buttons_export[1] => buttons_export[1].IN1
 buttons_export[2] => buttons_export[2].IN1

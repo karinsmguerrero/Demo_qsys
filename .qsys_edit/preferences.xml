@@ -8,7 +8,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library,Project,Library/University Program/Clock,Library/Interface Protocols/Audio &amp; Video,Library/University Program/Audio &amp; Video/Video,Library/Interface Protocols,Library/University Program/Audio &amp; Video,Library/University Program" />
+   expandedCategories="Library/University Program/Clock,Project,Library/Interface Protocols/Audio &amp; Video,Library/Interface Protocols,Library/University Program/Audio &amp; Video/Video,Library/University Program/Audio &amp; Video,Library,Library/University Program" />
  <window width="1922" height="1025" x="-508" y="0" />
  <generation simulation="VERILOG" />
 </preferences>
