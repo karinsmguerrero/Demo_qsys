@@ -1,0 +1,5 @@
+Transfer files:
+    scp helloworld root@192.168.100.70:/home/root/
+Compile:
+    cd "Documents/TEC/2025/I semestre/Sistemas empotrados/Proyecto 1/HPS/Hello"
+    make
