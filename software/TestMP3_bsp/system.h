@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII' in SOPC Builder design 'reloj_soc'
  * SOPC Builder design path: ../../reloj_soc.sopcinfo
  *
- * Generated: Mon May 26 19:55:08 CST 2025
+ * Generated: Thu May 29 16:30:01 CST 2025
  */
 
 /*
@@ -62,7 +62,7 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_gen2"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x00002020
+#define ALT_CPU_BREAK_ADDR 0x00005020
 #define ALT_CPU_CPU_ARCH_NIOS2_R1
 #define ALT_CPU_CPU_FREQ 50000000u
 #define ALT_CPU_CPU_ID_SIZE 1
@@ -72,7 +72,7 @@
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x00000020
+#define ALT_CPU_EXCEPTION_ADDR 0x00002020
 #define ALT_CPU_FLASH_ACCELERATOR_LINES 0
 #define ALT_CPU_FLASH_ACCELERATOR_LINE_SIZE 0
 #define ALT_CPU_FLUSHDA_SUPPORTED
@@ -87,10 +87,10 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0xe
+#define ALT_CPU_INST_ADDR_WIDTH 0xf
 #define ALT_CPU_NAME "NIOSII"
 #define ALT_CPU_OCI_VERSION 1
-#define ALT_CPU_RESET_ADDR 0x00000000
+#define ALT_CPU_RESET_ADDR 0x00002000
 
 
 /*
@@ -99,7 +99,7 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x00002020
+#define NIOS2_BREAK_ADDR 0x00005020
 #define NIOS2_CPU_ARCH_NIOS2_R1
 #define NIOS2_CPU_FREQ 50000000u
 #define NIOS2_CPU_ID_SIZE 1
@@ -109,7 +109,7 @@
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x00000020
+#define NIOS2_EXCEPTION_ADDR 0x00002020
 #define NIOS2_FLASH_ACCELERATOR_LINES 0
 #define NIOS2_FLASH_ACCELERATOR_LINE_SIZE 0
 #define NIOS2_FLUSHDA_SUPPORTED
@@ -123,9 +123,9 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0xe
+#define NIOS2_INST_ADDR_WIDTH 0xf
 #define NIOS2_OCI_VERSION 1
-#define NIOS2_RESET_ADDR 0x00000000
+#define NIOS2_RESET_ADDR 0x00002000
 
 
 /*
@@ -138,6 +138,8 @@
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
+#define __ALTERA_UP_AVALON_AUDIO
+#define __ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG
 
 
 /*
@@ -148,9 +150,9 @@
 #define ALT_MODULE_CLASS_RAM altera_avalon_onchip_memory2
 #define RAM_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define RAM_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define RAM_BASE 0x0
+#define RAM_BASE 0x2000
 #define RAM_CONTENTS_INFO ""
-#define RAM_DUAL_PORT 0
+#define RAM_DUAL_PORT 1
 #define RAM_GUI_RAM_BLOCK_TYPE "AUTO"
 #define RAM_INIT_CONTENTS_FILE "reloj_soc_RAM"
 #define RAM_INIT_MEM_CONTENT 1
@@ -202,7 +204,7 @@
  */
 
 #define ALT_MODULE_CLASS_REG_LEDS altera_avalon_pio
-#define REG_LEDS_BASE 0x4000
+#define REG_LEDS_BASE 0x4040
 #define REG_LEDS_BIT_CLEARING_EDGE_REGISTER 0
 #define REG_LEDS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define REG_LEDS_CAPTURE 0
@@ -229,8 +231,8 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone V"
-#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
+#define ALT_LEGACY_INTERRUPT_API_PRESENT
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
 #define ALT_LOG_PORT_DEV null
@@ -239,19 +241,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/UART"
-#define ALT_STDERR_BASE 0x4040
+#define ALT_STDERR_BASE 0x4050
 #define ALT_STDERR_DEV UART
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/UART"
-#define ALT_STDIN_BASE 0x4040
+#define ALT_STDIN_BASE 0x4050
 #define ALT_STDIN_DEV UART
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/UART"
-#define ALT_STDOUT_BASE 0x4040
+#define ALT_STDOUT_BASE 0x4050
 #define ALT_STDOUT_DEV UART
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -291,7 +293,7 @@
  */
 
 #define ALT_MODULE_CLASS_UART altera_avalon_jtag_uart
-#define UART_BASE 0x4040
+#define UART_BASE 0x4050
 #define UART_IRQ 0
 #define UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define UART_NAME "/dev/UART"
@@ -301,6 +303,34 @@
 #define UART_TYPE "altera_avalon_jtag_uart"
 #define UART_WRITE_DEPTH 64
 #define UART_WRITE_THRESHOLD 8
+
+
+/*
+ * audio_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_audio_0 altera_up_avalon_audio
+#define AUDIO_0_BASE 0x4000
+#define AUDIO_0_IRQ 1
+#define AUDIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define AUDIO_0_NAME "/dev/audio_0"
+#define AUDIO_0_SPAN 16
+#define AUDIO_0_TYPE "altera_up_avalon_audio"
+
+
+/*
+ * audio_and_video_config_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_audio_and_video_config_0 altera_up_avalon_audio_and_video_config
+#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x0
+#define AUDIO_AND_VIDEO_CONFIG_0_IRQ -1
+#define AUDIO_AND_VIDEO_CONFIG_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define AUDIO_AND_VIDEO_CONFIG_0_NAME "/dev/audio_and_video_config_0"
+#define AUDIO_AND_VIDEO_CONFIG_0_SPAN 16
+#define AUDIO_AND_VIDEO_CONFIG_0_TYPE "altera_up_avalon_audio_and_video_config"
 
 
 /*

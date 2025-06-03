@@ -36,7 +36,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "AUD_DACDAT",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
@@ -69,10 +85,6 @@
 				},
 				{
 					"name" : "sw[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rst_n",
 					"strict" : false
 				}
 			]

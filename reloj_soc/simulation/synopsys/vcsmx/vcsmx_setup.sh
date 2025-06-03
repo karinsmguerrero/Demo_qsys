@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2025.05.27.22:25:30
+# ACDS 18.1 625 linux 2025.06.02.23:32:19
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 linux 2025.05.27.22:25:30
+# ACDS 18.1 625 linux 2025.06.02.23:32:19
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="reloj_soc"
@@ -152,11 +152,11 @@ mkdir -p ./libraries/avalon_st_adapter/
 mkdir -p ./libraries/rsp_mux_001/
 mkdir -p ./libraries/rsp_mux/
 mkdir -p ./libraries/rsp_demux/
-mkdir -p ./libraries/cmd_mux_002/
+mkdir -p ./libraries/cmd_mux_003/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux_001/
 mkdir -p ./libraries/cmd_demux/
-mkdir -p ./libraries/router_004/
+mkdir -p ./libraries/router_005/
 mkdir -p ./libraries/router_002/
 mkdir -p ./libraries/router_001/
 mkdir -p ./libraries/router/
@@ -165,10 +165,14 @@ mkdir -p ./libraries/audio_0_avalon_audio_slave_agent/
 mkdir -p ./libraries/NIOSII_data_master_agent/
 mkdir -p ./libraries/audio_0_avalon_audio_slave_translator/
 mkdir -p ./libraries/NIOSII_data_master_translator/
+mkdir -p ./libraries/reset_from_locked/
+mkdir -p ./libraries/audio_pll/
 mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/audio_pll_0/
+mkdir -p ./libraries/audio_and_video_config_0/
 mkdir -p ./libraries/audio_0/
 mkdir -p ./libraries/UART/
 mkdir -p ./libraries/TIMER/
@@ -227,13 +231,13 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work rsp_mux                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                                
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv"                       -work cmd_mux_002                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux_002                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_003.sv"                       -work cmd_mux_003                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux_003                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                            
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                                
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_004.sv"                        -work router_004                               
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_005.sv"                        -work router_005                               
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_002.sv"                        -work router_002                               
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_001.sv"                        -work router_001                               
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router.sv"                            -work router                                   
@@ -243,6 +247,8 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                                    -work NIOSII_data_master_agent                 
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                                -work audio_0_avalon_audio_slave_translator    
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                               -work NIOSII_data_master_translator            
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v"                      -work reset_from_locked                        
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0_audio_pll.vo"                               -work audio_pll                                
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu.v"                                           -work cpu                                      
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"                       -work cpu                                      
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v"                        -work cpu                                      
@@ -252,6 +258,22 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                      -work rst_controller                           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_irq_mapper.sv"                                          -work irq_mapper                               
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0.v"                                    -work mm_interconnect_0                        
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0.v"                                          -work audio_pll_0                              
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_serial_bus_controller.v"                      -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_slow_clock_generator.v"                                 -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init.v"                                  -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_dc2.v"                              -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_d5m.v"                              -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_lcm.v"                              -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ltm.v"                              -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"                       -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2_115.v"                       -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"                      -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"                 -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_audio.v"                         -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7180.v"                       -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7181.v"                       -work audio_and_video_config_0                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/reloj_soc_audio_and_video_config_0.v"                             -work audio_and_video_config_0                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_audio_bit_counter.v"                                    -work audio_0                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_audio_in_deserializer.v"                                -work audio_0                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_audio_out_serializer.v"                                 -work audio_0                                  

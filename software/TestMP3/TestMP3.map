@@ -1,15 +1,9 @@
 Archive member included to satisfy reference by file (symbol)
 
-../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
-                              obj/default/hello_world_small.o (alt_ic_isr_register)
-../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_iic.o) (alt_iic_isr_register)
-../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_entry)
-../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_handler)
+../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+                              obj/default/hello_world_small.o (alt_irq_register)
 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_iic.o) (alt_irq_active)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o) (alt_irq_active)
 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
                               ../TestMP3_bsp//obj/HAL/src/crt0.o (alt_load)
 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
@@ -26,14 +20,26 @@ Archive member included to satisfy reference by file (symbol)
                               ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o) (altera_avalon_jtag_uart_write)
 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
                               ../TestMP3_bsp//libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
-../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o) (alt_exception)
+../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o) (alt_dev_list)
+../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o) (alt_dev_llist_insert)
+../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o) (alt_errno)
 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
                               ../TestMP3_bsp//libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
-../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
-                              ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o) (alt_instruction_exception_entry)
+../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o) (alt_irq_entry)
+../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o) (alt_irq_handler)
 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
                               ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o) (alt_exception)
+../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o) (alt_instruction_exception_entry)
+/opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+                              ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o) (errno)
 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
                               ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o) (strlen)
 
@@ -41,13 +47,14 @@ Allocating common symbols
 Common symbol       size              file
 
 alt_irq             0x100             ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+errno               0x4               /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
 elapsed_ms          0x4               obj/default/hello_world_small.o
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-reset            0x0000000000000000 0x0000000000000020
-RAM              0x0000000000000020 0x0000000000001fe0
+reset            0x0000000000002000 0x0000000000000020
+RAM              0x0000000000002020 0x0000000000001fe0
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
@@ -64,73 +71,73 @@ LOAD ../TestMP3_bsp//libhal_bsp.a
 LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libm.a
 END GROUP
 LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a
-                0x0000000000000000                __alt_mem_RAM = 0x0
+                0x0000000000002000                __alt_mem_RAM = 0x2000
 
-.entry          0x0000000000000000       0x20
+.entry          0x0000000000002000       0x20
  *(.entry)
- .entry         0x0000000000000000       0x20 ../TestMP3_bsp//obj/HAL/src/crt0.o
-                0x0000000000000000                __reset
-                0x000000000000000c                _exit
+ .entry         0x0000000000002000       0x20 ../TestMP3_bsp//obj/HAL/src/crt0.o
+                0x0000000000002000                __reset
+                0x000000000000200c                _exit
 
-.exceptions     0x0000000000000020      0x160
-                0x0000000000000020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
-                0x0000000000000020                . = ALIGN (0x20)
+.exceptions     0x0000000000002020      0x160
+                0x0000000000002020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x0000000000002020                . = ALIGN (0x20)
  *(.irq)
  *(.exceptions.entry.label)
  .exceptions.entry.label
-                0x0000000000000020        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
-                0x0000000000000020                alt_irq_entry
+                0x0000000000002020        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000002020                alt_irq_entry
  .exceptions.entry.label
-                0x0000000000000020        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
-                0x0000000000000020                alt_exception
+                0x0000000000002020        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x0000000000002020                alt_exception
  *(.exceptions.entry.user)
  *(.exceptions.entry.ecc_fatal)
  *(.exceptions.entry)
  .exceptions.entry
-                0x0000000000000020       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x0000000000002020       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
  *(.exceptions.irqtest.user)
  *(.exceptions.irqtest)
  .exceptions.irqtest
-                0x0000000000000074       0x10 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000002074       0x10 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  *(.exceptions.irqhandler.user)
  *(.exceptions.irqhandler)
  .exceptions.irqhandler
-                0x0000000000000084        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000002084        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  *(.exceptions.irqreturn.user)
  *(.exceptions.irqreturn)
  .exceptions.irqreturn
-                0x0000000000000088        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000002088        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  *(.exceptions.notirq.label)
  .exceptions.notirq.label
-                0x000000000000008c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x000000000000208c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  *(.exceptions.notirq.user)
  *(.exceptions.notirq)
  .exceptions.notirq
-                0x000000000000008c        0x8 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x000000000000208c        0x8 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
  *(.exceptions.soft.user)
  *(.exceptions.soft)
  *(.exceptions.unknown.user)
  *(.exceptions.unknown)
  .exceptions.unknown
-                0x0000000000000094       0x14 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x0000000000002094       0x14 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
  *(.exceptions.exit.label)
  .exceptions.exit.label
-                0x00000000000000a8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x00000000000020a8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  .exceptions.exit.label
-                0x00000000000000a8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x00000000000020a8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
  *(.exceptions.exit.user)
  *(.exceptions.exit)
  .exceptions.exit
-                0x00000000000000a8       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x00000000000020a8       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
  *(.exceptions)
- .exceptions    0x00000000000000fc       0x60 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
-                0x00000000000000fc                alt_irq_handler
- .exceptions    0x000000000000015c       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
-                0x000000000000015c                alt_instruction_exception_entry
-                0x0000000000000180                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
-                0x0000000000000020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+ .exceptions    0x00000000000020fc       0x60 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x00000000000020fc                alt_irq_handler
+ .exceptions    0x000000000000215c       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+                0x000000000000215c                alt_instruction_exception_entry
+                0x0000000000002180                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x0000000000002020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
-.text           0x0000000000000180      0x610
+.text           0x0000000000002180      0x660
                 [!provide]                        PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -175,56 +182,56 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
  *(.init)
  *(.plt)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000000000000180       0x3c ../TestMP3_bsp//obj/HAL/src/crt0.o
-                0x0000000000000180                _start
- .text          0x00000000000001bc       0x38 obj/default/hello_world_small.o
-                0x00000000000001bc                timer_ir_handler
- .text.startup  0x00000000000001f4       0xb4 obj/default/hello_world_small.o
-                0x00000000000001f4                main
- .text          0x00000000000002a8       0x8c ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
-                0x00000000000002a8                alt_ic_isr_register
-                0x00000000000002ac                alt_ic_irq_enable
-                0x00000000000002e4                alt_ic_irq_disable
-                0x000000000000031c                alt_ic_irq_enabled
- .text          0x0000000000000334       0x68 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
-                0x0000000000000334                alt_iic_isr_register
- .text          0x000000000000039c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .text          0x000000000000039c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .text          0x000000000000039c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .text          0x000000000000039c       0xe0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
-                0x000000000000039c                alt_load
- .text          0x000000000000047c       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
-                0x000000000000047c                alt_main
- .text          0x00000000000004a8      0x170 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
-                0x00000000000004a8                alt_printf
- .text          0x0000000000000618       0x48 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
-                0x0000000000000618                alt_putchar
- .text          0x0000000000000660       0x38 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
-                0x0000000000000660                alt_putstr
- .text          0x0000000000000698       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x0000000000000698                alt_irq_init
-                0x00000000000006b8                alt_sys_init
- .text          0x00000000000006bc       0x34 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x00000000000006bc                altera_avalon_jtag_uart_write
- .text          0x00000000000006f0        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
-                0x00000000000006f0                alt_dcache_flush_all
- .text          0x00000000000006f4        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .text          0x00000000000006f4        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
-                0x00000000000006f4                alt_icache_flush_all
- .text          0x00000000000006f8       0x74 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
-                0x00000000000006f8                alt_exception_cause_generated_bad_addr
- .text          0x000000000000076c        0x8 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
-                0x000000000000076c                altera_nios2_gen2_irq_init
- .text          0x0000000000000774        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
- .text.strlen   0x0000000000000774       0x1c /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
-                0x0000000000000774                strlen
+ .text          0x0000000000002180       0x3c ../TestMP3_bsp//obj/HAL/src/crt0.o
+                0x0000000000002180                _start
+ .text          0x00000000000021bc       0x38 obj/default/hello_world_small.o
+                0x00000000000021bc                timer_ir_handler
+ .text.startup  0x00000000000021f4       0xb8 obj/default/hello_world_small.o
+                0x00000000000021f4                main
+ .text          0x00000000000022ac       0x94 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+                0x00000000000022ac                alt_irq_register
+ .text          0x0000000000002340        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .text          0x0000000000002340       0xe0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+                0x0000000000002340                alt_load
+ .text          0x0000000000002420       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000002420                alt_main
+ .text          0x000000000000244c      0x170 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+                0x000000000000244c                alt_printf
+ .text          0x00000000000025bc       0x48 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+                0x00000000000025bc                alt_putchar
+ .text          0x0000000000002604       0x38 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+                0x0000000000002604                alt_putstr
+ .text          0x000000000000263c       0x5c ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x000000000000263c                alt_irq_init
+                0x000000000000265c                alt_sys_init
+ .text          0x0000000000002698       0x34 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x0000000000002698                altera_avalon_jtag_uart_write
+ .text          0x00000000000026cc        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000000026cc                alt_dcache_flush_all
+ .text          0x00000000000026d0        0x8 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .text          0x00000000000026d8       0x6c ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+                0x00000000000026d8                alt_dev_llist_insert
+ .text          0x0000000000002744        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .text          0x0000000000002744        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000000002744                alt_icache_flush_all
+ .text          0x0000000000002748        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .text          0x0000000000002748        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .text          0x0000000000002748        0x8 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x0000000000002748                altera_nios2_gen2_irq_init
+ .text          0x0000000000002750        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .text          0x0000000000002750       0x74 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+                0x0000000000002750                alt_exception_cause_generated_bad_addr
+ .text          0x00000000000027c4        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .text          0x00000000000027c4        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x00000000000027c4       0x1c /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x00000000000027c4                strlen
  *(.gnu.warning.*)
  *(.fini)
                 [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x0000000000000790                . = ALIGN (0x4)
+                0x00000000000027e0                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
@@ -246,118 +253,140 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
  *(SORT(.dtors.*))
                 [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x0000000000000790                . = ALIGN (0x4)
+                0x00000000000027e0                . = ALIGN (0x4)
 
-.rodata         0x0000000000000790       0x94
-                0x0000000000000790                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x0000000000000790                . = ALIGN (0x4)
+.rodata         0x00000000000027e0       0xd8
+                0x00000000000027e0                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000000000027e0                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x0000000000000790       0x94 obj/default/hello_world_small.o
-                                         0x92 (size before relaxing)
+                0x00000000000027e0       0x9a obj/default/hello_world_small.o
+ *fill*         0x000000000000287a        0x2 
+ .rodata.str1.4
+                0x000000000000287c       0x2e ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ *fill*         0x00000000000028aa        0x2 
+ .rodata.str1.4
+                0x00000000000028ac        0xc ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+                                          0xa (size before relaxing)
  *(.rodata1)
-                0x0000000000000824                . = ALIGN (0x4)
-                0x0000000000000824                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x0000000000000790                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x00000000000028b8                . = ALIGN (0x4)
+                0x00000000000028b8                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000000000027e0                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x0000000000000824        0x8 load address 0x000000000000082c
-                0x0000000000000824                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x0000000000000824                . = ALIGN (0x4)
+.rwdata         0x00000000000028b8       0xd8 load address 0x0000000000002990
+                0x00000000000028b8                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x00000000000028b8                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//obj/HAL/src/crt0.o
- .data          0x0000000000000824        0x0 obj/default/hello_world_small.o
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .data          0x0000000000000824        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .data          0x0000000000000824        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
-                0x0000000000008824                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//obj/HAL/src/crt0.o
+ .data          0x00000000000028b8        0x0 obj/default/hello_world_small.o
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .data          0x00000000000028b8        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .data          0x00000000000028b8       0x60 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000000002918        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x0000000000002918        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000000002918       0x58 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+                0x0000000000002918                alt_fd_list
+                0x0000000000002948                alt_dev_null
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .data          0x0000000000002970        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .data          0x0000000000002970        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .data          0x0000000000002970        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x000000000000a970                _gp = ABSOLUTE ((. + 0x8000))
                 [!provide]                        PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x0000000000000824        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
-                0x0000000000000824                alt_priority_mask
- .sdata         0x0000000000000828        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x0000000000000828                UART
+ .sdata         0x0000000000002970        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x0000000000002970                alt_priority_mask
+ .sdata         0x0000000000002974        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x0000000000002974                UART
+ .sdata         0x0000000000002978       0x14 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+                0x0000000000002978                alt_max_fd
+                0x000000000000297c                alt_dev_list
+                0x0000000000002984                alt_fs_list
+ .sdata         0x000000000000298c        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+                0x000000000000298c                alt_errno
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x000000000000082c                . = ALIGN (0x4)
-                0x000000000000082c                _edata = ABSOLUTE (.)
+                0x0000000000002990                . = ALIGN (0x4)
+                0x0000000000002990                _edata = ABSOLUTE (.)
                 [!provide]                        PROVIDE (edata, ABSOLUTE (.))
-                0x000000000000082c                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x000000000000082c                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x0000000000002990                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000000002990                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x0000000000000834      0x118
-                0x0000000000000834                __bss_start = ABSOLUTE (.)
+.bss            0x0000000000002a68      0x11c
+                0x0000000000002a68                __bss_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x0000000000000834        0x4 obj/default/hello_world_small.o
-                0x0000000000000834                elapsed_ms
- .sbss          0x0000000000000838        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
-                0x0000000000000838                alt_irq_active
- .sbss          0x000000000000083c        0xc ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
-                0x000000000000083c                alt_envp
-                0x0000000000000840                alt_argv
-                0x0000000000000844                alt_argc
- .sbss          0x0000000000000848        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
-                0x0000000000000848                alt_instruction_exception_handler
+ .sbss          0x0000000000002a68        0x4 obj/default/hello_world_small.o
+                0x0000000000002a68                elapsed_ms
+ .sbss          0x0000000000002a6c        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x0000000000002a6c                alt_irq_active
+ .sbss          0x0000000000002a70        0xc ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000002a70                alt_envp
+                0x0000000000002a74                alt_argv
+                0x0000000000002a78                alt_argc
+ .sbss          0x0000000000002a7c        0x4 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+                0x0000000000002a7c                alt_instruction_exception_handler
+ .sbss          0x0000000000002a80        0x4 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+                0x0000000000002a80                errno
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
                 [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//obj/HAL/src/crt0.o
- .bss           0x000000000000084c        0x0 obj/default/hello_world_small.o
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .bss           0x000000000000084c        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .bss           0x000000000000084c        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000002a84        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .bss           0x0000000000002a84        0x0 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .bss           0x0000000000002a84        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .bss           0x0000000000002a84        0x0 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
  *(COMMON)
- COMMON         0x000000000000084c      0x100 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
-                0x000000000000084c                alt_irq
-                0x000000000000094c                . = ALIGN (0x4)
-                0x000000000000094c                __bss_end = ABSOLUTE (.)
+ COMMON         0x0000000000002a84      0x100 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x0000000000002a84                alt_irq
+                0x0000000000002b84                . = ALIGN (0x4)
+                0x0000000000002b84                __bss_end = ABSOLUTE (.)
 
-.RAM            0x000000000000094c        0x0
+.RAM            0x0000000000002b84        0x0
                 [!provide]                        PROVIDE (_alt_partition_RAM_start, ABSOLUTE (.))
  *(.RAM .RAM. RAM.*)
-                0x000000000000094c                . = ALIGN (0x4)
+                0x0000000000002b84                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_RAM_end, ABSOLUTE (.))
-                0x000000000000094c                _end = ABSOLUTE (.)
-                0x000000000000094c                end = ABSOLUTE (.)
-                0x000000000000094c                __alt_stack_base = ABSOLUTE (.)
+                0x0000000000002b84                _end = ABSOLUTE (.)
+                0x0000000000002b84                end = ABSOLUTE (.)
+                0x0000000000002b84                __alt_stack_base = ABSOLUTE (.)
                 [!provide]                        PROVIDE (_alt_partition_RAM_load_addr, LOADADDR (.RAM))
 
 .stab
@@ -382,9 +411,7 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
  *(.comment)
  .comment       0x0000000000000000       0x23 obj/default/hello_world_small.o
                                          0x24 (size before relaxing)
- .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
@@ -394,9 +421,14 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
  .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .comment       0x0000000000000023       0x24 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .comment       0x0000000000000023       0x24 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
  .comment       0x0000000000000023       0x24 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
 .debug
@@ -411,190 +443,212 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x2b8
+.debug_aranges  0x0000000000000000      0x308
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x28 ../TestMP3_bsp//obj/HAL/src/crt0.o
  .debug_aranges
                 0x0000000000000028       0x28 obj/default/hello_world_small.o
  .debug_aranges
-                0x0000000000000050       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
+                0x0000000000000050       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
  .debug_aranges
-                0x0000000000000070       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                0x0000000000000070       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
  .debug_aranges
-                0x0000000000000090       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000000088       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
  .debug_aranges
-                0x00000000000000c0       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x00000000000000a8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
  .debug_aranges
-                0x00000000000000e0       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x00000000000000c8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
  .debug_aranges
-                0x00000000000000f8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+                0x00000000000000e8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
  .debug_aranges
-                0x0000000000000118       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000000108       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
  .debug_aranges
-                0x0000000000000138       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+                0x0000000000000128       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
  .debug_aranges
-                0x0000000000000158       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+                0x0000000000000148       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
  .debug_aranges
-                0x0000000000000178       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+                0x0000000000000168       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
  .debug_aranges
-                0x0000000000000198       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x0000000000000188       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
  .debug_aranges
-                0x00000000000001b8       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x00000000000001a8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
  .debug_aranges
-                0x00000000000001d8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000000001c8       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
  .debug_aranges
-                0x00000000000001f8       0x38 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x00000000000001e0       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
  .debug_aranges
-                0x0000000000000230       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000000000200       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
  .debug_aranges
-                0x0000000000000250       0x28 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+                0x0000000000000230       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
  .debug_aranges
-                0x0000000000000278       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x0000000000000250       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
  .debug_aranges
-                0x0000000000000298       0x20 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x0000000000000270       0x38 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_aranges
+                0x00000000000002a8       0x28 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_aranges
+                0x00000000000002d0       0x18 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .debug_aranges
+                0x00000000000002e8       0x20 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x19af
+.debug_info     0x0000000000000000     0x22b7
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0x6f ../TestMP3_bsp//obj/HAL/src/crt0.o
- .debug_info    0x000000000000006f      0x1ef obj/default/hello_world_small.o
- .debug_info    0x000000000000025e      0x38a ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .debug_info    0x00000000000005e8      0x232 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .debug_info    0x000000000000081a       0x78 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .debug_info    0x0000000000000892      0x184 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_info    0x0000000000000a16       0x88 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .debug_info    0x0000000000000a9e      0x1c9 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .debug_info    0x0000000000000c67      0x169 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .debug_info    0x0000000000000dd0      0x14d ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_info    0x0000000000000f1d      0x12a ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .debug_info    0x0000000000001047      0x13a ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_info    0x0000000000001181      0x19d ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_info    0x000000000000131e      0x197 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_info    0x00000000000014b5       0x92 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_info    0x0000000000001547       0x7e ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .debug_info    0x00000000000015c5       0x92 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_info    0x0000000000001657      0x1fd ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_info    0x0000000000001854       0x92 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_info    0x00000000000018e6       0xc9 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_info    0x000000000000006f      0x20a obj/default/hello_world_small.o
+ .debug_info    0x0000000000000279      0x30d ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .debug_info    0x0000000000000586       0x88 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_info    0x000000000000060e      0x1c9 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_info    0x00000000000007d7      0x18f ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000966      0x14d ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_info    0x0000000000000ab3      0x12a ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_info    0x0000000000000bdd      0x13a ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x0000000000000d17      0x53b ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000000000001252      0x1ad ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x00000000000013ff       0x92 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000000000001491      0x499 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .debug_info    0x000000000000192a      0x1b3 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_info    0x0000000000001add       0xa6 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .debug_info    0x0000000000001b83       0x92 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000001c15       0x78 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_info    0x0000000000001c8d      0x1a4 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_info    0x0000000000001e31       0xb8 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x0000000000001ee9       0x7e ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_info    0x0000000000001f67      0x1fd ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_info    0x0000000000002164       0x8a /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .debug_info    0x00000000000021ee       0xc9 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
-.debug_abbrev   0x0000000000000000      0xdfa
+.debug_abbrev   0x0000000000000000     0x101f
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0x12 ../TestMP3_bsp//obj/HAL/src/crt0.o
- .debug_abbrev  0x0000000000000012       0xd9 obj/default/hello_world_small.o
- .debug_abbrev  0x00000000000000eb      0x1a0 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .debug_abbrev  0x000000000000028b      0x19c ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .debug_abbrev  0x0000000000000427       0x12 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .debug_abbrev  0x0000000000000439      0x120 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_abbrev  0x0000000000000559       0x40 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .debug_abbrev  0x0000000000000599       0xd8 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .debug_abbrev  0x0000000000000671       0xee ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .debug_abbrev  0x000000000000075f       0xd5 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_abbrev  0x0000000000000834       0xd2 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .debug_abbrev  0x0000000000000906       0xd3 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_abbrev  0x00000000000009d9      0x10e ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_abbrev  0x0000000000000ae7       0xd5 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_abbrev  0x0000000000000bbc       0x42 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_abbrev  0x0000000000000bfe       0x12 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .debug_abbrev  0x0000000000000c10       0x42 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_abbrev  0x0000000000000c52       0xe7 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_abbrev  0x0000000000000d39       0x42 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_abbrev  0x0000000000000d7b       0x7f /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_abbrev  0x0000000000000012       0xf7 obj/default/hello_world_small.o
+ .debug_abbrev  0x0000000000000109      0x1a5 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .debug_abbrev  0x00000000000002ae       0x40 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_abbrev  0x00000000000002ee       0xd8 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x00000000000003c6       0xf5 ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00000000000004bb       0xd5 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_abbrev  0x0000000000000590       0xd2 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_abbrev  0x0000000000000662       0xd3 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x0000000000000735      0x1e2 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x0000000000000917       0xd5 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x00000000000009ec       0x42 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000000000000a2e       0xd9 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .debug_abbrev  0x0000000000000b07      0x11c ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_abbrev  0x0000000000000c23       0x5a ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .debug_abbrev  0x0000000000000c7d       0x42 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x0000000000000cbf       0x12 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_abbrev  0x0000000000000cd1      0x138 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_abbrev  0x0000000000000e09       0x67 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x0000000000000e70       0x12 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_abbrev  0x0000000000000e82       0xe7 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_abbrev  0x0000000000000f69       0x37 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .debug_abbrev  0x0000000000000fa0       0x7f /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
-.debug_line     0x0000000000000000      0xd79
+.debug_line     0x0000000000000000     0x1096
  *(.debug_line)
  .debug_line    0x0000000000000000       0x66 ../TestMP3_bsp//obj/HAL/src/crt0.o
- .debug_line    0x0000000000000066       0xb2 obj/default/hello_world_small.o
- .debug_line    0x0000000000000118       0xf1 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .debug_line    0x0000000000000209       0xd6 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .debug_line    0x00000000000002df       0x6b ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .debug_line    0x000000000000034a       0xa5 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_line    0x00000000000003ef       0x50 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
- .debug_line    0x000000000000043f       0xa4 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .debug_line    0x00000000000004e3       0xbd ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .debug_line    0x00000000000005a0      0x119 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_line    0x00000000000006b9       0x55 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .debug_line    0x000000000000070e       0xa7 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_line    0x00000000000007b5      0x11a ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x00000000000008cf       0xf0 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x00000000000009bf       0x4e ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x0000000000000a0d       0xb3 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .debug_line    0x0000000000000ac0       0x4e ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x0000000000000b0e       0xbf ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_line    0x0000000000000bcd       0x50 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_line    0x0000000000000c1d      0x15c /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_line    0x0000000000000066       0xfd obj/default/hello_world_small.o
+ .debug_line    0x0000000000000163       0xed ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .debug_line    0x0000000000000250       0x50 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_line    0x00000000000002a0       0xa4 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000000000000344       0xea ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x000000000000042e      0x119 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_line    0x0000000000000547       0x55 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_line    0x000000000000059c       0xa7 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x0000000000000643      0x1a1 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x00000000000007e4      0x104 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x00000000000008e8       0x4e ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x0000000000000936       0xfd ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .debug_line    0x0000000000000a33       0xd8 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_line    0x0000000000000b0b       0x51 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+ .debug_line    0x0000000000000b5c       0x4e ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000000baa       0x6b ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_line    0x0000000000000c15       0xc8 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_line    0x0000000000000cdd       0x8c ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x0000000000000d69       0xb3 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_line    0x0000000000000e1c       0xbf ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_line    0x0000000000000edb       0x5f /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+ .debug_line    0x0000000000000f3a      0x15c /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
-.debug_frame    0x0000000000000000      0x31c
+.debug_frame    0x0000000000000000      0x318
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x4c obj/default/hello_world_small.o
- .debug_frame   0x000000000000004c       0x50 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .debug_frame   0x000000000000009c       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .debug_frame   0x00000000000000cc       0x34 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_frame   0x0000000000000100       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .debug_frame   0x0000000000000130       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
- .debug_frame   0x000000000000015c       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_frame   0x00000000000001b0       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .debug_frame   0x00000000000001e0       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_frame   0x0000000000000210       0x3c ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_frame   0x000000000000024c       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_frame   0x000000000000026c       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_frame   0x000000000000028c       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_frame   0x00000000000002ac       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_frame   0x00000000000002dc       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_frame   0x00000000000002fc       0x20 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_frame   0x000000000000004c       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .debug_frame   0x000000000000006c       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_frame   0x000000000000009c       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00000000000000c8       0x54 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_frame   0x000000000000011c       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_frame   0x000000000000014c       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x000000000000017c       0x4c ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000000000001c8       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x00000000000001e8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x0000000000000208       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+ .debug_frame   0x0000000000000228       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_frame   0x0000000000000254       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000000000000274       0x34 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_frame   0x00000000000002a8       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x00000000000002c8       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_frame   0x00000000000002f8       0x20 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
-.debug_str      0x0000000000000000      0xcd5
+.debug_str      0x0000000000000000     0x1038
  *(.debug_str)
- .debug_str     0x0000000000000000      0x182 obj/default/hello_world_small.o
-                                        0x1c8 (size before relaxing)
- .debug_str     0x0000000000000182      0x145 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
-                                        0x254 (size before relaxing)
- .debug_str     0x00000000000002c7       0x37 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
-                                        0x20e (size before relaxing)
- .debug_str     0x00000000000002fe       0x3a ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
-                                        0x198 (size before relaxing)
- .debug_str     0x0000000000000338       0x17 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_str     0x0000000000000000      0x1a8 obj/default/hello_world_small.o
+                                        0x1ee (size before relaxing)
+ .debug_str     0x00000000000001a8       0xd8 ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+                                        0x209 (size before relaxing)
+ .debug_str     0x0000000000000280       0x17 ../TestMP3_bsp//libhal_bsp.a(alt_irq_vars.o)
                                         0x13b (size before relaxing)
- .debug_str     0x000000000000034f      0x113 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_str     0x0000000000000297      0x113 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
                                         0x23d (size before relaxing)
- .debug_str     0x0000000000000462       0x8f ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
-                                        0x1b6 (size before relaxing)
- .debug_str     0x00000000000004f1       0x59 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_str     0x00000000000003aa       0x8f ../TestMP3_bsp//libhal_bsp.a(alt_main.o)
+                                        0x1df (size before relaxing)
+ .debug_str     0x0000000000000439       0x59 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
                                         0x107 (size before relaxing)
- .debug_str     0x000000000000054a       0x59 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_str     0x0000000000000492       0x59 ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
                                         0x187 (size before relaxing)
- .debug_str     0x00000000000005a3       0x1c ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_str     0x00000000000004eb       0x1c ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
                                         0x18c (size before relaxing)
- .debug_str     0x00000000000005bf       0xb9 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
-                                        0x258 (size before relaxing)
- .debug_str     0x0000000000000678       0x39 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                                        0x216 (size before relaxing)
- .debug_str     0x00000000000006b1       0x1f ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x0000000000000507      0x245 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+                                        0x41b (size before relaxing)
+ .debug_str     0x000000000000074c       0x32 ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                                        0x237 (size before relaxing)
+ .debug_str     0x000000000000077e       0x1f ../TestMP3_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
                                         0x156 (size before relaxing)
- .debug_str     0x00000000000006d0       0x1f ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x000000000000079d      0x12c ../TestMP3_bsp//libhal_bsp.a(alt_dev.o)
+                                        0x306 (size before relaxing)
+ .debug_str     0x00000000000008c9       0x48 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+                                        0x1cd (size before relaxing)
+ .debug_str     0x0000000000000911       0x14 ../TestMP3_bsp//libhal_bsp.a(alt_errno.o)
+                                        0x146 (size before relaxing)
+ .debug_str     0x0000000000000925       0x1f ../TestMP3_bsp//libhal_bsp.a(alt_icache_flush_all.o)
                                         0x156 (size before relaxing)
- .debug_str     0x00000000000006ef      0x48b ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_str     0x0000000000000944       0x3a ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+                                        0x1b9 (size before relaxing)
+ .debug_str     0x000000000000097e       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                        0x186 (size before relaxing)
+ .debug_str     0x000000000000099e      0x48b ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
                                         0x5a1 (size before relaxing)
- .debug_str     0x0000000000000b7a       0x20 ../TestMP3_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
-                                        0x15d (size before relaxing)
- .debug_str     0x0000000000000b9a      0x13b /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_str     0x0000000000000e29      0x135 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-int_errno.o)
+                                        0x1d9 (size before relaxing)
+ .debug_str     0x0000000000000f5e       0xda /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
                                         0x1e6 (size before relaxing)
 
-.debug_loc      0x0000000000000000      0x706
+.debug_loc      0x0000000000000000      0x593
  *(.debug_loc)
  .debug_loc     0x0000000000000000       0x21 obj/default/hello_world_small.o
- .debug_loc     0x0000000000000021      0x170 ../TestMP3_bsp//libhal_bsp.a(alt_iic.o)
- .debug_loc     0x0000000000000191      0x193 ../TestMP3_bsp//libhal_bsp.a(alt_iic_isr_register.o)
- .debug_loc     0x0000000000000324       0x72 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_loc     0x0000000000000396      0x1de ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_loc     0x0000000000000574       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
- .debug_loc     0x00000000000005a0       0x37 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_loc     0x00000000000005d7       0x21 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_loc     0x00000000000005f8       0x8b ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_loc     0x0000000000000683       0x65 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_loc     0x00000000000006e8       0x1e /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_loc     0x0000000000000021       0xfa ../TestMP3_bsp//libhal_bsp.a(alt_irq_register.o)
+ .debug_loc     0x000000000000011b      0x1de ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_loc     0x00000000000002f9       0x2c ../TestMP3_bsp//libhal_bsp.a(alt_putchar.o)
+ .debug_loc     0x0000000000000325       0x37 ../TestMP3_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_loc     0x000000000000035c       0x39 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x0000000000000395       0x8b ../TestMP3_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x0000000000000420       0x7e ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_loc     0x000000000000049e       0x72 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_loc     0x0000000000000510       0x65 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_loc     0x0000000000000575       0x1e /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -616,20 +670,22 @@ LOAD /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/
  *(.debug_alt_sim_info)
  .debug_alt_sim_info
                 0x0000000000000000       0x10 ../TestMP3_bsp//obj/HAL/src/crt0.o
-                0x0000000000002000                __alt_data_end = 0x2000
-                0x0000000000002000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                0x0000000000004000                __alt_data_end = 0x4000
+                0x0000000000004000                PROVIDE (__alt_stack_pointer, __alt_data_end)
                 [!provide]                        PROVIDE (__alt_stack_limit, __alt_stack_base)
                 [!provide]                        PROVIDE (__alt_heap_start, end)
-                [!provide]                        PROVIDE (__alt_heap_limit, 0x2000)
+                [!provide]                        PROVIDE (__alt_heap_limit, 0x4000)
 OUTPUT(TestMP3.elf elf32-littlenios2)
 
-.debug_ranges   0x0000000000000000      0x128
+.debug_ranges   0x0000000000000000      0x178
  .debug_ranges  0x0000000000000000       0x20 ../TestMP3_bsp//obj/HAL/src/crt0.o
  .debug_ranges  0x0000000000000020       0x18 obj/default/hello_world_small.o
- .debug_ranges  0x0000000000000038       0x28 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
- .debug_ranges  0x0000000000000060       0x10 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
- .debug_ranges  0x0000000000000070       0x48 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
- .debug_ranges  0x00000000000000b8       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
- .debug_ranges  0x00000000000000d0       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
- .debug_ranges  0x0000000000000100       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
- .debug_ranges  0x0000000000000118       0x10 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .debug_ranges  0x0000000000000038       0x48 ../TestMP3_bsp//libhal_bsp.a(alt_load.o)
+ .debug_ranges  0x0000000000000080       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_printf.o)
+ .debug_ranges  0x0000000000000098       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_ranges  0x00000000000000c8       0x20 ../TestMP3_bsp//libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_ranges  0x00000000000000e8       0x28 ../TestMP3_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_ranges  0x0000000000000110       0x10 ../TestMP3_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_ranges  0x0000000000000120       0x30 ../TestMP3_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_ranges  0x0000000000000150       0x18 ../TestMP3_bsp//libhal_bsp.a(alt_instruction_exception_entry.o)
+ .debug_ranges  0x0000000000000168       0x10 /opt/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)

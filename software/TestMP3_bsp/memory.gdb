@@ -3,7 +3,7 @@
 # Machine generated for CPU 'NIOSII' in SOPC Builder design 'reloj_soc'
 # SOPC Builder design path: ../../reloj_soc.sopcinfo
 #
-# Generated: Mon May 26 19:55:08 CST 2025
+# Generated: Thu May 29 16:30:01 CST 2025
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # RAM
-memory 0x0 0x2000 cache
+memory 0x2000 0x4000 cache

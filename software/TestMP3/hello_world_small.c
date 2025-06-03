@@ -1,36 +1,36 @@
-/* 
- * "Small Hello World" example. 
- * 
- * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
- * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example 
- * designs. It requires a STDOUT  device in your system's hardware. 
+/*
+ * "Small Hello World" example.
  *
- * The purpose of this example is to demonstrate the smallest possible Hello 
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
+ * designs. It requires a STDOUT  device in your system's hardware.
+ *
+ * The purpose of this example is to demonstrate the smallest possible Hello
  * World application, using the Nios II HAL library.  The memory footprint
- * of this hosted application is ~332 bytes by default using the standard 
+ * of this hosted application is ~332 bytes by default using the standard
  * reference design.  For a more fully featured Hello World application
  * example, see the example titled "Hello World".
  *
  * The memory footprint of this example has been reduced by making the
  * following changes to the normal "Hello World" example.
- * Check in the Nios II Software Developers Manual for a more complete 
+ * Check in the Nios II Software Developers Manual for a more complete
  * description.
- * 
+ *
  * In the SW Application project (small_hello_world):
  *
  *  - In the C/C++ Build page
- * 
+ *
  *    - Set the Optimization Level to -Os
- * 
+ *
  * In System Library project (small_hello_world_syslib):
  *  - In the C/C++ Build page
- * 
+ *
  *    - Set the Optimization Level to -Os
- * 
- *    - Define the preprocessor option ALT_NO_INSTRUCTION_EMULATION 
- *      This removes software exception handling, which means that you cannot 
- *      run code compiled for Nios II cpu with a hardware multiplier on a core 
- *      without a the multiply unit. Check the Nios II Software Developers 
+ *
+ *    - Define the preprocessor option ALT_NO_INSTRUCTION_EMULATION
+ *      This removes software exception handling, which means that you cannot
+ *      run code compiled for Nios II cpu with a hardware multiplier on a core
+ *      without a the multiply unit. Check the Nios II Software Developers
  *      Manual for more details.
  *
  *  - In the System Library page:
@@ -49,14 +49,14 @@
  *      This builds without the C++ support code.
  *
  *    - Check Small C library
- *      This uses a reduced functionality C library, which lacks  
- *      support for buffering, file IO, floating point and getch(), etc. 
+ *      This uses a reduced functionality C library, which lacks
+ *      support for buffering, file IO, floating point and getch(), etc.
  *      Check the Nios II Software Developers Manual for a complete list.
  *
  *    - Check Reduced device drivers
  *      This uses reduced functionality drivers if they're available. For the
  *      standard design this means you get polled UART and JTAG UART drivers,
- *      no support for the LCD driver and you lose the ability to program 
+ *      no support for the LCD driver and you lose the ability to program
  *      CFI compliant flash devices.
  *
  *    - Check Access device drivers directly
@@ -86,14 +86,13 @@
 #define LEDS_BASE    0x4040
 #define BUTTON_BASE  0x4010
 #define TIMER_BASE   0x4020
-#define AUDIO_BASE	 0x4000
 
 unsigned int elapsed_ms;
 
 void timer_ir_handler (void * context);
 
 int main()
-{ 
+{
 	volatile unsigned int * leds_ptr = (unsigned int *) LEDS_BASE;
 	volatile unsigned int * button_ptr = (unsigned int *) BUTTON_BASE;
 	volatile unsigned int * timer_status_ptr = (unsigned int *) TIMER_BASE; //offset 0
@@ -101,11 +100,17 @@ int main()
 	volatile unsigned int * timer_snapl_ptr = timer_status_ptr + 4; //offset 4
 
 	alt_putstr("Hello from Nios II!\n");
-	if (*timer_status_ptr != 0) {
-		alt_printf("ERROR: status is not 0 -> %x\n", *timer_status_ptr);
-		return 0;
+
+	*timer_status_ptr = 0x1;
+
+	// Espera a que no haya interrupción pendiente (bit 0)
+	if (*timer_status_ptr & 0x1) {
+	    alt_printf("ERROR: interrupción pendiente -> %x\n", *timer_status_ptr);
+	    return 0;
 	}
-	alt_ic_isr_register(0x0,0x2, timer_ir_handler, 0x0, 0x0);
+	//alt_ic_isr_register(0x0,0x2, timer_ir_handler, 0x0, 0x0);
+
+	alt_irq_register(0x2, 0x0, timer_ir_handler);
 
 	alt_putstr("Turning on the timer\n");
 	*timer_ctr_ptr = 0x7;

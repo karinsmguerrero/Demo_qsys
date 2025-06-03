@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2025.05.27.22:25:30
+# ACDS 18.1 625 linux 2025.06.02.23:32:19
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 linux 2025.05.27.22:25:30
+# ACDS 18.1 625 linux 2025.06.02.23:32:19
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="reloj_soc"
@@ -161,11 +161,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_mux.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_demux.sv \
-  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv \
+  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_003.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux_001.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux.sv \
-  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_004.sv \
+  $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_005.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_002.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_001.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router.sv \
@@ -175,6 +175,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv \
+  $QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v \
+  $QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0_audio_pll.vo \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu.v \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v \
@@ -184,6 +186,22 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/submodules/reloj_soc_irq_mapper.sv \
   $QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_serial_bus_controller.v \
+  $QSYS_SIMDIR/submodules/altera_up_slow_clock_generator.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_dc2.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_d5m.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_lcm.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ltm.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de1_soc.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2_115.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2i_150.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de10_standard.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_audio.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7180.v \
+  $QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7181.v \
+  $QSYS_SIMDIR/submodules/reloj_soc_audio_and_video_config_0.v \
   $QSYS_SIMDIR/submodules/altera_up_audio_bit_counter.v \
   $QSYS_SIMDIR/submodules/altera_up_audio_in_deserializer.v \
   $QSYS_SIMDIR/submodules/altera_up_audio_out_serializer.v \

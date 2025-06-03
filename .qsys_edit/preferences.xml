@@ -3,12 +3,11 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="143" />
+   <connections preferredWidth="175" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/University Program/Clock,Project,Library/Interface Protocols/Audio &amp; Video,Library/Interface Protocols,Library/University Program/Audio &amp; Video/Video,Library/University Program/Audio &amp; Video,Library,Library/University Program" />
- <window width="1922" height="1025" x="-508" y="0" />
+ <library expandedCategories="Project,Library" />
+ <window width="1922" height="1025" x="420" y="0" />
  <generation simulation="VERILOG" />
 </preferences>

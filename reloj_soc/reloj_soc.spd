@@ -29,13 +29,13 @@
    type="SYSTEM_VERILOG"
    library="rsp_demux" />
  <file
-   path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv"
+   path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux_003.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_002" />
+   library="cmd_mux_003" />
  <file
    path="simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_002" />
+   library="cmd_mux_003" />
  <file
    path="simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv"
    type="SYSTEM_VERILOG"
@@ -53,9 +53,9 @@
    type="SYSTEM_VERILOG"
    library="cmd_demux" />
  <file
-   path="simulation/submodules/reloj_soc_mm_interconnect_0_router_004.sv"
+   path="simulation/submodules/reloj_soc_mm_interconnect_0_router_005.sv"
    type="SYSTEM_VERILOG"
-   library="router_004" />
+   library="router_005" />
  <file
    path="simulation/submodules/reloj_soc_mm_interconnect_0_router_002.sv"
    type="SYSTEM_VERILOG"
@@ -92,6 +92,14 @@
    path="simulation/submodules/altera_merlin_master_translator.sv"
    type="SYSTEM_VERILOG"
    library="NIOSII_data_master_translator" />
+ <file
+   path="simulation/submodules/altera_up_avalon_reset_from_locked_signal.v"
+   type="VERILOG"
+   library="reset_from_locked" />
+ <file
+   path="simulation/submodules/reloj_soc_audio_pll_0_audio_pll.vo"
+   type="VERILOG"
+   library="audio_pll" />
  <file
    path="simulation/submodules/reloj_soc_NIOSII_cpu.v"
    type="VERILOG"
@@ -176,6 +184,70 @@
    path="simulation/submodules/reloj_soc_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
+ <file
+   path="simulation/submodules/reloj_soc_audio_pll_0.v"
+   type="VERILOG"
+   library="audio_pll_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_serial_bus_controller.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_slow_clock_generator.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_dc2.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_d5m.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_lcm.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ltm.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_audio.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
+ <file
+   path="simulation/submodules/reloj_soc_audio_and_video_config_0.v"
+   type="VERILOG"
+   library="audio_and_video_config_0" />
  <file
    path="simulation/submodules/altera_up_audio_bit_counter.v"
    type="VERILOG"

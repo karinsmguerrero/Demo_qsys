@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 linux 2025.05.27.22:25:30
+# ACDS 18.1 625 linux 2025.06.02.23:32:19
 
 # ----------------------------------------
 # Initialize variables
@@ -188,16 +188,16 @@ ensure_lib                                           ./libraries/rsp_mux/
 vmap       rsp_mux                                   ./libraries/rsp_mux/                                  
 ensure_lib                                           ./libraries/rsp_demux/                                
 vmap       rsp_demux                                 ./libraries/rsp_demux/                                
-ensure_lib                                           ./libraries/cmd_mux_002/                              
-vmap       cmd_mux_002                               ./libraries/cmd_mux_002/                              
+ensure_lib                                           ./libraries/cmd_mux_003/                              
+vmap       cmd_mux_003                               ./libraries/cmd_mux_003/                              
 ensure_lib                                           ./libraries/cmd_mux/                                  
 vmap       cmd_mux                                   ./libraries/cmd_mux/                                  
 ensure_lib                                           ./libraries/cmd_demux_001/                            
 vmap       cmd_demux_001                             ./libraries/cmd_demux_001/                            
 ensure_lib                                           ./libraries/cmd_demux/                                
 vmap       cmd_demux                                 ./libraries/cmd_demux/                                
-ensure_lib                                           ./libraries/router_004/                               
-vmap       router_004                                ./libraries/router_004/                               
+ensure_lib                                           ./libraries/router_005/                               
+vmap       router_005                                ./libraries/router_005/                               
 ensure_lib                                           ./libraries/router_002/                               
 vmap       router_002                                ./libraries/router_002/                               
 ensure_lib                                           ./libraries/router_001/                               
@@ -214,6 +214,10 @@ ensure_lib                                           ./libraries/audio_0_avalon_
 vmap       audio_0_avalon_audio_slave_translator     ./libraries/audio_0_avalon_audio_slave_translator/    
 ensure_lib                                           ./libraries/NIOSII_data_master_translator/            
 vmap       NIOSII_data_master_translator             ./libraries/NIOSII_data_master_translator/            
+ensure_lib                                           ./libraries/reset_from_locked/                        
+vmap       reset_from_locked                         ./libraries/reset_from_locked/                        
+ensure_lib                                           ./libraries/audio_pll/                                
+vmap       audio_pll                                 ./libraries/audio_pll/                                
 ensure_lib                                           ./libraries/cpu/                                      
 vmap       cpu                                       ./libraries/cpu/                                      
 ensure_lib                                           ./libraries/rst_controller/                           
@@ -222,6 +226,10 @@ ensure_lib                                           ./libraries/irq_mapper/
 vmap       irq_mapper                                ./libraries/irq_mapper/                               
 ensure_lib                                           ./libraries/mm_interconnect_0/                        
 vmap       mm_interconnect_0                         ./libraries/mm_interconnect_0/                        
+ensure_lib                                           ./libraries/audio_pll_0/                              
+vmap       audio_pll_0                               ./libraries/audio_pll_0/                              
+ensure_lib                                           ./libraries/audio_and_video_config_0/                 
+vmap       audio_and_video_config_0                  ./libraries/audio_and_video_config_0/                 
 ensure_lib                                           ./libraries/audio_0/                                  
 vmap       audio_0                                   ./libraries/audio_0/                                  
 ensure_lib                                           ./libraries/UART/                                     
@@ -268,13 +276,13 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                  
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work rsp_mux                                  
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                                
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_002.sv"                       -work cmd_mux_002                              
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux_002                              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux_003.sv"                       -work cmd_mux_003                              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux_003                              
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                  
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                      -work cmd_mux                                  
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                                
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_004.sv"                        -work router_004                               
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_005.sv"                        -work router_005                               
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_002.sv"                        -work router_002                               
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router_001.sv"                        -work router_001                               
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0_router.sv"                            -work router                                   
@@ -284,6 +292,8 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                                    -work NIOSII_data_master_agent                 
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                                -work audio_0_avalon_audio_slave_translator    
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                               -work NIOSII_data_master_translator            
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v"                      -work reset_from_locked                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0_audio_pll.vo"                               -work audio_pll                                
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu.v"                                           -work cpu                                      
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"                       -work cpu                                      
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v"                        -work cpu                                      
@@ -293,6 +303,22 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                      -work rst_controller                           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_irq_mapper.sv"                                          -work irq_mapper                               
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_mm_interconnect_0.v"                                    -work mm_interconnect_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0.v"                                          -work audio_pll_0                              
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_serial_bus_controller.v"                      -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_slow_clock_generator.v"                                 -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init.v"                                  -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_dc2.v"                              -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_d5m.v"                              -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_lcm.v"                              -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ltm.v"                              -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"                       -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2_115.v"                       -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"                      -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"                 -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_audio.v"                         -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7180.v"                       -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_av_config_auto_init_ob_adv7181.v"                       -work audio_and_video_config_0                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/reloj_soc_audio_and_video_config_0.v"                             -work audio_and_video_config_0                 
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_audio_bit_counter.v"                                    -work audio_0                                  
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_audio_in_deserializer.v"                                -work audio_0                                  
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_audio_out_serializer.v"                                 -work audio_0                                  
@@ -312,14 +338,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_002 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_004 -L router_002 -L router_001 -L router -L audio_0_avalon_audio_slave_agent_rsp_fifo -L audio_0_avalon_audio_slave_agent -L NIOSII_data_master_agent -L audio_0_avalon_audio_slave_translator -L NIOSII_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L audio_0 -L UART -L TIMER -L REG_LEDS -L REG_BUTTON -L RAM -L NIOSII -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L audio_0_avalon_audio_slave_agent_rsp_fifo -L audio_0_avalon_audio_slave_agent -L NIOSII_data_master_agent -L audio_0_avalon_audio_slave_translator -L NIOSII_data_master_translator -L reset_from_locked -L audio_pll -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L audio_pll_0 -L audio_and_video_config_0 -L audio_0 -L UART -L TIMER -L REG_LEDS -L REG_BUTTON -L RAM -L NIOSII -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_002 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_004 -L router_002 -L router_001 -L router -L audio_0_avalon_audio_slave_agent_rsp_fifo -L audio_0_avalon_audio_slave_agent -L NIOSII_data_master_agent -L audio_0_avalon_audio_slave_translator -L NIOSII_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L audio_0 -L UART -L TIMER -L REG_LEDS -L REG_BUTTON -L RAM -L NIOSII -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L audio_0_avalon_audio_slave_agent_rsp_fifo -L audio_0_avalon_audio_slave_agent -L NIOSII_data_master_agent -L audio_0_avalon_audio_slave_translator -L NIOSII_data_master_translator -L reset_from_locked -L audio_pll -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L audio_pll_0 -L audio_and_video_config_0 -L audio_0 -L UART -L TIMER -L REG_LEDS -L REG_BUTTON -L RAM -L NIOSII -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

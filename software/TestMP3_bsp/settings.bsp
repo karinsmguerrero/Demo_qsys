@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 26, 2025 9:30:39 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1748316639772</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jun 2, 2025 11:33:24 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1748928804589</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/tefa/Documents/GitHub/Demo_qsys/software/TestMP3_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../reloj_soc.sopcinfo</SopcDesignFile>
@@ -899,13 +899,19 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
+                <slaveDescriptor>audio_and_video_config_0</slaveDescriptor>
+                <addressRange>0x00000000 - 0x0000000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>RAM</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00001FFF</addressRange>
+                <addressRange>0x00002000 - 0x00003FFF</addressRange>
                 <addressSpan>8192</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>REG_LEDS</slaveDescriptor>
+                <slaveDescriptor>audio_0</slaveDescriptor>
                 <addressRange>0x00004000 - 0x0000400F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -923,8 +929,14 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>REG_LEDS</slaveDescriptor>
+                <addressRange>0x00004040 - 0x0000404F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>UART</slaveDescriptor>
-                <addressRange>0x00004040 - 0x00004047</addressRange>
+                <addressRange>0x00004050 - 0x00004057</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

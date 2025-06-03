@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII' in SOPC Builder design 'reloj_soc'
  * SOPC Builder design path: ../../reloj_soc.sopcinfo
  *
- * Generated: Mon May 26 19:55:08 CST 2025
+ * Generated: Thu May 29 16:30:01 CST 2025
  */
 
 /*
@@ -61,6 +61,8 @@
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_timer.h"
+#include "altera_up_avalon_audio.h"
+#include "altera_up_avalon_audio_and_video_config.h"
 
 /*
  * Allocate the device storage
@@ -69,6 +71,8 @@
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOSII, NIOSII);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( UART, UART);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, TIMER);
+ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG_INSTANCE ( AUDIO_AND_VIDEO_CONFIG_0, audio_and_video_config_0);
+ALTERA_UP_AVALON_AUDIO_INSTANCE ( AUDIO_0, audio_0);
 
 /*
  * Initialize the interrupt controller devices
@@ -93,4 +97,6 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER, TIMER);
     ALTERA_AVALON_JTAG_UART_INIT ( UART, UART);
+    ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG_INIT ( AUDIO_AND_VIDEO_CONFIG_0, audio_and_video_config_0);
+    ALTERA_UP_AVALON_AUDIO_INIT ( AUDIO_0, audio_0);
 }
