@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'altera_reserved_tck'
+Slack : 11.294
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'altera_reserved_tck'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Recovery 'altera_reserved_tck'
+Slack : 14.151
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Removal 'altera_reserved_tck'
+Slack : 1.278
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.717
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'altera_reserved_tck'
+Slack : 11.450
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 14.329
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Removal 'altera_reserved_tck'
+Slack : 1.190
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.742
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'altera_reserved_tck'
+Slack : 14.137
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'altera_reserved_tck'
+Slack : 0.028
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Recovery 'altera_reserved_tck'
+Slack : 15.604
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Removal 'altera_reserved_tck'
+Slack : 0.517
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.733
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'altera_reserved_tck'
+Slack : 14.527
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 15.793
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Removal 'altera_reserved_tck'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.777
+TNS   : 0.000
+
+------------------------------------------------------------
