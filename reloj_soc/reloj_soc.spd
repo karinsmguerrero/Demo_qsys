@@ -70,43 +70,43 @@
  <file
    path="simulation/submodules/altera_merlin_burst_adapter.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_merlin_burst_adapter_13_1.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_merlin_burst_adapter_new.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_incr_burst_converter.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_wrap_burst_converter.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_default_burst_converter.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_merlin_address_alignment.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_avalon_st_pipeline_stage.sv"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/altera_avalon_st_pipeline_base.v"
    type="SYSTEM_VERILOG"
-   library="MEM_BRIDGE_s0_burst_adapter" />
+   library="FIFO_in_burst_adapter" />
  <file
    path="simulation/submodules/reloj_soc_mm_interconnect_1_router_002.sv"
    type="SYSTEM_VERILOG"
@@ -758,10 +758,6 @@
    type="SYSTEM_VERILOG"
    library="irq_mapper" />
  <file
-   path="simulation/submodules/reloj_soc_mm_interconnect_2.v"
-   type="VERILOG"
-   library="mm_interconnect_2" />
- <file
    path="simulation/submodules/reloj_soc_mm_interconnect_1.v"
    type="VERILOG"
    library="mm_interconnect_1" />
@@ -885,10 +881,6 @@
    path="simulation/submodules/reloj_soc_NIOSII.v"
    type="VERILOG"
    library="NIOSII" />
- <file
-   path="simulation/submodules/altera_avalon_mm_bridge.v"
-   type="VERILOG"
-   library="MEM_BRIDGE" />
  <file
    path="simulation/submodules/reloj_soc_HPS.v"
    type="VERILOG"

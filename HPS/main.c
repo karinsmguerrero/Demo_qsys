@@ -2,15 +2,17 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+
+#define HW_REGS_BASE (0xff200000)
+#define HW_REGS_SPAN (0x00200000)
+#define HW_REGS_MASK (HW_REGS_SPAN - 1)
+#define LED_PIO_BASE 0x4040
 
 
 #define PRINT_ERROR(a, args...) printf("ERROR %s() %s Line %d: " a "\n", __FUNCTION__, __FILE__, __LINE__, ##args);
-
-#if RAND_MAX == 32767
-#define rand32() ((rand()%lt%lt16) + (rand()%lt%lt1) + (rand()&1))
-#else
-#define rand32() rand()
-#endif
 
 typedef struct {
 	uint32_t samples;
