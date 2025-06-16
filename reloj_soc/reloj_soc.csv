@@ -1,12 +1,12 @@
-# system info reloj_soc on 2025.06.02.23:32:18
+# system info reloj_soc on 2025.06.13.18:57:10
 system_info:
 name,value
 DEVICE,5CSTFD5D5F31I7
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1748928719
+GENERATION_ID,1749862610
 #
 #
-# Files generated for reloj_soc on 2025.06.02.23:32:18
+# Files generated for reloj_soc on 2025.06.13.18:57:10
 files:
 filepath,kind,attributes,module,is_top
 simulation/reloj_soc.v,VERILOG,,reloj_soc,true

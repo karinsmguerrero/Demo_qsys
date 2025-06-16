@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="reloj_soc" kind="reloj_soc" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2025.06.02.23:32:23 -->
+ <!-- 2025.06.13.18:57:15 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1748928743</value>
+  <value>1749862635</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

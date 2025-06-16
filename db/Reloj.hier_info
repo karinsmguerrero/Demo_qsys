@@ -1,29 +1,4 @@
-|soc_top
-clk => clk.IN1
-rst_n => rst_n.IN1
-sw[0] => buttons_export[0].IN1
-sw[1] => buttons_export[1].IN1
-sw[2] => buttons_export[2].IN1
-sw[3] => buttons_export[3].IN1
-sw[4] => buttons_export[4].IN1
-sw[5] => buttons_export[5].IN1
-sw[6] => buttons_export[6].IN1
-sw[7] => buttons_export[7].IN1
-leds[0] <= reloj_soc:dut.leds_export
-leds[1] <= reloj_soc:dut.leds_export
-leds[2] <= reloj_soc:dut.leds_export
-leds[3] <= reloj_soc:dut.leds_export
-leds[4] <= reloj_soc:dut.leds_export
-leds[5] <= reloj_soc:dut.leds_export
-leds[6] <= reloj_soc:dut.leds_export
-leds[7] <= reloj_soc:dut.leds_export
-AUD_BCLK => AUD_BCLK.IN1
-AUD_DACLRCK => AUD_DACLRCK.IN1
-AUD_DACDAT <= reloj_soc:dut.audio_0_external_interface_DACDAT
-AUD_XCK <= reloj_soc:dut.audio_pll_0_audio_clk_clk
-
-
-|soc_top|reloj_soc:dut
+|reloj_soc
 audio_0_external_interface_BCLK => audio_0_external_interface_BCLK.IN1
 audio_0_external_interface_DACDAT <= reloj_soc_audio_0:audio_0.AUD_DACDAT
 audio_0_external_interface_DACLRCK => audio_0_external_interface_DACLRCK.IN1
@@ -99,7 +74,7 @@ reset_reset_n => _.IN1
 reset_reset_n => _.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii
+|reloj_soc|reloj_soc_NIOSII:niosii
 clk => clk.IN1
 reset_n => reset_n.IN1
 reset_req => reset_req.IN1
@@ -356,7 +331,7 @@ debug_mem_slave_writedata[31] => debug_mem_slave_writedata[31].IN1
 dummy_ci_port <= reloj_soc_NIOSII_cpu:cpu.dummy_ci_port
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu
 clk => clk.IN4
 d_readdata[0] => av_ld_byte0_data_nxt.DATAA
 d_readdata[1] => av_ld_byte0_data_nxt.DATAA
@@ -613,7 +588,7 @@ i_address[14] <= i_address[14].DB_MAX_OUTPUT_PORT_TYPE
 i_read <= i_read.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_test_bench:the_reloj_soc_NIOSII_cpu_test_bench
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_test_bench:the_reloj_soc_NIOSII_cpu_test_bench
 D_iw[0] => ~NO_FANOUT~
 D_iw[1] => ~NO_FANOUT~
 D_iw[2] => ~NO_FANOUT~
@@ -928,7 +903,7 @@ av_ld_data_aligned_filtered[31] <= av_ld_data_aligned_unfiltered[31].DB_MAX_OUTP
 test_has_ended <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a
 clock => clock.IN1
 data[0] => ram_data[0].IN1
 data[1] => ram_data[1].IN1
@@ -1007,7 +982,7 @@ q[30] <= altsyncram:the_altsyncram.q_b
 q[31] <= altsyncram:the_altsyncram.q_b
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a|altsyncram:the_altsyncram
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a|altsyncram:the_altsyncram
 wren_a => altsyncram_msi1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -1167,7 +1142,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a|altsyncram:the_altsyncram|altsyncram_msi1:auto_generated
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_a_module:reloj_soc_NIOSII_cpu_register_bank_a|altsyncram:the_altsyncram|altsyncram_msi1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -1682,7 +1657,7 @@ wren_a => ram_block1a31.PORTAWE
 wren_a => ram_block1a31.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b
 clock => clock.IN1
 data[0] => ram_data[0].IN1
 data[1] => ram_data[1].IN1
@@ -1761,7 +1736,7 @@ q[30] <= altsyncram:the_altsyncram.q_b
 q[31] <= altsyncram:the_altsyncram.q_b
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b|altsyncram:the_altsyncram
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b|altsyncram:the_altsyncram
 wren_a => altsyncram_msi1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -1921,7 +1896,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b|altsyncram:the_altsyncram|altsyncram_msi1:auto_generated
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_register_bank_b_module:reloj_soc_NIOSII_cpu_register_bank_b|altsyncram:the_altsyncram|altsyncram_msi1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -2436,7 +2411,7 @@ wren_a => ram_block1a31.PORTAWE
 wren_a => ram_block1a31.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci
 D_valid => D_valid.IN1
 E_st_data[0] => E_st_data[0].IN1
 E_st_data[1] => E_st_data[1].IN1
@@ -2658,7 +2633,7 @@ resetrequest <= reloj_soc_NIOSII_cpu_nios2_oci_debug:the_reloj_soc_NIOSII_cpu_ni
 waitrequest <= reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem.waitrequest
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_debug:the_reloj_soc_NIOSII_cpu_nios2_oci_debug
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_debug:the_reloj_soc_NIOSII_cpu_nios2_oci_debug
 clk => clk.IN1
 dbrk_break => oci_hbreak_req.IN1
 debugreq => always0.IN0
@@ -2726,7 +2701,7 @@ resetlatch <= resetlatch~reg0.DB_MAX_OUTPUT_PORT_TYPE
 resetrequest <= resetrequest~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_debug:the_reloj_soc_NIOSII_cpu_nios2_oci_debug|altera_std_synchronizer:the_altera_std_synchronizer
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_debug:the_reloj_soc_NIOSII_cpu_nios2_oci_debug|altera_std_synchronizer:the_altera_std_synchronizer
 clk => dreg[0].CLK
 clk => din_s1.CLK
 reset_n => dreg[0].ACLR
@@ -2735,7 +2710,7 @@ din => din_s1.DATAIN
 dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_break:the_reloj_soc_NIOSII_cpu_nios2_oci_break
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_break:the_reloj_soc_NIOSII_cpu_nios2_oci_break
 clk => trigger_state.CLK
 clk => break_readreg[0]~reg0.CLK
 clk => break_readreg[1]~reg0.CLK
@@ -3083,7 +3058,7 @@ xbrk_ctrl3[6] <= <GND>
 xbrk_ctrl3[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_xbrk:the_reloj_soc_NIOSII_cpu_nios2_oci_xbrk
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_xbrk:the_reloj_soc_NIOSII_cpu_nios2_oci_xbrk
 D_valid => ~NO_FANOUT~
 E_valid => xbrk_break~reg0.ENA
 F_pc[0] => ~NO_FANOUT~
@@ -3143,7 +3118,7 @@ xbrk_traceon <= <GND>
 xbrk_trigout <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dbrk:the_reloj_soc_NIOSII_cpu_nios2_oci_dbrk
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dbrk:the_reloj_soc_NIOSII_cpu_nios2_oci_dbrk
 E_st_data[0] => cpu_d_writedata[0].DATAIN
 E_st_data[1] => cpu_d_writedata[1].DATAIN
 E_st_data[2] => cpu_d_writedata[2].DATAIN
@@ -3334,7 +3309,7 @@ dbrk_traceon <= dbrk_traceon~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbrk_trigout <= dbrk_trigout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_itrace:the_reloj_soc_NIOSII_cpu_nios2_oci_itrace
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_itrace:the_reloj_soc_NIOSII_cpu_nios2_oci_itrace
 clk => ~NO_FANOUT~
 dbrk_traceoff => ~NO_FANOUT~
 dbrk_traceon => ~NO_FANOUT~
@@ -3414,7 +3389,7 @@ trc_ctrl[15] <= <GND>
 trc_on <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dtrace:the_reloj_soc_NIOSII_cpu_nios2_oci_dtrace
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dtrace:the_reloj_soc_NIOSII_cpu_nios2_oci_dtrace
 clk => dtm[0]~reg0.CLK
 clk => dtm[1]~reg0.CLK
 clk => dtm[2]~reg0.CLK
@@ -3731,7 +3706,7 @@ dtm[34] <= dtm[34]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dtm[35] <= dtm[35]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dtrace:the_reloj_soc_NIOSII_cpu_nios2_oci_dtrace|reloj_soc_NIOSII_cpu_nios2_oci_td_mode:reloj_soc_NIOSII_cpu_nios2_oci_trc_ctrl_td_mode
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_dtrace:the_reloj_soc_NIOSII_cpu_nios2_oci_dtrace|reloj_soc_NIOSII_cpu_nios2_oci_td_mode:reloj_soc_NIOSII_cpu_nios2_oci_trc_ctrl_td_mode
 ctrl[0] => ~NO_FANOUT~
 ctrl[1] => ~NO_FANOUT~
 ctrl[2] => ~NO_FANOUT~
@@ -3751,7 +3726,7 @@ td_mode[2] <= ctrl[6].DB_MAX_OUTPUT_PORT_TYPE
 td_mode[3] <= ctrl[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo
 atm[0] => ~NO_FANOUT~
 atm[1] => ~NO_FANOUT~
 atm[2] => ~NO_FANOUT~
@@ -3917,7 +3892,7 @@ tw[34] <= itm[34].DB_MAX_OUTPUT_PORT_TYPE
 tw[35] <= itm[35].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_compute_input_tm_cnt:the_reloj_soc_NIOSII_cpu_nios2_oci_compute_input_tm_cnt
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_compute_input_tm_cnt:the_reloj_soc_NIOSII_cpu_nios2_oci_compute_input_tm_cnt
 atm_valid => Decoder0.IN1
 dtm_valid => Decoder0.IN2
 itm_valid => Decoder0.IN0
@@ -3925,7 +3900,7 @@ compute_input_tm_cnt[0] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 compute_input_tm_cnt[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_fifo_wrptr_inc:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo_wrptr_inc
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_fifo_wrptr_inc:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo_wrptr_inc
 ge2_free => always0.IN1
 ge3_free => always0.IN1
 input_tm_cnt[0] => LessThan0.IN4
@@ -3940,7 +3915,7 @@ fifo_wrptr_inc[2] <= <GND>
 fifo_wrptr_inc[3] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_fifo_cnt_inc:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo_cnt_inc
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_fifo:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo|reloj_soc_NIOSII_cpu_nios2_oci_fifo_cnt_inc:the_reloj_soc_NIOSII_cpu_nios2_oci_fifo_cnt_inc
 empty => fifo_cnt_inc.OUTPUTSELECT
 empty => fifo_cnt_inc.OUTPUTSELECT
 empty => fifo_cnt_inc.OUTPUTSELECT
@@ -3963,7 +3938,7 @@ fifo_cnt_inc[3] <= fifo_cnt_inc.DB_MAX_OUTPUT_PORT_TYPE
 fifo_cnt_inc[4] <= fifo_cnt_inc.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_pib:the_reloj_soc_NIOSII_cpu_nios2_oci_pib
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_pib:the_reloj_soc_NIOSII_cpu_nios2_oci_pib
 tr_data[0] <= <GND>
 tr_data[1] <= <GND>
 tr_data[2] <= <GND>
@@ -4002,7 +3977,7 @@ tr_data[34] <= <GND>
 tr_data[35] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_im:the_reloj_soc_NIOSII_cpu_nios2_oci_im
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_oci_im:the_reloj_soc_NIOSII_cpu_nios2_oci_im
 clk => trc_wrap~reg0.CLK
 clk => trc_im_addr[0]~reg0.CLK
 clk => trc_im_addr[1]~reg0.CLK
@@ -4120,7 +4095,7 @@ trc_wrap <= trc_wrap~reg0.DB_MAX_OUTPUT_PORT_TYPE
 xbrk_wrap_traceoff <= xbrk_wrap_traceoff.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_avalon_reg:the_reloj_soc_NIOSII_cpu_nios2_avalon_reg
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_avalon_reg:the_reloj_soc_NIOSII_cpu_nios2_avalon_reg
 address[0] => Equal0.IN8
 address[0] => Equal1.IN1
 address[1] => Equal0.IN7
@@ -4314,7 +4289,7 @@ ocireg_mrs <= writedata[0].DB_MAX_OUTPUT_PORT_TYPE
 take_action_ocireg <= take_action_ocireg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem
 address[0] => ociram_addr.DATAA
 address[1] => ociram_addr.DATAA
 address[2] => ociram_addr.DATAA
@@ -4668,7 +4643,7 @@ ociram_readdata[31] <= reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSI
 waitrequest <= waitrequest~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -4750,7 +4725,7 @@ q[30] <= altsyncram:the_altsyncram.q_a
 q[31] <= altsyncram:the_altsyncram.q_a
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram|altsyncram:the_altsyncram
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram|altsyncram:the_altsyncram
 wren_a => altsyncram_qid1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -4850,7 +4825,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram|altsyncram:the_altsyncram|altsyncram_qid1:auto_generated
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_nios2_ocimem:the_reloj_soc_NIOSII_cpu_nios2_ocimem|reloj_soc_NIOSII_cpu_ociram_sp_ram_module:reloj_soc_NIOSII_cpu_ociram_sp_ram|altsyncram:the_altsyncram|altsyncram_qid1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -5302,7 +5277,7 @@ wren_a => ram_block1a30.PORTAWE
 wren_a => ram_block1a31.PORTAWE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper
 MonDReg[0] => MonDReg[0].IN1
 MonDReg[1] => MonDReg[1].IN1
 MonDReg[2] => MonDReg[2].IN1
@@ -5478,7 +5453,7 @@ take_no_action_break_c <= reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_
 take_no_action_ocimem_a <= reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk.take_no_action_ocimem_a
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck
 MonDReg[0] => Mux36.IN0
 MonDReg[1] => Mux35.IN0
 MonDReg[2] => Mux34.IN0
@@ -5814,7 +5789,7 @@ st_ready_test_idle <= jtag_state_rti.DB_MAX_OUTPUT_PORT_TYPE
 tdo <= tdo.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck|altera_std_synchronizer:the_altera_std_synchronizer1
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck|altera_std_synchronizer:the_altera_std_synchronizer1
 clk => dreg[0].CLK
 clk => din_s1.CLK
 reset_n => dreg[0].ACLR
@@ -5823,7 +5798,7 @@ din => din_s1.DATAIN
 dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck|altera_std_synchronizer:the_altera_std_synchronizer2
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_tck:the_reloj_soc_NIOSII_cpu_debug_slave_tck|altera_std_synchronizer:the_altera_std_synchronizer2
 clk => dreg[0].CLK
 clk => din_s1.CLK
 reset_n => dreg[0].ACLR
@@ -5832,7 +5807,7 @@ din => din_s1.DATAIN
 dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk
 clk => clk.IN2
 ir_in[0] => ir[0].DATAIN
 ir_in[1] => ir[1].DATAIN
@@ -5926,7 +5901,7 @@ take_no_action_break_c <= take_no_action_break_c.DB_MAX_OUTPUT_PORT_TYPE
 take_no_action_ocimem_a <= take_no_action_ocimem_a.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk|altera_std_synchronizer:the_altera_std_synchronizer3
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk|altera_std_synchronizer:the_altera_std_synchronizer3
 clk => dreg[0].CLK
 clk => din_s1.CLK
 reset_n => dreg[0].ACLR
@@ -5935,7 +5910,7 @@ din => din_s1.DATAIN
 dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk|altera_std_synchronizer:the_altera_std_synchronizer4
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|reloj_soc_NIOSII_cpu_debug_slave_sysclk:the_reloj_soc_NIOSII_cpu_debug_slave_sysclk|altera_std_synchronizer:the_altera_std_synchronizer4
 clk => dreg[0].CLK
 clk => din_s1.CLK
 reset_n => dreg[0].ACLR
@@ -5944,7 +5919,7 @@ din => din_s1.DATAIN
 dout <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy
 tck <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_tck
 tdi <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_tdi
 ir_in[0] <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_ir_in
@@ -5979,7 +5954,7 @@ jtag_state_e2ir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_sta
 jtag_state_uir <= sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst.usr_jtag_state_uir
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst
 usr_tck <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tck
 usr_tdi <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_tdi
 usr_ir_in[0] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.adapted_ir_in
@@ -6041,7 +6016,7 @@ ir_out[0] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
 ir_out[1] <= sld_jtag_endpoint_adapter:jtag_signal_adapter.ir_out
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter
 raw_tck => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tck
 raw_tms => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tms
 tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdi
@@ -6100,7 +6075,7 @@ adapted_ir_out[0] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_im
 adapted_ir_out[1] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[1]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
+|reloj_soc|reloj_soc_NIOSII:niosii|reloj_soc_NIOSII_cpu:cpu|reloj_soc_NIOSII_cpu_nios2_oci:the_reloj_soc_NIOSII_cpu_nios2_oci|reloj_soc_NIOSII_cpu_debug_slave_wrapper:the_reloj_soc_NIOSII_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:reloj_soc_NIOSII_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
 raw_tck => adapted_tck.DATAIN
 raw_tms => adapted_tms.DATAIN
 tdi => adapted_tdi.DATAIN
@@ -6159,7 +6134,7 @@ adapted_ir_out[0] => ir_out[0].DATAIN
 adapted_ir_out[1] => ir_out[1].DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_RAM:ram
+|reloj_soc|reloj_soc_RAM:ram
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -6333,7 +6308,7 @@ readdata2[30] <= altsyncram:the_altsyncram.q_b
 readdata2[31] <= altsyncram:the_altsyncram.q_b
 
 
-|soc_top|reloj_soc:dut|reloj_soc_RAM:ram|altsyncram:the_altsyncram
+|reloj_soc|reloj_soc_RAM:ram|altsyncram:the_altsyncram
 wren_a => altsyncram_ek82:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => altsyncram_ek82:auto_generated.wren_b
@@ -6511,7 +6486,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_RAM:ram|altsyncram:the_altsyncram|altsyncram_ek82:auto_generated
+|reloj_soc|reloj_soc_RAM:ram|altsyncram:the_altsyncram|altsyncram_ek82:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -7602,7 +7577,7 @@ wren_b => ram_block1a30.PORTBWE
 wren_b => ram_block1a31.PORTBWE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_REG_BUTTON:reg_button
+|reloj_soc|reloj_soc_REG_BUTTON:reg_button
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 clk => readdata[0]~reg0.CLK
@@ -7735,7 +7710,7 @@ readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_REG_LEDS:reg_leds
+|reloj_soc|reloj_soc_REG_LEDS:reg_leds
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 chipselect => always0.IN0
@@ -7902,7 +7877,7 @@ readdata[30] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
 readdata[31] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_TIMER:timer
+|reloj_soc|reloj_soc_TIMER:timer
 address[0] => Equal1.IN31
 address[0] => Equal2.IN0
 address[0] => Equal3.IN31
@@ -8072,7 +8047,7 @@ readdata[14] <= readdata[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[15] <= readdata[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart
+|reloj_soc|reloj_soc_UART:uart
 av_address => ien_AF.OUTPUTSELECT
 av_address => ien_AE.OUTPUTSELECT
 av_address => ac.OUTPUTSELECT
@@ -8162,7 +8137,7 @@ dataavailable <= dataavailable~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readyfordata <= readyfordata~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w
 clk => clk.IN1
 fifo_clear => fifo_clear.IN1
 fifo_wdata[0] => fifo_wdata[0].IN1
@@ -8193,7 +8168,7 @@ wfifo_used[4] <= scfifo:wfifo.usedw
 wfifo_used[5] <= scfifo:wfifo.usedw
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo
 data[0] => scfifo_3291:auto_generated.data[0]
 data[1] => scfifo_3291:auto_generated.data[1]
 data[2] => scfifo_3291:auto_generated.data[2]
@@ -8229,7 +8204,7 @@ usedw[4] <= scfifo_3291:auto_generated.usedw[4]
 usedw[5] <= scfifo_3291:auto_generated.usedw[5]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated
 aclr => a_dpfifo_5771:dpfifo.aclr
 clock => a_dpfifo_5771:dpfifo.clock
 data[0] => a_dpfifo_5771:dpfifo.data[0]
@@ -8260,7 +8235,7 @@ usedw[5] <= a_dpfifo_5771:dpfifo.usedw[5]
 wrreq => a_dpfifo_5771:dpfifo.wreq
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo
 aclr => a_fefifo_7cf:fifo_state.aclr
 aclr => cntr_jgb:rd_ptr_count.aclr
 aclr => cntr_jgb:wr_ptr.aclr
@@ -8306,7 +8281,7 @@ wreq => altsyncram_7pu1:FIFOram.wren_a
 wreq => cntr_jgb:wr_ptr.cnt_en
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state
 aclr => b_full.IN0
 aclr => b_non_empty.IN0
 aclr => cntr_vg7:count_usedw.aclr
@@ -8338,7 +8313,7 @@ wreq => _.IN0
 wreq => cntr_vg7:count_usedw.updown
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state|cntr_vg7:count_usedw
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state|cntr_vg7:count_usedw
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8364,7 +8339,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|altsyncram_7pu1:FIFOram
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|altsyncram_7pu1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -8519,7 +8494,7 @@ wren_a => ram_block1a7.PORTAWE
 wren_a => ram_block1a7.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:rd_ptr_count
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:rd_ptr_count
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8543,7 +8518,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:wr_ptr
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_w:the_reloj_soc_UART_scfifo_w|scfifo:wfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:wr_ptr
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8567,7 +8542,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r
 clk => clk.IN1
 fifo_clear => fifo_clear.IN1
 fifo_rd => fifo_rd.IN1
@@ -8599,7 +8574,7 @@ rfifo_used[4] <= scfifo:rfifo.usedw
 rfifo_used[5] <= scfifo:rfifo.usedw
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo
 data[0] => scfifo_3291:auto_generated.data[0]
 data[1] => scfifo_3291:auto_generated.data[1]
 data[2] => scfifo_3291:auto_generated.data[2]
@@ -8635,7 +8610,7 @@ usedw[4] <= scfifo_3291:auto_generated.usedw[4]
 usedw[5] <= scfifo_3291:auto_generated.usedw[5]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated
 aclr => a_dpfifo_5771:dpfifo.aclr
 clock => a_dpfifo_5771:dpfifo.clock
 data[0] => a_dpfifo_5771:dpfifo.data[0]
@@ -8666,7 +8641,7 @@ usedw[5] <= a_dpfifo_5771:dpfifo.usedw[5]
 wrreq => a_dpfifo_5771:dpfifo.wreq
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo
 aclr => a_fefifo_7cf:fifo_state.aclr
 aclr => cntr_jgb:rd_ptr_count.aclr
 aclr => cntr_jgb:wr_ptr.aclr
@@ -8712,7 +8687,7 @@ wreq => altsyncram_7pu1:FIFOram.wren_a
 wreq => cntr_jgb:wr_ptr.cnt_en
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state
 aclr => b_full.IN0
 aclr => b_non_empty.IN0
 aclr => cntr_vg7:count_usedw.aclr
@@ -8744,7 +8719,7 @@ wreq => _.IN0
 wreq => cntr_vg7:count_usedw.updown
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state|cntr_vg7:count_usedw
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|a_fefifo_7cf:fifo_state|cntr_vg7:count_usedw
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8770,7 +8745,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|altsyncram_7pu1:FIFOram
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|altsyncram_7pu1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -8925,7 +8900,7 @@ wren_a => ram_block1a7.PORTAWE
 wren_a => ram_block1a7.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:rd_ptr_count
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:rd_ptr_count
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8949,7 +8924,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:wr_ptr
+|reloj_soc|reloj_soc_UART:uart|reloj_soc_UART_scfifo_r:the_reloj_soc_UART_scfifo_r|scfifo:rfifo|scfifo_3291:auto_generated|a_dpfifo_5771:dpfifo|cntr_jgb:wr_ptr
 aclr => counter_reg_bit[5].IN0
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -8973,7 +8948,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic
+|reloj_soc|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic
 raw_tck => raw_tck.IN1
 tdi => tdi.IN1
 jtag_state_rti => ~NO_FANOUT~
@@ -9052,7 +9027,7 @@ t_dat[7] <= t_dat[7].DB_MAX_OUTPUT_PORT_TYPE
 t_pause <= t_pause~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic|sld_jtag_endpoint_adapter:inst
+|reloj_soc|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic|sld_jtag_endpoint_adapter:inst
 raw_tck => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tck
 raw_tms => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.raw_tms
 tdi => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.tdi
@@ -9107,7 +9082,7 @@ adapted_tdo => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_ins
 adapted_ir_out[0] => sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst.adapted_ir_out[0]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic|sld_jtag_endpoint_adapter:inst|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
+|reloj_soc|reloj_soc_UART:uart|alt_jtag_atlantic:reloj_soc_UART_alt_jtag_atlantic|sld_jtag_endpoint_adapter:inst|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst
 raw_tck => adapted_tck.DATAIN
 raw_tms => adapted_tms.DATAIN
 tdi => adapted_tdi.DATAIN
@@ -9162,7 +9137,7 @@ adapted_tdo => tdo.DATAIN
 adapted_ir_out[0] => ir_out[0].DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0
+|reloj_soc|reloj_soc_audio_0:audio_0
 clk => clk.IN3
 reset => reset.IN2
 address[0] => Equal0.IN1
@@ -9282,7 +9257,7 @@ readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 AUD_DACDAT <= altera_up_audio_out_serializer:Audio_Out_Serializer.serial_audio_out_data
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_clock_edge:Bit_Clock_Edges
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_clock_edge:Bit_Clock_Edges
 clk => last_test_clk.CLK
 clk => cur_test_clk.CLK
 reset => ~NO_FANOUT~
@@ -9291,7 +9266,7 @@ rising_edge <= rising_edge.DB_MAX_OUTPUT_PORT_TYPE
 falling_edge <= falling_edge.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_clock_edge:DAC_Left_Right_Clock_Edges
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_clock_edge:DAC_Left_Right_Clock_Edges
 clk => last_test_clk.CLK
 clk => cur_test_clk.CLK
 reset => ~NO_FANOUT~
@@ -9300,7 +9275,7 @@ rising_edge <= rising_edge.DB_MAX_OUTPUT_PORT_TYPE
 falling_edge <= falling_edge.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer
 clk => clk.IN2
 reset => reset.IN2
 bit_clk_rising_edge => ~NO_FANOUT~
@@ -9377,7 +9352,7 @@ right_channel_fifo_write_space[7] <= right_channel_fifo_write_space[7]~reg0.DB_M
 serial_audio_out_data <= serial_audio_out_data~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -9425,7 +9400,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -9478,7 +9453,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -9526,7 +9501,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -9647,7 +9622,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -9970,7 +9945,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -9988,7 +9963,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -10006,7 +9981,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -10029,7 +10004,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -10057,7 +10032,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -10083,7 +10058,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -10131,7 +10106,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -10184,7 +10159,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -10232,7 +10207,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -10353,7 +10328,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -10676,7 +10651,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -10694,7 +10669,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -10712,7 +10687,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -10735,7 +10710,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -10763,7 +10738,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|reloj_soc|reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -10789,7 +10764,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0
 clk => clk.IN2
 reset => internal_reset.IN1
 address[0] => Equal0.IN1
@@ -10925,7 +10900,7 @@ I2C_SCEN <= altera_up_av_config_serial_bus_controller:Serial_Bus_Controller.seri
 I2C_SCLK <= altera_up_av_config_serial_bus_controller:Serial_Bus_Controller.serial_clk
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init
 clk => auto_init_error~reg0.CLK
 clk => auto_init_complete~reg0.CLK
 clk => rom_address[0]~reg0.CLK
@@ -11067,7 +11042,7 @@ auto_init_complete <= auto_init_complete~reg0.DB_MAX_OUTPUT_PORT_TYPE
 auto_init_error <= auto_init_error~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM
 rom_address[0] => rom_address[0].IN2
 rom_address[1] => rom_address[1].IN2
 rom_address[2] => rom_address[2].IN2
@@ -11103,7 +11078,7 @@ rom_data[25] <= rom_data.DB_MAX_OUTPUT_PORT_TYPE
 rom_data[26] <= rom_data.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
 rom_address[0] => Decoder0.IN5
 rom_address[1] => Decoder0.IN4
 rom_address[2] => Decoder0.IN3
@@ -11139,7 +11114,7 @@ rom_data[25] <= <GND>
 rom_data[26] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
 rom_address[0] => Ram0.RADDR
 rom_address[1] => Ram0.RADDR1
 rom_address[2] => Ram0.RADDR2
@@ -11175,7 +11150,7 @@ rom_data[25] <= Ram0.DATAOUT22
 rom_data[26] <= Ram0.DATAOUT23
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller
 clk => clk.IN1
 reset => reset.IN1
 start_transfer => always1.IN1
@@ -11326,7 +11301,7 @@ data_out[26] <= shiftreg_data[26].DB_MAX_OUTPUT_PORT_TYPE
 transfer_complete <= transfer_complete~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator
+|reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator
 clk => middle_of_low_level~reg0.CLK
 clk => middle_of_high_level~reg0.CLK
 clk => falling_edge~reg0.CLK
@@ -11377,21 +11352,21 @@ middle_of_high_level <= middle_of_high_level~reg0.DB_MAX_OUTPUT_PORT_TYPE
 middle_of_low_level <= middle_of_low_level~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_pll_0:audio_pll_0
+|reloj_soc|reloj_soc_audio_pll_0:audio_pll_0
 ref_clk_clk => ref_clk_clk.IN1
 ref_reset_reset => ref_reset_reset.IN1
 audio_clk_clk <= reloj_soc_audio_pll_0_audio_pll:audio_pll.outclk_0
 reset_source_reset <= altera_up_avalon_reset_from_locked_signal:reset_from_locked.reset
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll
+|reloj_soc|reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= altera_pll:altera_pll_i.outclk
 locked <= altera_pll:altera_pll_i.locked
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i
+|reloj_soc|reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i
 refclk => general[0].gpll.I_REFCLK
 refclk1 => ~NO_FANOUT~
 fbclk => ~NO_FANOUT~
@@ -11563,12 +11538,12 @@ cascade_out[0] <= <GND>
 zdbfbclk <> <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_audio_pll_0:audio_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked
+|reloj_soc|reloj_soc_audio_pll_0:audio_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked
 locked => reset.DATAIN
 reset <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0
 CLK_clk_clk => CLK_clk_clk.IN66
 NIOSII_reset_reset_bridge_in_reset_reset => NIOSII_reset_reset_bridge_in_reset_reset.IN66
 NIOSII_data_master_address[0] => NIOSII_data_master_address[0].IN1
@@ -12222,7 +12197,7 @@ UART_avalon_jtag_slave_waitrequest => UART_avalon_jtag_slave_waitrequest.IN1
 UART_avalon_jtag_slave_chipselect <= altera_merlin_slave_translator:uart_avalon_jtag_slave_translator.av_chipselect
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:niosii_data_master_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:niosii_data_master_translator
 clk => end_begintransfer.CLK
 clk => write_accepted.CLK
 clk => read_accepted.CLK
@@ -12433,7 +12408,7 @@ av_response[1] <= <GND>
 av_writeresponsevalid <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:niosii_instruction_master_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_translator:niosii_instruction_master_translator
 clk => read_accepted.CLK
 reset => read_accepted.ACLR
 uav_write <= <GND>
@@ -12636,7 +12611,7 @@ av_response[1] <= <GND>
 av_writeresponsevalid <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:audio_0_avalon_audio_slave_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:audio_0_avalon_audio_slave_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -12856,7 +12831,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:audio_and_video_config_0_avalon_av_config_slave_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:audio_and_video_config_0_avalon_av_config_slave_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13079,7 +13054,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:uart_avalon_jtag_slave_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:uart_avalon_jtag_slave_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13352,7 +13327,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:niosii_debug_mem_slave_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:niosii_debug_mem_slave_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13645,7 +13620,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:ram_s1_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:ram_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13874,7 +13849,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:reg_leds_s1_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:reg_leds_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -14150,7 +14125,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:timer_s1_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:timer_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -14363,7 +14338,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:reg_button_s1_translator
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:reg_button_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -14639,7 +14614,7 @@ av_response[1] => ~NO_FANOUT~
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_agent:niosii_data_master_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_agent:niosii_data_master_agent
 clk => hold_waitrequest.CLK
 reset => hold_waitrequest.PRESET
 av_address[0] => ~NO_FANOUT~
@@ -14940,7 +14915,7 @@ rp_endofpacket => ~NO_FANOUT~
 rp_ready <= <VCC>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_agent:niosii_instruction_master_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_master_agent:niosii_instruction_master_agent
 clk => hold_waitrequest.CLK
 reset => hold_waitrequest.PRESET
 av_address[0] => ~NO_FANOUT~
@@ -15241,7 +15216,7 @@ rp_endofpacket => ~NO_FANOUT~
 rp_ready <= <VCC>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_0_avalon_audio_slave_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_0_avalon_audio_slave_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -15846,7 +15821,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_0_avalon_audio_slave_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_0_avalon_audio_slave_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -16052,7 +16027,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:audio_0_avalon_audio_slave_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:audio_0_avalon_audio_slave_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -16799,7 +16774,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_and_video_config_0_avalon_av_config_slave_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_and_video_config_0_avalon_av_config_slave_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -17404,7 +17379,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_and_video_config_0_avalon_av_config_slave_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:audio_and_video_config_0_avalon_av_config_slave_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -17610,7 +17585,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:audio_and_video_config_0_avalon_av_config_slave_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:audio_and_video_config_0_avalon_av_config_slave_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -18357,7 +18332,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:uart_avalon_jtag_slave_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:uart_avalon_jtag_slave_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -18962,7 +18937,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:uart_avalon_jtag_slave_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:uart_avalon_jtag_slave_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -19168,7 +19143,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:uart_avalon_jtag_slave_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:uart_avalon_jtag_slave_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -19915,7 +19890,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:niosii_debug_mem_slave_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:niosii_debug_mem_slave_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -20520,7 +20495,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:niosii_debug_mem_slave_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:niosii_debug_mem_slave_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -20726,7 +20701,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:niosii_debug_mem_slave_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:niosii_debug_mem_slave_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -21473,7 +21448,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:ram_s1_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:ram_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -22078,7 +22053,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:ram_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:ram_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -22284,7 +22259,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:ram_s1_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:ram_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -23031,7 +23006,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_leds_s1_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_leds_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -23636,7 +23611,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_leds_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_leds_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -23842,7 +23817,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:reg_leds_s1_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:reg_leds_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -24589,7 +24564,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:timer_s1_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:timer_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -25194,7 +25169,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:timer_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:timer_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -25400,7 +25375,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:timer_s1_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:timer_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -26147,7 +26122,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_button_s1_agent
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_button_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -26752,7 +26727,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_button_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:reg_button_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -26958,7 +26933,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:reg_button_s1_agent_rsp_fifo
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:reg_button_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -27705,7 +27680,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router:router
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router:router
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -27981,7 +27956,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router:router|reloj_soc_mm_interconnect_0_router_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router:router|reloj_soc_mm_interconnect_0_router_default_decode:the_default_decode
 default_destination_id[0] <= <VCC>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -28011,7 +27986,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_001:router_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_001:router_001
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -28220,7 +28195,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_001:router_001|reloj_soc_mm_interconnect_0_router_001_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_001:router_001|reloj_soc_mm_interconnect_0_router_001_default_decode:the_default_decode
 default_destination_id[0] <= <VCC>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -28250,7 +28225,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_002
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_002
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -28456,7 +28431,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_002|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_002|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -28486,7 +28461,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_003
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_003
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -28692,7 +28667,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_003|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_003|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -28722,7 +28697,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_004
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_004
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -28928,7 +28903,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_004|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_004|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -28958,247 +28933,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_005
-clk => ~NO_FANOUT~
-reset => ~NO_FANOUT~
-sink_valid => src_valid.DATAIN
-sink_data[0] => src_data[0].DATAIN
-sink_data[1] => src_data[1].DATAIN
-sink_data[2] => src_data[2].DATAIN
-sink_data[3] => src_data[3].DATAIN
-sink_data[4] => src_data[4].DATAIN
-sink_data[5] => src_data[5].DATAIN
-sink_data[6] => src_data[6].DATAIN
-sink_data[7] => src_data[7].DATAIN
-sink_data[8] => src_data[8].DATAIN
-sink_data[9] => src_data[9].DATAIN
-sink_data[10] => src_data[10].DATAIN
-sink_data[11] => src_data[11].DATAIN
-sink_data[12] => src_data[12].DATAIN
-sink_data[13] => src_data[13].DATAIN
-sink_data[14] => src_data[14].DATAIN
-sink_data[15] => src_data[15].DATAIN
-sink_data[16] => src_data[16].DATAIN
-sink_data[17] => src_data[17].DATAIN
-sink_data[18] => src_data[18].DATAIN
-sink_data[19] => src_data[19].DATAIN
-sink_data[20] => src_data[20].DATAIN
-sink_data[21] => src_data[21].DATAIN
-sink_data[22] => src_data[22].DATAIN
-sink_data[23] => src_data[23].DATAIN
-sink_data[24] => src_data[24].DATAIN
-sink_data[25] => src_data[25].DATAIN
-sink_data[26] => src_data[26].DATAIN
-sink_data[27] => src_data[27].DATAIN
-sink_data[28] => src_data[28].DATAIN
-sink_data[29] => src_data[29].DATAIN
-sink_data[30] => src_data[30].DATAIN
-sink_data[31] => src_data[31].DATAIN
-sink_data[32] => src_data[32].DATAIN
-sink_data[33] => src_data[33].DATAIN
-sink_data[34] => src_data[34].DATAIN
-sink_data[35] => src_data[35].DATAIN
-sink_data[36] => src_data[36].DATAIN
-sink_data[37] => src_data[37].DATAIN
-sink_data[38] => src_data[38].DATAIN
-sink_data[39] => src_data[39].DATAIN
-sink_data[40] => src_data[40].DATAIN
-sink_data[41] => src_data[41].DATAIN
-sink_data[42] => src_data[42].DATAIN
-sink_data[43] => src_data[43].DATAIN
-sink_data[44] => src_data[44].DATAIN
-sink_data[45] => src_data[45].DATAIN
-sink_data[46] => src_data[46].DATAIN
-sink_data[47] => src_data[47].DATAIN
-sink_data[48] => src_data[48].DATAIN
-sink_data[49] => src_data[49].DATAIN
-sink_data[50] => src_data[50].DATAIN
-sink_data[51] => src_data[51].DATAIN
-sink_data[52] => src_data[52].DATAIN
-sink_data[53] => src_data[53].DATAIN
-sink_data[54] => always0.IN1
-sink_data[54] => src_data[54].DATAIN
-sink_data[55] => src_data[55].DATAIN
-sink_data[56] => src_data[56].DATAIN
-sink_data[57] => src_data[57].DATAIN
-sink_data[58] => src_data[58].DATAIN
-sink_data[59] => src_data[59].DATAIN
-sink_data[60] => src_data[60].DATAIN
-sink_data[61] => src_data[61].DATAIN
-sink_data[62] => src_data[62].DATAIN
-sink_data[63] => src_data[63].DATAIN
-sink_data[64] => src_data[64].DATAIN
-sink_data[65] => src_data[65].DATAIN
-sink_data[66] => src_data[66].DATAIN
-sink_data[67] => src_data[67].DATAIN
-sink_data[68] => src_data[68].DATAIN
-sink_data[69] => src_data[69].DATAIN
-sink_data[70] => src_data[70].DATAIN
-sink_data[71] => src_data[71].DATAIN
-sink_data[72] => src_data[72].DATAIN
-sink_data[73] => src_data[73].DATAIN
-sink_data[74] => src_data[74].DATAIN
-sink_data[75] => src_data[75].DATAIN
-sink_data[75] => Equal0.IN31
-sink_data[75] => Equal1.IN0
-sink_data[76] => src_data[76].DATAIN
-sink_data[76] => Equal0.IN30
-sink_data[76] => Equal1.IN31
-sink_data[77] => src_data[77].DATAIN
-sink_data[77] => Equal0.IN29
-sink_data[77] => Equal1.IN30
-sink_data[78] => src_data[78].DATAIN
-sink_data[79] => src_data[79].DATAIN
-sink_data[80] => src_data[80].DATAIN
-sink_data[81] => src_data[81].DATAIN
-sink_data[82] => src_data[82].DATAIN
-sink_data[83] => src_data[83].DATAIN
-sink_data[84] => src_data[84].DATAIN
-sink_data[85] => src_data[85].DATAIN
-sink_data[86] => src_data[86].DATAIN
-sink_data[87] => src_data[87].DATAIN
-sink_data[88] => src_data[88].DATAIN
-sink_data[89] => src_data[89].DATAIN
-sink_data[90] => src_data[90].DATAIN
-sink_startofpacket => src_startofpacket.DATAIN
-sink_endofpacket => src_endofpacket.DATAIN
-sink_ready <= src_ready.DB_MAX_OUTPUT_PORT_TYPE
-src_valid <= sink_valid.DB_MAX_OUTPUT_PORT_TYPE
-src_data[0] <= sink_data[0].DB_MAX_OUTPUT_PORT_TYPE
-src_data[1] <= sink_data[1].DB_MAX_OUTPUT_PORT_TYPE
-src_data[2] <= sink_data[2].DB_MAX_OUTPUT_PORT_TYPE
-src_data[3] <= sink_data[3].DB_MAX_OUTPUT_PORT_TYPE
-src_data[4] <= sink_data[4].DB_MAX_OUTPUT_PORT_TYPE
-src_data[5] <= sink_data[5].DB_MAX_OUTPUT_PORT_TYPE
-src_data[6] <= sink_data[6].DB_MAX_OUTPUT_PORT_TYPE
-src_data[7] <= sink_data[7].DB_MAX_OUTPUT_PORT_TYPE
-src_data[8] <= sink_data[8].DB_MAX_OUTPUT_PORT_TYPE
-src_data[9] <= sink_data[9].DB_MAX_OUTPUT_PORT_TYPE
-src_data[10] <= sink_data[10].DB_MAX_OUTPUT_PORT_TYPE
-src_data[11] <= sink_data[11].DB_MAX_OUTPUT_PORT_TYPE
-src_data[12] <= sink_data[12].DB_MAX_OUTPUT_PORT_TYPE
-src_data[13] <= sink_data[13].DB_MAX_OUTPUT_PORT_TYPE
-src_data[14] <= sink_data[14].DB_MAX_OUTPUT_PORT_TYPE
-src_data[15] <= sink_data[15].DB_MAX_OUTPUT_PORT_TYPE
-src_data[16] <= sink_data[16].DB_MAX_OUTPUT_PORT_TYPE
-src_data[17] <= sink_data[17].DB_MAX_OUTPUT_PORT_TYPE
-src_data[18] <= sink_data[18].DB_MAX_OUTPUT_PORT_TYPE
-src_data[19] <= sink_data[19].DB_MAX_OUTPUT_PORT_TYPE
-src_data[20] <= sink_data[20].DB_MAX_OUTPUT_PORT_TYPE
-src_data[21] <= sink_data[21].DB_MAX_OUTPUT_PORT_TYPE
-src_data[22] <= sink_data[22].DB_MAX_OUTPUT_PORT_TYPE
-src_data[23] <= sink_data[23].DB_MAX_OUTPUT_PORT_TYPE
-src_data[24] <= sink_data[24].DB_MAX_OUTPUT_PORT_TYPE
-src_data[25] <= sink_data[25].DB_MAX_OUTPUT_PORT_TYPE
-src_data[26] <= sink_data[26].DB_MAX_OUTPUT_PORT_TYPE
-src_data[27] <= sink_data[27].DB_MAX_OUTPUT_PORT_TYPE
-src_data[28] <= sink_data[28].DB_MAX_OUTPUT_PORT_TYPE
-src_data[29] <= sink_data[29].DB_MAX_OUTPUT_PORT_TYPE
-src_data[30] <= sink_data[30].DB_MAX_OUTPUT_PORT_TYPE
-src_data[31] <= sink_data[31].DB_MAX_OUTPUT_PORT_TYPE
-src_data[32] <= sink_data[32].DB_MAX_OUTPUT_PORT_TYPE
-src_data[33] <= sink_data[33].DB_MAX_OUTPUT_PORT_TYPE
-src_data[34] <= sink_data[34].DB_MAX_OUTPUT_PORT_TYPE
-src_data[35] <= sink_data[35].DB_MAX_OUTPUT_PORT_TYPE
-src_data[36] <= sink_data[36].DB_MAX_OUTPUT_PORT_TYPE
-src_data[37] <= sink_data[37].DB_MAX_OUTPUT_PORT_TYPE
-src_data[38] <= sink_data[38].DB_MAX_OUTPUT_PORT_TYPE
-src_data[39] <= sink_data[39].DB_MAX_OUTPUT_PORT_TYPE
-src_data[40] <= sink_data[40].DB_MAX_OUTPUT_PORT_TYPE
-src_data[41] <= sink_data[41].DB_MAX_OUTPUT_PORT_TYPE
-src_data[42] <= sink_data[42].DB_MAX_OUTPUT_PORT_TYPE
-src_data[43] <= sink_data[43].DB_MAX_OUTPUT_PORT_TYPE
-src_data[44] <= sink_data[44].DB_MAX_OUTPUT_PORT_TYPE
-src_data[45] <= sink_data[45].DB_MAX_OUTPUT_PORT_TYPE
-src_data[46] <= sink_data[46].DB_MAX_OUTPUT_PORT_TYPE
-src_data[47] <= sink_data[47].DB_MAX_OUTPUT_PORT_TYPE
-src_data[48] <= sink_data[48].DB_MAX_OUTPUT_PORT_TYPE
-src_data[49] <= sink_data[49].DB_MAX_OUTPUT_PORT_TYPE
-src_data[50] <= sink_data[50].DB_MAX_OUTPUT_PORT_TYPE
-src_data[51] <= sink_data[51].DB_MAX_OUTPUT_PORT_TYPE
-src_data[52] <= sink_data[52].DB_MAX_OUTPUT_PORT_TYPE
-src_data[53] <= sink_data[53].DB_MAX_OUTPUT_PORT_TYPE
-src_data[54] <= sink_data[54].DB_MAX_OUTPUT_PORT_TYPE
-src_data[55] <= sink_data[55].DB_MAX_OUTPUT_PORT_TYPE
-src_data[56] <= sink_data[56].DB_MAX_OUTPUT_PORT_TYPE
-src_data[57] <= sink_data[57].DB_MAX_OUTPUT_PORT_TYPE
-src_data[58] <= sink_data[58].DB_MAX_OUTPUT_PORT_TYPE
-src_data[59] <= sink_data[59].DB_MAX_OUTPUT_PORT_TYPE
-src_data[60] <= sink_data[60].DB_MAX_OUTPUT_PORT_TYPE
-src_data[61] <= sink_data[61].DB_MAX_OUTPUT_PORT_TYPE
-src_data[62] <= sink_data[62].DB_MAX_OUTPUT_PORT_TYPE
-src_data[63] <= sink_data[63].DB_MAX_OUTPUT_PORT_TYPE
-src_data[64] <= sink_data[64].DB_MAX_OUTPUT_PORT_TYPE
-src_data[65] <= sink_data[65].DB_MAX_OUTPUT_PORT_TYPE
-src_data[66] <= sink_data[66].DB_MAX_OUTPUT_PORT_TYPE
-src_data[67] <= sink_data[67].DB_MAX_OUTPUT_PORT_TYPE
-src_data[68] <= sink_data[68].DB_MAX_OUTPUT_PORT_TYPE
-src_data[69] <= sink_data[69].DB_MAX_OUTPUT_PORT_TYPE
-src_data[70] <= sink_data[70].DB_MAX_OUTPUT_PORT_TYPE
-src_data[71] <= sink_data[71].DB_MAX_OUTPUT_PORT_TYPE
-src_data[72] <= sink_data[72].DB_MAX_OUTPUT_PORT_TYPE
-src_data[73] <= sink_data[73].DB_MAX_OUTPUT_PORT_TYPE
-src_data[74] <= sink_data[74].DB_MAX_OUTPUT_PORT_TYPE
-src_data[75] <= sink_data[75].DB_MAX_OUTPUT_PORT_TYPE
-src_data[76] <= sink_data[76].DB_MAX_OUTPUT_PORT_TYPE
-src_data[77] <= sink_data[77].DB_MAX_OUTPUT_PORT_TYPE
-src_data[78] <= sink_data[78].DB_MAX_OUTPUT_PORT_TYPE
-src_data[79] <= sink_data[79].DB_MAX_OUTPUT_PORT_TYPE
-src_data[80] <= sink_data[80].DB_MAX_OUTPUT_PORT_TYPE
-src_data[81] <= sink_data[81].DB_MAX_OUTPUT_PORT_TYPE
-src_data[82] <= sink_data[82].DB_MAX_OUTPUT_PORT_TYPE
-src_data[83] <= sink_data[83].DB_MAX_OUTPUT_PORT_TYPE
-src_data[84] <= sink_data[84].DB_MAX_OUTPUT_PORT_TYPE
-src_data[85] <= sink_data[85].DB_MAX_OUTPUT_PORT_TYPE
-src_data[86] <= sink_data[86].DB_MAX_OUTPUT_PORT_TYPE
-src_data[87] <= sink_data[87].DB_MAX_OUTPUT_PORT_TYPE
-src_data[88] <= sink_data[88].DB_MAX_OUTPUT_PORT_TYPE
-src_data[89] <= sink_data[89].DB_MAX_OUTPUT_PORT_TYPE
-src_data[90] <= sink_data[90].DB_MAX_OUTPUT_PORT_TYPE
-src_channel[0] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[1] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[2] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[3] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[4] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[5] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[6] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_channel[7] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
-src_startofpacket <= sink_startofpacket.DB_MAX_OUTPUT_PORT_TYPE
-src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
-src_ready => sink_ready.DATAIN
-
-
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_005|reloj_soc_mm_interconnect_0_router_005_default_decode:the_default_decode
-default_destination_id[0] <= <GND>
-default_destination_id[1] <= <GND>
-default_destination_id[2] <= <GND>
-default_wr_channel[0] <= <GND>
-default_wr_channel[1] <= <GND>
-default_wr_channel[2] <= <GND>
-default_wr_channel[3] <= <GND>
-default_wr_channel[4] <= <GND>
-default_wr_channel[5] <= <GND>
-default_wr_channel[6] <= <GND>
-default_wr_channel[7] <= <GND>
-default_rd_channel[0] <= <GND>
-default_rd_channel[1] <= <GND>
-default_rd_channel[2] <= <GND>
-default_rd_channel[3] <= <GND>
-default_rd_channel[4] <= <GND>
-default_rd_channel[5] <= <GND>
-default_rd_channel[6] <= <GND>
-default_rd_channel[7] <= <GND>
-default_src_channel[0] <= <VCC>
-default_src_channel[1] <= <GND>
-default_src_channel[2] <= <GND>
-default_src_channel[3] <= <GND>
-default_src_channel[4] <= <GND>
-default_src_channel[5] <= <GND>
-default_src_channel[6] <= <GND>
-default_src_channel[7] <= <GND>
-
-
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_006
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_005
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -29408,7 +29143,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_006|reloj_soc_mm_interconnect_0_router_005_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_005|reloj_soc_mm_interconnect_0_router_005_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -29438,7 +29173,247 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_007
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_006
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+sink_valid => src_valid.DATAIN
+sink_data[0] => src_data[0].DATAIN
+sink_data[1] => src_data[1].DATAIN
+sink_data[2] => src_data[2].DATAIN
+sink_data[3] => src_data[3].DATAIN
+sink_data[4] => src_data[4].DATAIN
+sink_data[5] => src_data[5].DATAIN
+sink_data[6] => src_data[6].DATAIN
+sink_data[7] => src_data[7].DATAIN
+sink_data[8] => src_data[8].DATAIN
+sink_data[9] => src_data[9].DATAIN
+sink_data[10] => src_data[10].DATAIN
+sink_data[11] => src_data[11].DATAIN
+sink_data[12] => src_data[12].DATAIN
+sink_data[13] => src_data[13].DATAIN
+sink_data[14] => src_data[14].DATAIN
+sink_data[15] => src_data[15].DATAIN
+sink_data[16] => src_data[16].DATAIN
+sink_data[17] => src_data[17].DATAIN
+sink_data[18] => src_data[18].DATAIN
+sink_data[19] => src_data[19].DATAIN
+sink_data[20] => src_data[20].DATAIN
+sink_data[21] => src_data[21].DATAIN
+sink_data[22] => src_data[22].DATAIN
+sink_data[23] => src_data[23].DATAIN
+sink_data[24] => src_data[24].DATAIN
+sink_data[25] => src_data[25].DATAIN
+sink_data[26] => src_data[26].DATAIN
+sink_data[27] => src_data[27].DATAIN
+sink_data[28] => src_data[28].DATAIN
+sink_data[29] => src_data[29].DATAIN
+sink_data[30] => src_data[30].DATAIN
+sink_data[31] => src_data[31].DATAIN
+sink_data[32] => src_data[32].DATAIN
+sink_data[33] => src_data[33].DATAIN
+sink_data[34] => src_data[34].DATAIN
+sink_data[35] => src_data[35].DATAIN
+sink_data[36] => src_data[36].DATAIN
+sink_data[37] => src_data[37].DATAIN
+sink_data[38] => src_data[38].DATAIN
+sink_data[39] => src_data[39].DATAIN
+sink_data[40] => src_data[40].DATAIN
+sink_data[41] => src_data[41].DATAIN
+sink_data[42] => src_data[42].DATAIN
+sink_data[43] => src_data[43].DATAIN
+sink_data[44] => src_data[44].DATAIN
+sink_data[45] => src_data[45].DATAIN
+sink_data[46] => src_data[46].DATAIN
+sink_data[47] => src_data[47].DATAIN
+sink_data[48] => src_data[48].DATAIN
+sink_data[49] => src_data[49].DATAIN
+sink_data[50] => src_data[50].DATAIN
+sink_data[51] => src_data[51].DATAIN
+sink_data[52] => src_data[52].DATAIN
+sink_data[53] => src_data[53].DATAIN
+sink_data[54] => always0.IN1
+sink_data[54] => src_data[54].DATAIN
+sink_data[55] => src_data[55].DATAIN
+sink_data[56] => src_data[56].DATAIN
+sink_data[57] => src_data[57].DATAIN
+sink_data[58] => src_data[58].DATAIN
+sink_data[59] => src_data[59].DATAIN
+sink_data[60] => src_data[60].DATAIN
+sink_data[61] => src_data[61].DATAIN
+sink_data[62] => src_data[62].DATAIN
+sink_data[63] => src_data[63].DATAIN
+sink_data[64] => src_data[64].DATAIN
+sink_data[65] => src_data[65].DATAIN
+sink_data[66] => src_data[66].DATAIN
+sink_data[67] => src_data[67].DATAIN
+sink_data[68] => src_data[68].DATAIN
+sink_data[69] => src_data[69].DATAIN
+sink_data[70] => src_data[70].DATAIN
+sink_data[71] => src_data[71].DATAIN
+sink_data[72] => src_data[72].DATAIN
+sink_data[73] => src_data[73].DATAIN
+sink_data[74] => src_data[74].DATAIN
+sink_data[75] => src_data[75].DATAIN
+sink_data[75] => Equal0.IN31
+sink_data[75] => Equal1.IN0
+sink_data[76] => src_data[76].DATAIN
+sink_data[76] => Equal0.IN30
+sink_data[76] => Equal1.IN31
+sink_data[77] => src_data[77].DATAIN
+sink_data[77] => Equal0.IN29
+sink_data[77] => Equal1.IN30
+sink_data[78] => src_data[78].DATAIN
+sink_data[79] => src_data[79].DATAIN
+sink_data[80] => src_data[80].DATAIN
+sink_data[81] => src_data[81].DATAIN
+sink_data[82] => src_data[82].DATAIN
+sink_data[83] => src_data[83].DATAIN
+sink_data[84] => src_data[84].DATAIN
+sink_data[85] => src_data[85].DATAIN
+sink_data[86] => src_data[86].DATAIN
+sink_data[87] => src_data[87].DATAIN
+sink_data[88] => src_data[88].DATAIN
+sink_data[89] => src_data[89].DATAIN
+sink_data[90] => src_data[90].DATAIN
+sink_startofpacket => src_startofpacket.DATAIN
+sink_endofpacket => src_endofpacket.DATAIN
+sink_ready <= src_ready.DB_MAX_OUTPUT_PORT_TYPE
+src_valid <= sink_valid.DB_MAX_OUTPUT_PORT_TYPE
+src_data[0] <= sink_data[0].DB_MAX_OUTPUT_PORT_TYPE
+src_data[1] <= sink_data[1].DB_MAX_OUTPUT_PORT_TYPE
+src_data[2] <= sink_data[2].DB_MAX_OUTPUT_PORT_TYPE
+src_data[3] <= sink_data[3].DB_MAX_OUTPUT_PORT_TYPE
+src_data[4] <= sink_data[4].DB_MAX_OUTPUT_PORT_TYPE
+src_data[5] <= sink_data[5].DB_MAX_OUTPUT_PORT_TYPE
+src_data[6] <= sink_data[6].DB_MAX_OUTPUT_PORT_TYPE
+src_data[7] <= sink_data[7].DB_MAX_OUTPUT_PORT_TYPE
+src_data[8] <= sink_data[8].DB_MAX_OUTPUT_PORT_TYPE
+src_data[9] <= sink_data[9].DB_MAX_OUTPUT_PORT_TYPE
+src_data[10] <= sink_data[10].DB_MAX_OUTPUT_PORT_TYPE
+src_data[11] <= sink_data[11].DB_MAX_OUTPUT_PORT_TYPE
+src_data[12] <= sink_data[12].DB_MAX_OUTPUT_PORT_TYPE
+src_data[13] <= sink_data[13].DB_MAX_OUTPUT_PORT_TYPE
+src_data[14] <= sink_data[14].DB_MAX_OUTPUT_PORT_TYPE
+src_data[15] <= sink_data[15].DB_MAX_OUTPUT_PORT_TYPE
+src_data[16] <= sink_data[16].DB_MAX_OUTPUT_PORT_TYPE
+src_data[17] <= sink_data[17].DB_MAX_OUTPUT_PORT_TYPE
+src_data[18] <= sink_data[18].DB_MAX_OUTPUT_PORT_TYPE
+src_data[19] <= sink_data[19].DB_MAX_OUTPUT_PORT_TYPE
+src_data[20] <= sink_data[20].DB_MAX_OUTPUT_PORT_TYPE
+src_data[21] <= sink_data[21].DB_MAX_OUTPUT_PORT_TYPE
+src_data[22] <= sink_data[22].DB_MAX_OUTPUT_PORT_TYPE
+src_data[23] <= sink_data[23].DB_MAX_OUTPUT_PORT_TYPE
+src_data[24] <= sink_data[24].DB_MAX_OUTPUT_PORT_TYPE
+src_data[25] <= sink_data[25].DB_MAX_OUTPUT_PORT_TYPE
+src_data[26] <= sink_data[26].DB_MAX_OUTPUT_PORT_TYPE
+src_data[27] <= sink_data[27].DB_MAX_OUTPUT_PORT_TYPE
+src_data[28] <= sink_data[28].DB_MAX_OUTPUT_PORT_TYPE
+src_data[29] <= sink_data[29].DB_MAX_OUTPUT_PORT_TYPE
+src_data[30] <= sink_data[30].DB_MAX_OUTPUT_PORT_TYPE
+src_data[31] <= sink_data[31].DB_MAX_OUTPUT_PORT_TYPE
+src_data[32] <= sink_data[32].DB_MAX_OUTPUT_PORT_TYPE
+src_data[33] <= sink_data[33].DB_MAX_OUTPUT_PORT_TYPE
+src_data[34] <= sink_data[34].DB_MAX_OUTPUT_PORT_TYPE
+src_data[35] <= sink_data[35].DB_MAX_OUTPUT_PORT_TYPE
+src_data[36] <= sink_data[36].DB_MAX_OUTPUT_PORT_TYPE
+src_data[37] <= sink_data[37].DB_MAX_OUTPUT_PORT_TYPE
+src_data[38] <= sink_data[38].DB_MAX_OUTPUT_PORT_TYPE
+src_data[39] <= sink_data[39].DB_MAX_OUTPUT_PORT_TYPE
+src_data[40] <= sink_data[40].DB_MAX_OUTPUT_PORT_TYPE
+src_data[41] <= sink_data[41].DB_MAX_OUTPUT_PORT_TYPE
+src_data[42] <= sink_data[42].DB_MAX_OUTPUT_PORT_TYPE
+src_data[43] <= sink_data[43].DB_MAX_OUTPUT_PORT_TYPE
+src_data[44] <= sink_data[44].DB_MAX_OUTPUT_PORT_TYPE
+src_data[45] <= sink_data[45].DB_MAX_OUTPUT_PORT_TYPE
+src_data[46] <= sink_data[46].DB_MAX_OUTPUT_PORT_TYPE
+src_data[47] <= sink_data[47].DB_MAX_OUTPUT_PORT_TYPE
+src_data[48] <= sink_data[48].DB_MAX_OUTPUT_PORT_TYPE
+src_data[49] <= sink_data[49].DB_MAX_OUTPUT_PORT_TYPE
+src_data[50] <= sink_data[50].DB_MAX_OUTPUT_PORT_TYPE
+src_data[51] <= sink_data[51].DB_MAX_OUTPUT_PORT_TYPE
+src_data[52] <= sink_data[52].DB_MAX_OUTPUT_PORT_TYPE
+src_data[53] <= sink_data[53].DB_MAX_OUTPUT_PORT_TYPE
+src_data[54] <= sink_data[54].DB_MAX_OUTPUT_PORT_TYPE
+src_data[55] <= sink_data[55].DB_MAX_OUTPUT_PORT_TYPE
+src_data[56] <= sink_data[56].DB_MAX_OUTPUT_PORT_TYPE
+src_data[57] <= sink_data[57].DB_MAX_OUTPUT_PORT_TYPE
+src_data[58] <= sink_data[58].DB_MAX_OUTPUT_PORT_TYPE
+src_data[59] <= sink_data[59].DB_MAX_OUTPUT_PORT_TYPE
+src_data[60] <= sink_data[60].DB_MAX_OUTPUT_PORT_TYPE
+src_data[61] <= sink_data[61].DB_MAX_OUTPUT_PORT_TYPE
+src_data[62] <= sink_data[62].DB_MAX_OUTPUT_PORT_TYPE
+src_data[63] <= sink_data[63].DB_MAX_OUTPUT_PORT_TYPE
+src_data[64] <= sink_data[64].DB_MAX_OUTPUT_PORT_TYPE
+src_data[65] <= sink_data[65].DB_MAX_OUTPUT_PORT_TYPE
+src_data[66] <= sink_data[66].DB_MAX_OUTPUT_PORT_TYPE
+src_data[67] <= sink_data[67].DB_MAX_OUTPUT_PORT_TYPE
+src_data[68] <= sink_data[68].DB_MAX_OUTPUT_PORT_TYPE
+src_data[69] <= sink_data[69].DB_MAX_OUTPUT_PORT_TYPE
+src_data[70] <= sink_data[70].DB_MAX_OUTPUT_PORT_TYPE
+src_data[71] <= sink_data[71].DB_MAX_OUTPUT_PORT_TYPE
+src_data[72] <= sink_data[72].DB_MAX_OUTPUT_PORT_TYPE
+src_data[73] <= sink_data[73].DB_MAX_OUTPUT_PORT_TYPE
+src_data[74] <= sink_data[74].DB_MAX_OUTPUT_PORT_TYPE
+src_data[75] <= sink_data[75].DB_MAX_OUTPUT_PORT_TYPE
+src_data[76] <= sink_data[76].DB_MAX_OUTPUT_PORT_TYPE
+src_data[77] <= sink_data[77].DB_MAX_OUTPUT_PORT_TYPE
+src_data[78] <= sink_data[78].DB_MAX_OUTPUT_PORT_TYPE
+src_data[79] <= sink_data[79].DB_MAX_OUTPUT_PORT_TYPE
+src_data[80] <= sink_data[80].DB_MAX_OUTPUT_PORT_TYPE
+src_data[81] <= sink_data[81].DB_MAX_OUTPUT_PORT_TYPE
+src_data[82] <= sink_data[82].DB_MAX_OUTPUT_PORT_TYPE
+src_data[83] <= sink_data[83].DB_MAX_OUTPUT_PORT_TYPE
+src_data[84] <= sink_data[84].DB_MAX_OUTPUT_PORT_TYPE
+src_data[85] <= sink_data[85].DB_MAX_OUTPUT_PORT_TYPE
+src_data[86] <= sink_data[86].DB_MAX_OUTPUT_PORT_TYPE
+src_data[87] <= sink_data[87].DB_MAX_OUTPUT_PORT_TYPE
+src_data[88] <= sink_data[88].DB_MAX_OUTPUT_PORT_TYPE
+src_data[89] <= sink_data[89].DB_MAX_OUTPUT_PORT_TYPE
+src_data[90] <= sink_data[90].DB_MAX_OUTPUT_PORT_TYPE
+src_channel[0] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[1] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[2] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[3] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[4] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[5] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[6] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_channel[7] <= src_channel.DB_MAX_OUTPUT_PORT_TYPE
+src_startofpacket <= sink_startofpacket.DB_MAX_OUTPUT_PORT_TYPE
+src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
+src_ready => sink_ready.DATAIN
+
+
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_005:router_006|reloj_soc_mm_interconnect_0_router_005_default_decode:the_default_decode
+default_destination_id[0] <= <GND>
+default_destination_id[1] <= <GND>
+default_destination_id[2] <= <GND>
+default_wr_channel[0] <= <GND>
+default_wr_channel[1] <= <GND>
+default_wr_channel[2] <= <GND>
+default_wr_channel[3] <= <GND>
+default_wr_channel[4] <= <GND>
+default_wr_channel[5] <= <GND>
+default_wr_channel[6] <= <GND>
+default_wr_channel[7] <= <GND>
+default_rd_channel[0] <= <GND>
+default_rd_channel[1] <= <GND>
+default_rd_channel[2] <= <GND>
+default_rd_channel[3] <= <GND>
+default_rd_channel[4] <= <GND>
+default_rd_channel[5] <= <GND>
+default_rd_channel[6] <= <GND>
+default_rd_channel[7] <= <GND>
+default_src_channel[0] <= <VCC>
+default_src_channel[1] <= <GND>
+default_src_channel[2] <= <GND>
+default_src_channel[3] <= <GND>
+default_src_channel[4] <= <GND>
+default_src_channel[5] <= <GND>
+default_src_channel[6] <= <GND>
+default_src_channel[7] <= <GND>
+
+
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_007
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -29644,7 +29619,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_007|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_007|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -29674,7 +29649,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_008
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_008
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -29880,7 +29855,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_008|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_008|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -29910,7 +29885,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_009
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_009
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 sink_valid => src_valid.DATAIN
@@ -30116,7 +30091,7 @@ src_endofpacket <= sink_endofpacket.DB_MAX_OUTPUT_PORT_TYPE
 src_ready => sink_ready.DATAIN
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_009|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_router_002:router_009|reloj_soc_mm_interconnect_0_router_002_default_decode:the_default_decode
 default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
 default_destination_id[2] <= <GND>
@@ -30146,7 +30121,7 @@ default_src_channel[6] <= <GND>
 default_src_channel[7] <= <GND>
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux:cmd_demux
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux:cmd_demux
 sink_valid[0] => src0_valid.IN0
 sink_valid[0] => src1_valid.IN0
 sink_valid[0] => src2_valid.IN0
@@ -31744,7 +31719,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:cmd_demux_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:cmd_demux_001
 sink_valid[0] => src0_valid.IN0
 sink_valid[0] => src1_valid.IN0
 sink_data[0] => src1_data[0].DATAIN
@@ -32160,7 +32135,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -32371,7 +32346,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_001
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -32582,7 +32557,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_002
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_002
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -32793,7 +32768,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003
 sink0_valid => request.IN1
 sink0_valid => src_valid.IN1
 sink0_data[0] => src_payload.IN1
@@ -33113,7 +33088,7 @@ clk => clk.IN1
 reset => reset.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003|altera_merlin_arbitrator:arb
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003|altera_merlin_arbitrator:arb
 clk => top_priority_reg[0].CLK
 clk => top_priority_reg[1].CLK
 reset => top_priority_reg[0].PRESET
@@ -33135,7 +33110,7 @@ increment_top_priority => top_priority_reg.OUTPUTSELECT
 save_top_priority => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_003|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
 a[0] => sum.IN0
 a[0] => full_adder.cout[0].IN0
 a[1] => cout.IN0
@@ -33156,7 +33131,7 @@ sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004
 sink0_valid => request.IN1
 sink0_valid => src_valid.IN1
 sink0_data[0] => src_payload.IN1
@@ -33476,7 +33451,7 @@ clk => clk.IN1
 reset => reset.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004|altera_merlin_arbitrator:arb
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004|altera_merlin_arbitrator:arb
 clk => top_priority_reg[0].CLK
 clk => top_priority_reg[1].CLK
 reset => top_priority_reg[0].PRESET
@@ -33498,7 +33473,7 @@ increment_top_priority => top_priority_reg.OUTPUTSELECT
 save_top_priority => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux_003:cmd_mux_004|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
 a[0] => sum.IN0
 a[0] => full_adder.cout[0].IN0
 a[1] => cout.IN0
@@ -33519,7 +33494,7 @@ sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_005
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_005
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -33730,7 +33705,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_006
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_006
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -33941,7 +33916,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_007
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_mux:cmd_mux_007
 sink0_valid => src_valid.DATAIN
 sink0_data[0] => src_data[0].DATAIN
 sink0_data[1] => src_data[1].DATAIN
@@ -34152,7 +34127,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -34364,7 +34339,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_001
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -34576,7 +34551,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_002
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_002
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -34788,7 +34763,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:rsp_demux_003
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:rsp_demux_003
 sink_valid[0] => src0_valid.IN0
 sink_valid[0] => src1_valid.IN0
 sink_data[0] => src1_data[0].DATAIN
@@ -35204,7 +35179,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:rsp_demux_004
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_cmd_demux_001:rsp_demux_004
 sink_valid[0] => src0_valid.IN0
 sink_valid[0] => src1_valid.IN0
 sink_data[0] => src1_data[0].DATAIN
@@ -35620,7 +35595,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_005
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_005
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -35832,7 +35807,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_006
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_006
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -36044,7 +36019,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_007
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_demux:rsp_demux_007
 sink_valid[0] => src0_valid.IN0
 sink_data[0] => src0_data[0].DATAIN
 sink_data[1] => src0_data[1].DATAIN
@@ -36256,7 +36231,7 @@ clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux
 sink0_valid => request[0].IN1
 sink0_data[0] => src_payload.IN1
 sink0_data[1] => src_payload.IN1
@@ -37204,7 +37179,7 @@ clk => clk.IN1
 reset => reset.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux|altera_merlin_arbitrator:arb
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux|altera_merlin_arbitrator:arb
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 request[0] => grant[0].DATAIN
@@ -37243,7 +37218,7 @@ increment_top_priority => ~NO_FANOUT~
 save_top_priority => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux:rsp_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
 a[0] => Add0.IN16
 a[1] => Add0.IN15
 a[2] => Add0.IN14
@@ -37294,7 +37269,7 @@ sum[14] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 sum[15] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001
 sink0_valid => request[0].IN1
 sink0_data[0] => src_payload.IN1
 sink0_data[1] => src_payload.IN1
@@ -37612,7 +37587,7 @@ clk => clk.IN1
 reset => reset.IN1
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001|altera_merlin_arbitrator:arb
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001|altera_merlin_arbitrator:arb
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 request[0] => grant[0].DATAIN
@@ -37627,7 +37602,7 @@ increment_top_priority => ~NO_FANOUT~
 save_top_priority => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_rsp_mux_001:rsp_mux_001|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder
 a[0] => sum.IN0
 a[0] => full_adder.cout[0].IN0
 a[1] => cout.IN0
@@ -37648,7 +37623,7 @@ sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -37726,7 +37701,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -37804,7 +37779,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_001
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_001
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -37882,7 +37857,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_001|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_001|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -37960,7 +37935,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_002
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_002
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38038,7 +38013,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_002|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_002|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38116,7 +38091,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_003
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_003
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38194,7 +38169,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_003|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_003|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38272,7 +38247,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_004
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_004
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38350,7 +38325,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_004|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_004|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38428,7 +38403,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_005
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_005
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38506,7 +38481,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_005|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_005|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38584,7 +38559,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_006
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_006
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38662,7 +38637,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_006|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_006|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38740,7 +38715,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_007
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_007
 in_clk_0_clk => in_clk_0_clk.IN1
 in_rst_0_reset => _.IN1
 in_0_data[0] => in_0_data[0].IN1
@@ -38818,7 +38793,7 @@ out_0_ready => out_0_ready.IN1
 out_0_error[0] <= reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0.out_error
 
 
-|soc_top|reloj_soc:dut|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_007|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
+|reloj_soc|reloj_soc_mm_interconnect_0:mm_interconnect_0|reloj_soc_mm_interconnect_0_avalon_st_adapter:avalon_st_adapter_007|reloj_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0:error_adapter_0
 in_ready <= out_ready.DB_MAX_OUTPUT_PORT_TYPE
 in_valid => out_valid.DATAIN
 in_data[0] => out_data[0].DATAIN
@@ -38896,7 +38871,7 @@ clk => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 
 
-|soc_top|reloj_soc:dut|reloj_soc_irq_mapper:irq_mapper
+|reloj_soc|reloj_soc_irq_mapper:irq_mapper
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 receiver0_irq => sender_irq[1].DATAIN
@@ -38936,7 +38911,7 @@ sender_irq[30] <= <GND>
 sender_irq[31] <= <GND>
 
 
-|soc_top|reloj_soc:dut|altera_reset_controller:rst_controller
+|reloj_soc|altera_reset_controller:rst_controller
 reset_in0 => merged_reset.IN0
 reset_in1 => merged_reset.IN1
 reset_in2 => merged_reset.IN1
@@ -38974,7 +38949,7 @@ reset_out <= r_sync_rst.DB_MAX_OUTPUT_PORT_TYPE
 reset_req <= r_early_rst.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+|reloj_soc|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
 reset_in => altera_reset_synchronizer_int_chain_out.PRESET
 reset_in => altera_reset_synchronizer_int_chain[0].PRESET
 reset_in => altera_reset_synchronizer_int_chain[1].PRESET
@@ -38984,7 +38959,7 @@ clk => altera_reset_synchronizer_int_chain[1].CLK
 reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|soc_top|reloj_soc:dut|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+|reloj_soc|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
 reset_in => altera_reset_synchronizer_int_chain[1].DATAIN
 clk => altera_reset_synchronizer_int_chain_out.CLK
 clk => altera_reset_synchronizer_int_chain[0].CLK
