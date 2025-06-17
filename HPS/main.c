@@ -4,14 +4,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <sys/mman.h>
+#include "lib/HPS.h"
 
-#define HW_REGS_BASE (0xff200000)
-#define HW_REGS_SPAN (0x00200000)
-#define HW_REGS_MASK (HW_REGS_SPAN - 1)
-#define LED_PIO_BASE 0x4040
-
-
+#define HW_REGS_BASE ( ALT_STM_OFST )
 #define PRINT_ERROR(a, args...) printf("ERROR %s() %s Line %d: " a "\n", __FUNCTION__, __FILE__, __LINE__, ##args);
 
 typedef struct {
@@ -37,15 +32,22 @@ int main(int argc, char **argv) {
 		return -1;
 	}
 	static uint32_t sound_position = 0;
-	for(int j = 0; j < CHUNK_SIZE; ++j) {
-		if(sound_position < song.samples) {
-			int16_t value = song.data[sound_position++];
-			printf("Value: %d \n", value);
+	uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
+
+	for (int i = 0; i < chunk_quantity; i++)
+	{
+		for (int j = 0; j < CHUNK_SIZE; ++j)
+		{
+			sound_position = j + i*CHUNK_SIZE; 
+			if (sound_position < song.samples)
+			{
+				int16_t value = song.data[sound_position];
+				printf("Value: %d \n", value);
+			}
+
+			
 		}
-		else {
-			quit = true;
-			*(to++) = 0;
-		}
+		printf("--------------");
 	}
 	printf("About to exit");
 	return 0;
