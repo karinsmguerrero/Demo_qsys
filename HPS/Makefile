@@ -1,4 +1,4 @@
-TARGET = song_processor
+TARGET = fifo_write
 
 ALT_DEVICE_FAMILY ?= soc_cv_av
 SOCEDS_ROOT ?= $(SOCEDS_DEST_ROOT)
@@ -9,7 +9,8 @@ LDFLAGS =  -g -Wall
 CC = $(CROSS_COMPILE)gcc
 ARCH= arm
 #OBJFILES = lib/wav_reader_methods.o main.o
-OBJFILES = main.o
+#OBJFILES = main.o
+OBJFILES = hps_fifo.o
 
 build: $(TARGET)
 $(TARGET): $(OBJFILES)
