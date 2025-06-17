@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "audio_0_external_interface_DACDAT",
+					"strict" : false
+				},
+				{
+					"name" : "audio_and_video_config_0_external_interface_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[10]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[11]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[12]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[13]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[14]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[15]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[16]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[17]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[18]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[19]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[20]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[21]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[22]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[23]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[24]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[25]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[26]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[27]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[28]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[29]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[30]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_export[31]",
+					"strict" : false
+				},
+				{
+					"name" : "audio_and_video_config_0_external_interface_SDAT",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "audio_0_external_interface_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "audio_0_external_interface_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[10]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[11]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[12]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[13]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[14]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[15]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[16]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[17]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[18]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[19]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[20]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[21]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[22]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[23]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[24]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[25]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[26]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[27]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[28]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[29]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[30]",
+					"strict" : false
+				},
+				{
+					"name" : "buttons_export[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

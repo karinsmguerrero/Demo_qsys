@@ -8,7 +8,12 @@
    <name preferredWidth="297" />
   </columns>
  </systemtable>
+<<<<<<< HEAD
  <library expandedCategories="Project,Library" />
  <window width="1920" height="1032" x="0" y="0" />
+=======
+ <library expandedCategories="Library,Project" />
+ <window width="1920" height="1020" x="0" y="0" />
+>>>>>>> c55547a6f564b08b382625230a765e3672128cc3
  <generation simulation="VERILOG" />
 </preferences>

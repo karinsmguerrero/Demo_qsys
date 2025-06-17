@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # system info reloj_soc on 2025.06.11.10:12:01
 system_info:
 name,value
@@ -7,6 +8,17 @@ GENERATION_ID,1749658050
 #
 #
 # Files generated for reloj_soc on 2025.06.11.10:12:01
+=======
+# system info reloj_soc on 2025.06.16.20:34:46
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1750127653
+#
+#
+# Files generated for reloj_soc on 2025.06.16.20:34:46
+>>>>>>> c55547a6f564b08b382625230a765e3672128cc3
 files:
 filepath,kind,attributes,module,is_top
 simulation/reloj_soc.v,VERILOG,,reloj_soc,true
@@ -47,6 +59,7 @@ simulation/submodules/reloj_soc_irq_mapper.sv,SYSTEM_VERILOG,,reloj_soc_irq_mapp
 simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
 simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
 simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+<<<<<<< HEAD
 simulation/submodules/hps_sdram.v,VERILOG,,reloj_soc_HPS_fpga_interfaces,false
 simulation/submodules/aldec/hps_hmctl.v,VERILOG_ENCRYPT,ALDEC_SPECIFIC,reloj_soc_HPS_fpga_interfaces,false
 simulation/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv,SYSTEM_VERILOG,,reloj_soc_HPS_fpga_interfaces,false
@@ -164,6 +177,8 @@ simulation/submodules/altera_avalon_interrupt_sink.sv,SYSTEM_VERILOG,,reloj_soc_
 simulation/submodules/reloj_soc_HPS_fpga_interfaces_h2f_mpu_events.sv,SYSTEM_VERILOG,,reloj_soc_HPS_fpga_interfaces,false
 simulation/submodules/reloj_soc_HPS_fpga_interfaces.sv,SYSTEM_VERILOG,,reloj_soc_HPS_fpga_interfaces,false
 simulation/submodules/reloj_soc_HPS_hps_io.v,VERILOG,,reloj_soc_HPS_hps_io,false
+=======
+>>>>>>> c55547a6f564b08b382625230a765e3672128cc3
 simulation/submodules/reloj_soc_NIOSII_cpu.sdc,SDC,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu.v,VERILOG,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v,VERILOG,,reloj_soc_NIOSII_cpu,false

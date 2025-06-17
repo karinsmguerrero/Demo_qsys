@@ -284,6 +284,7 @@
    type="VERILOG"
    library="cpu" />
  <file
+<<<<<<< HEAD
    path="simulation/submodules/reloj_soc_HPS_hps_io.v"
    type="VERILOG"
    library="hps_io" />
@@ -742,6 +743,8 @@
    type="SYSTEM_VERILOG"
    library="fpga_interfaces" />
  <file
+=======
+>>>>>>> c55547a6f564b08b382625230a765e3672128cc3
    path="simulation/submodules/altera_reset_controller.v"
    type="VERILOG"
    library="rst_controller" />

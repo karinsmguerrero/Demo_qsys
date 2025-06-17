@@ -1,136 +1,99 @@
-/*
- * "Small Hello World" example.
- *
- * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
- * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
- * designs. It requires a STDOUT  device in your system's hardware.
- *
- * The purpose of this example is to demonstrate the smallest possible Hello
- * World application, using the Nios II HAL library.  The memory footprint
- * of this hosted application is ~332 bytes by default using the standard
- * reference design.  For a more fully featured Hello World application
- * example, see the example titled "Hello World".
- *
- * The memory footprint of this example has been reduced by making the
- * following changes to the normal "Hello World" example.
- * Check in the Nios II Software Developers Manual for a more complete
- * description.
- *
- * In the SW Application project (small_hello_world):
- *
- *  - In the C/C++ Build page
- *
- *    - Set the Optimization Level to -Os
- *
- * In System Library project (small_hello_world_syslib):
- *  - In the C/C++ Build page
- *
- *    - Set the Optimization Level to -Os
- *
- *    - Define the preprocessor option ALT_NO_INSTRUCTION_EMULATION
- *      This removes software exception handling, which means that you cannot
- *      run code compiled for Nios II cpu with a hardware multiplier on a core
- *      without a the multiply unit. Check the Nios II Software Developers
- *      Manual for more details.
- *
- *  - In the System Library page:
- *    - Set Periodic system timer and Timestamp timer to none
- *      This prevents the automatic inclusion of the timer driver.
- *
- *    - Set Max file descriptors to 4
- *      This reduces the size of the file handle pool.
- *
- *    - Check Main function does not exit
- *    - Uncheck Clean exit (flush buffers)
- *      This removes the unneeded call to exit when main returns, since it
- *      won't.
- *
- *    - Check Don't use C++
- *      This builds without the C++ support code.
- *
- *    - Check Small C library
- *      This uses a reduced functionality C library, which lacks
- *      support for buffering, file IO, floating point and getch(), etc.
- *      Check the Nios II Software Developers Manual for a complete list.
- *
- *    - Check Reduced device drivers
- *      This uses reduced functionality drivers if they're available. For the
- *      standard design this means you get polled UART and JTAG UART drivers,
- *      no support for the LCD driver and you lose the ability to program
- *      CFI compliant flash devices.
- *
- *    - Check Access device drivers directly
- *      This bypasses the device file system to access device drivers directly.
- *      This eliminates the space required for the device file system services.
- *      It also provides a HAL version of libc services that access the drivers
- *      directly, further reducing space. Only a limited number of libc
- *      functions are available in this configuration.
- *
- *    - Use ALT versions of stdio routines:
- *
- *           Function                  Description
- *        ===============  =====================================
- *        alt_printf       Only supports %s, %x, and %c ( < 1 Kbyte)
- *        alt_putstr       Smaller overhead than puts with direct drivers
- *                         Note this function doesn't add a newline.
- *        alt_putchar      Smaller overhead than putchar with direct drivers
- *        alt_getchar      Smaller overhead than getchar with direct drivers
- *
- */
-
 #include "sys/alt_stdio.h"
 #include "alt_types.h"
 #include "sys/alt_irq.h"
-
+#include <stdint.h>
 
 #define LEDS_BASE    0x4040
 #define BUTTON_BASE  0x4010
 #define TIMER_BASE   0x4020
+#define AUDIO_0_BASE 0x4000
+#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x0000
 
 unsigned int elapsed_ms;
 
-void timer_ir_handler (void * context);
+volatile int beep_pos = 0;
+volatile int beep_running = 0;
+
+void timer_ir_handler(void *context);
+
+// Nueva función para emitir una muestra a la vez
+void beep_step() {
+
+	volatile uint32_t *audio_status = (uint32_t *)(AUDIO_0_BASE + 1); // STATUS en offset 8
+	volatile int32_t *audio_left  = (int32_t *) (AUDIO_0_BASE + 2);
+	volatile int32_t *audio_right = (int32_t *) (AUDIO_0_BASE + 3);
+
+    if (!beep_running || beep_pos >= 240000) {
+        beep_running = 0; // Termina beep
+        alt_putstr("Beep finished\n");
+        return;
+    }
+
+    int32_t sample = (beep_pos % 100 < 50) ? 0x600000 : -0x600000;
+
+    int fifo_space = (*audio_status >> 16) & 0xFF;
+
+    // Imprimir cada 1000 muestras para no saturar salida
+    if (beep_pos % 1000 == 0) {
+        alt_printf("beep_pos=%d, fifo_space=%d\n", beep_pos, fifo_space);
+    }
+
+    if (fifo_space > 0) {
+        *audio_left = sample;
+        *audio_right = sample;
+        beep_pos++;
+    }
+}
 
 int main()
 {
-	volatile unsigned int * leds_ptr = (unsigned int *) LEDS_BASE;
-	volatile unsigned int * button_ptr = (unsigned int *) BUTTON_BASE;
-	volatile unsigned int * timer_status_ptr = (unsigned int *) TIMER_BASE; //offset 0
-	volatile unsigned int * timer_ctr_ptr = timer_status_ptr + 1; //offset 1
-	volatile unsigned int * timer_snapl_ptr = timer_status_ptr + 4; //offset 4
+    volatile unsigned int * leds_ptr = (unsigned int *) LEDS_BASE;
+    volatile unsigned int * timer_status_ptr = (unsigned int *) TIMER_BASE;
+    volatile unsigned int * timer_ctr_ptr = timer_status_ptr + 1;
+    volatile unsigned int * timer_cmp_ptr = timer_status_ptr + 2;
 
-	alt_putstr("Hello from Nios II!\n");
+    volatile unsigned int * audio_config_ptr = (unsigned int *) AUDIO_AND_VIDEO_CONFIG_0_BASE;
+    *audio_config_ptr = 0x1;  // Configura codec
 
-	*timer_status_ptr = 0x1;
+    alt_putstr("Hello from Nios II!\n");
+    beep_step();
 
-	// Espera a que no haya interrupciÃ³n pendiente (bit 0)
-	if (*timer_status_ptr & 0x1) {
-	    alt_printf("ERROR: interrupciÃ³n pendiente -> %x\n", *timer_status_ptr);
-	    return 0;
-	}
-	//alt_ic_isr_register(0x0,0x2, timer_ir_handler, 0x0, 0x0);
+    *timer_status_ptr = 0x1;  // reset timer
 
-	alt_irq_register(0x2, 0x0, timer_ir_handler);
+    if (*timer_status_ptr & 0x1) {
+        alt_printf("ERROR: interrupción pendiente -> %x\n", *timer_status_ptr);
+        return 0;
+    }
 
-	alt_putstr("Turning on the timer\n");
-	*timer_ctr_ptr = 0x7;
-	while (*timer_status_ptr != 0x2);
-	alt_putstr("Timer is running\n");
-	elapsed_ms = 0;
-	/* Event loop never exits. */
-	  /* Event loop never exits. */
-	  while (1) {
-			  *leds_ptr = elapsed_ms;
-			  if ((*leds_ptr) >= 1<< 10)
-				return 0;
-		  }
-	  return 0;
+    *timer_cmp_ptr = 50000 - 1;
+    alt_irq_register(0x2, 0x0, timer_ir_handler);
+
+    alt_putstr("Turning on the timer\n");
+    *timer_ctr_ptr = 0x7;  // start timer
+
+    while (*timer_status_ptr != 0x2);
+    alt_putstr("Timer is running\n");
+
+    elapsed_ms = 0;
+
+    beep_running = 1;  // iniciar beep
+    beep_pos = 0;
+
+    while (1) {
+                // generar beep sin bloqueo
+        *leds_ptr = elapsed_ms;
+
+        if ((*leds_ptr) >= 1 << 10)
+            break;
+    }
+
+    return 0;
 }
 
-	void timer_ir_handler (void * context) {
-		  //Clear the interrupt so that we can keep counting
-		  volatile int* timer_status_ptr = (int *) TIMER_BASE;
-		  *timer_status_ptr = 0x0;
-		  alt_printf("interrupt handler called.  clear status is %x\n", *timer_status_ptr);
-		  elapsed_ms += 1;
-	}
+void timer_ir_handler(void * context) {
+    volatile int* timer_status_ptr = (int *) TIMER_BASE;
+    *timer_status_ptr = 0x0;  // limpiar interrupción
+    alt_printf("interrupt handler called.  clear status is %x\n", *timer_status_ptr);
+    elapsed_ms += 1;
+
+}
