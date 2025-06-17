@@ -31,14 +31,29 @@ bool chunk_swap = false;
 int16_t *to;
 bool quit = false;
 
-int main()
+int main(int argc, char **argv) 
 {
 
-	if (!LoadWav("songs/replay.wav", &song))
-	{
-		PRINT_ERROR("Failed to load replay.wav");
-		return EXIT_FAILURE;
+	if (argc < 2) {
+		PRINT_ERROR("Usage: %s <audio_file.wav>\n", argv[0]);
+		return -1;
 	}
+
+	const char* audio_path = argv[1];
+
+	if (!LoadWav(audio_path, &song)) {
+		PRINT_ERROR("Failed to load %s", audio_path);
+		return -1;
+	}
+
+	// Leer y mostrar metadatos
+	wav_metadata_t metadata = {0};
+	ReadWavMetadata(audio_path, &metadata);
+	printf("Metadata:\n");
+	printf("  Artist:  %s\n", metadata.artist);
+	printf("  Title:   %s\n", metadata.title);
+	printf("  Album:   %s\n", metadata.album);
+	printf("  Comment: %s\n", metadata.comment);
 
 	int fd;
 	void *virtual_base;
@@ -205,4 +220,63 @@ CLOSE_FILE:
 	fclose(file);
 
 	return return_value;
+}
+
+void ReadWavMetadata(const char *filename, wav_metadata_t *metadata) {
+	FILE *file = fopen(filename, "rb");
+	if (!file) {
+		PRINT_ERROR("Cannot open file for metadata: %s", filename);
+		return;
+	}
+
+	fseek(file, 12, SEEK_SET); // Skip RIFF header
+
+	char chunk_id[5] = {0};
+	uint32_t chunk_size;
+
+	while (fread(chunk_id, 1, 4, file) == 4) {
+		fread(&chunk_size, 4, 1, file);
+
+		if (strncmp(chunk_id, "LIST", 4) == 0) {
+			long list_end = ftell(file) + chunk_size;
+
+			char list_type[5] = {0};
+			fread(list_type, 1, 4, file);
+			if (strncmp(list_type, "INFO", 4) != 0) {
+				fseek(file, list_end, SEEK_SET);
+				continue;
+			}
+
+			while (ftell(file) < list_end) {
+				char info_id[5] = {0};
+				uint32_t info_size = 0;
+
+				if (fread(info_id, 1, 4, file) != 4) break;
+				if (fread(&info_size, 4, 1, file) != 1) break;
+
+				char buffer[MAX_METADATA_LEN] = {0};
+				size_t read_len = (info_size < MAX_METADATA_LEN - 1) ? info_size : MAX_METADATA_LEN - 1;
+				fread(buffer, 1, read_len, file);
+				buffer[read_len] = '\0';
+
+				if (strncmp(info_id, "IART", 4) == 0) {
+					strncpy(metadata->artist, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "INAM", 4) == 0) {
+					strncpy(metadata->title, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "IPRD", 4) == 0) {
+					strncpy(metadata->album, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "ICMT", 4) == 0) {
+					strncpy(metadata->comment, buffer, MAX_METADATA_LEN);
+				}
+
+				// Word alignment
+				if (info_size % 2 != 0)
+					fseek(file, 1, SEEK_CUR);
+			}
+		} else {
+			fseek(file, chunk_size, SEEK_CUR);
+		}
+	}
+
+	fclose(file);
 }

@@ -16,7 +16,18 @@ typedef struct {
 
 sound_t song;
 
+#define MAX_METADATA_LEN 128
+
+typedef struct {
+	char artist[MAX_METADATA_LEN];
+	char title[MAX_METADATA_LEN];
+	char album[MAX_METADATA_LEN];
+	char comment[MAX_METADATA_LEN];
+} wav_metadata_t;
+
+
 bool LoadWav(const char *filename, sound_t *sound);
+void ReadWavMetadata(const char *filename, wav_metadata_t *metadata);
 
 #define SAMPLING_RATE 44100
 #define CHUNK_SIZE 2000
@@ -25,16 +36,35 @@ bool chunk_swap = false;
 int16_t *to;
 bool quit = false;
 
-int main(int argc, char **argv) {
-	//char* path = argv[0];
-	if(!LoadWav("songs/replay.wav", &song)) {
-		PRINT_ERROR("Failed to load replay.wav");
+int main(int argc, char **argv) 
+{
+
+	if (argc < 2) {
+		PRINT_ERROR("Usage: %s <audio_file.wav>\n", argv[0]);
 		return -1;
 	}
+
+	const char* audio_path = argv[1];
+
+	if (!LoadWav(audio_path, &song)) {
+		PRINT_ERROR("Failed to load %s", audio_path);
+		return -1;
+	}
+
+	// Leer y mostrar metadatos
+	wav_metadata_t metadata = {0};
+	ReadWavMetadata(audio_path, &metadata);
+	printf("Metadata:\n");
+	printf("  Artist:  %s\n", metadata.artist);
+	printf("  Title:   %s\n", metadata.title);
+	printf("  Album:   %s\n", metadata.album);
+	printf("  Comment: %s\n", metadata.comment);
+
+
 	static uint32_t sound_position = 0;
 	uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
 
-	for (int i = 0; i < chunk_quantity; i++)
+	/*for (int i = 0; i < chunk_quantity; i++)
 	{
 		for (int j = 0; j < CHUNK_SIZE; ++j)
 		{
@@ -48,12 +78,14 @@ int main(int argc, char **argv) {
 			
 		}
 		printf("--------------");
-	}
+	}*/
 	printf("About to exit");
 	return 0;
 }
 
-// Loads ONLY 16-bit 1-channel PCM .WAV files. Allocates sound->data and fills with the pcm data. Fills sound->samples with the number of ELEMENTS in sound->data. EG for 2-bytes per sample single channel, sound->samples = HALF of the number of bytes in sound->data.
+// Loads ONLY 16-bit 1-channel PCM .WAV files. Allocates sound->data and fills with the pcm data. 
+// Fills sound->samples with the number of ELEMENTS in sound->data. 
+// EG for 2-bytes per sample single channel, sound->samples = HALF of the number of bytes in sound->data.
 bool LoadWav(const char *filename, sound_t *sound) {
 	bool return_value = true;
 	FILE *file;
@@ -158,3 +190,64 @@ bool LoadWav(const char *filename, sound_t *sound) {
 
 	return return_value;
 }
+
+void ReadWavMetadata(const char *filename, wav_metadata_t *metadata) {
+	FILE *file = fopen(filename, "rb");
+	if (!file) {
+		PRINT_ERROR("Cannot open file for metadata: %s", filename);
+		return;
+	}
+
+	fseek(file, 12, SEEK_SET); // Skip RIFF header
+
+	char chunk_id[5] = {0};
+	uint32_t chunk_size;
+
+	while (fread(chunk_id, 1, 4, file) == 4) {
+		fread(&chunk_size, 4, 1, file);
+
+		if (strncmp(chunk_id, "LIST", 4) == 0) {
+			long list_end = ftell(file) + chunk_size;
+
+			char list_type[5] = {0};
+			fread(list_type, 1, 4, file);
+			if (strncmp(list_type, "INFO", 4) != 0) {
+				fseek(file, list_end, SEEK_SET);
+				continue;
+			}
+
+			while (ftell(file) < list_end) {
+				char info_id[5] = {0};
+				uint32_t info_size = 0;
+
+				if (fread(info_id, 1, 4, file) != 4) break;
+				if (fread(&info_size, 4, 1, file) != 1) break;
+
+				char buffer[MAX_METADATA_LEN] = {0};
+				size_t read_len = (info_size < MAX_METADATA_LEN - 1) ? info_size : MAX_METADATA_LEN - 1;
+				fread(buffer, 1, read_len, file);
+				buffer[read_len] = '\0';
+
+				if (strncmp(info_id, "IART", 4) == 0) {
+					strncpy(metadata->artist, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "INAM", 4) == 0) {
+					strncpy(metadata->title, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "IPRD", 4) == 0) {
+					strncpy(metadata->album, buffer, MAX_METADATA_LEN);
+				} else if (strncmp(info_id, "ICMT", 4) == 0) {
+					strncpy(metadata->comment, buffer, MAX_METADATA_LEN);
+				}
+
+				// Word alignment
+				if (info_size % 2 != 0)
+					fseek(file, 1, SEEK_CUR);
+			}
+		} else {
+			fseek(file, chunk_size, SEEK_CUR);
+		}
+	}
+
+	fclose(file);
+}
+
+
