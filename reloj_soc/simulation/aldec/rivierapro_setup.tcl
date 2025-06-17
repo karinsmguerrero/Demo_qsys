@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2025.06.13.18:57:11
+# ACDS 18.0 614 win32 2025.06.16.20:34:47
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "/opt/intelFPGA_lite/18.1/quartus/"
+  set QUARTUS_INSTALL_DIR "C:/intelfpga_lite/18.0/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -152,15 +152,15 @@ if { [ string match "Active" $Aldec ] } {
 # Copy ROM/RAM files to simulation directory
 alias file_copy {
   echo "\[exec\] file_copy"
-  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex ./
   file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.dat ./
+  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex ./
   file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.mif ./
-  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex ./
-  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat ./
-  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif ./
-  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex ./
   file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.dat ./
+  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex ./
   file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.mif ./
+  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat ./
+  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif ./
   file copy -force $QSYS_SIMDIR/submodules/reloj_soc_RAM.hex ./
 }
 
@@ -301,9 +301,9 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v"                      -work reset_from_locked                        
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0_audio_pll.vo"                               -work audio_pll                                
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu.v"                                           -work cpu                                      
-  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"                       -work cpu                                      
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v"                        -work cpu                                      
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v"                           -work cpu                                      
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"                       -work cpu                                      
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_test_bench.v"                                -work cpu                                      
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                        -work rst_controller                           
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                      -work rst_controller                           

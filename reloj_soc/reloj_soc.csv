@@ -1,12 +1,12 @@
-# system info reloj_soc on 2025.06.13.18:57:10
+# system info reloj_soc on 2025.06.16.20:34:46
 system_info:
 name,value
-DEVICE,5CSTFD5D5F31I7
+DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1749862610
+GENERATION_ID,1750127653
 #
 #
-# Files generated for reloj_soc on 2025.06.13.18:57:10
+# Files generated for reloj_soc on 2025.06.16.20:34:46
 files:
 filepath,kind,attributes,module,is_top
 simulation/reloj_soc.v,VERILOG,,reloj_soc,true
@@ -44,22 +44,22 @@ simulation/submodules/reloj_soc_irq_mapper.sv,SYSTEM_VERILOG,,reloj_soc_irq_mapp
 simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
 simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
 simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+simulation/submodules/reloj_soc_NIOSII_cpu.sdc,SDC,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu.v,VERILOG,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v,VERILOG,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v,VERILOG,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v,VERILOG,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v,VERILOG,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v,VERILOG,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_nios2_waves.do,OTHER,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu.sdc,SDC,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex,HEX,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.dat,DAT,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex,HEX,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.mif,MIF,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex,HEX,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat,DAT,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif,MIF,,reloj_soc_NIOSII_cpu,false
-simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex,HEX,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.dat,DAT,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex,HEX,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.mif,MIF,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat,DAT,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex,HEX,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif,MIF,,reloj_soc_NIOSII_cpu,false
+simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v,VERILOG,,reloj_soc_NIOSII_cpu,false
 simulation/submodules/reloj_soc_audio_pll_0_audio_pll.vo,VERILOG,,reloj_soc_audio_pll_0_audio_pll,false
 simulation/submodules/altera_up_avalon_reset_from_locked_signal.v,VERILOG,,altera_up_avalon_reset_from_locked_signal,false
 simulation/submodules/altera_merlin_master_translator.sv,SYSTEM_VERILOG,,altera_merlin_master_translator,false

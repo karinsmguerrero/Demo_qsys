@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2025.06.13.18:57:10
+# ACDS 18.0 614 win32 2025.06.16.20:34:47
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 linux 2025.06.13.18:57:10
+# ACDS 18.0 614 win32 2025.06.16.20:34:47
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="reloj_soc"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="/opt/intelFPGA_lite/18.1/quartus/"
+QUARTUS_INSTALL_DIR="C:/intelfpga_lite/18.0/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
@@ -130,15 +130,15 @@ fi
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
 if [ $SKIP_FILE_COPY -eq 0 ]; then
-  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex ./
   cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.dat ./
+  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex ./
   cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.mif ./
-  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex ./
-  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat ./
-  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif ./
-  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex ./
   cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.dat ./
+  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex ./
   cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.mif ./
+  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat ./
+  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex ./
+  cp -f $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif ./
   cp -f $QSYS_SIMDIR/submodules/reloj_soc_RAM.hex ./
 fi
 
@@ -178,9 +178,9 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v \
   $QSYS_SIMDIR/submodules/reloj_soc_audio_pll_0_audio_pll.vo \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu.v \
-  $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_sysclk.v \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_tck.v \
+  $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v \
   $QSYS_SIMDIR/submodules/reloj_soc_NIOSII_cpu_test_bench.v \
   $QSYS_SIMDIR/submodules/altera_reset_controller.v \
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \

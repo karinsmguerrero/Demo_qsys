@@ -1,53 +1,99 @@
-#include <stdio.h>
+#include "sys/alt_stdio.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+#include <stdint.h>
 
-#include "altera_up_avalon_audio.h"
-#include "altera_up_avalon_audio_and_video_config.h"
+#define LEDS_BASE    0x4040
+#define BUTTON_BASE  0x4010
+#define TIMER_BASE   0x4020
+#define AUDIO_0_BASE 0x4000
+#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x0000
 
-#define AUDIO_BASE 0x4000
-#define AUDIO_CTL 0x0000
-#define LED_BASE   0x4040
-#define BUF_SIZE  1000
-// app constants
-#define SAMPLE_RATE 48000
-#define FREQUENCY 333
-#define AMPLITUDE 350000
+unsigned int elapsed_ms;
 
+volatile int beep_pos = 0;
+volatile int beep_running = 0;
 
+void timer_ir_handler(void *context);
 
+// Nueva función para emitir una muestra a la vez
+void beep_step() {
 
-int main(){
-	volatile int* leds_ptr = (int*) LED_BASE;
-	volatile int* audio_ptr = (int*) AUDIO_BASE;
-	volatile int* ctl_ptr = (int*) AUDIO_CTL;
+	volatile uint32_t *audio_status = (uint32_t *)(AUDIO_0_BASE + 1); // STATUS en offset 8
+	volatile int32_t *audio_left  = (int32_t *) (AUDIO_0_BASE + 2);
+	volatile int32_t *audio_right = (int32_t *) (AUDIO_0_BASE + 3);
 
-	printf("Hello from Nios II!\n");
-	*leds_ptr = 0xf;
+    if (!beep_running || beep_pos >= 240000) {
+        beep_running = 0; // Termina beep
+        alt_putstr("Beep finished\n");
+        return;
+    }
 
-	//Let's build a big array with a discrete saw-tooth wave
-	unsigned int data_buffer[BUF_SIZE];
-	int period = SAMPLE_RATE / FREQUENCY;
-	for (int i = 0; i < BUF_SIZE; i++) {
-		data_buffer[i] = (int)((i % period) * 2 * AMPLITUDE / period) - AMPLITUDE;
-	}
+    int32_t sample = (beep_pos % 100 < 50) ? 0x600000 : -0x600000;
 
+    int fifo_space = (*audio_status >> 16) & 0xFF;
 
-	//Continuously play the buffer
-	int buffer_index = 0;
-	while(1) {
-		//check that we have space
-		int fifospace = *(audio_ptr + 1);
-		while (fifospace & 0x00FF0000) {
-					// write data point to fifos
-					*(audio_ptr + 2) = data_buffer[buffer_index];
-					*(audio_ptr + 3) = data_buffer[buffer_index];
-					//update index in the big source array
-					buffer_index = (buffer_index + 1)% BUF_SIZE;
-					//get available space
-					fifospace = *(audio_ptr + 1);
-				}
-		//fifospace = *(audio_ptr + 1);
-	}
+    // Imprimir cada 1000 muestras para no saturar salida
+    if (beep_pos % 1000 == 0) {
+        alt_printf("beep_pos=%d, fifo_space=%d\n", beep_pos, fifo_space);
+    }
 
+    if (fifo_space > 0) {
+        *audio_left = sample;
+        *audio_right = sample;
+        beep_pos++;
+    }
+}
 
-	return 0;
+int main()
+{
+    volatile unsigned int * leds_ptr = (unsigned int *) LEDS_BASE;
+    volatile unsigned int * timer_status_ptr = (unsigned int *) TIMER_BASE;
+    volatile unsigned int * timer_ctr_ptr = timer_status_ptr + 1;
+    volatile unsigned int * timer_cmp_ptr = timer_status_ptr + 2;
+
+    volatile unsigned int * audio_config_ptr = (unsigned int *) AUDIO_AND_VIDEO_CONFIG_0_BASE;
+    *audio_config_ptr = 0x1;  // Configura codec
+
+    alt_putstr("Hello from Nios II!\n");
+    beep_step();
+
+    *timer_status_ptr = 0x1;  // reset timer
+
+    if (*timer_status_ptr & 0x1) {
+        alt_printf("ERROR: interrupción pendiente -> %x\n", *timer_status_ptr);
+        return 0;
+    }
+
+    *timer_cmp_ptr = 50000 - 1;
+    alt_irq_register(0x2, 0x0, timer_ir_handler);
+
+    alt_putstr("Turning on the timer\n");
+    *timer_ctr_ptr = 0x7;  // start timer
+
+    while (*timer_status_ptr != 0x2);
+    alt_putstr("Timer is running\n");
+
+    elapsed_ms = 0;
+
+    beep_running = 1;  // iniciar beep
+    beep_pos = 0;
+
+    while (1) {
+                // generar beep sin bloqueo
+        *leds_ptr = elapsed_ms;
+
+        if ((*leds_ptr) >= 1 << 10)
+            break;
+    }
+
+    return 0;
+}
+
+void timer_ir_handler(void * context) {
+    volatile int* timer_status_ptr = (int *) TIMER_BASE;
+    *timer_status_ptr = 0x0;  // limpiar interrupción
+    alt_printf("interrupt handler called.  clear status is %x\n", *timer_status_ptr);
+    elapsed_ms += 1;
+
 }

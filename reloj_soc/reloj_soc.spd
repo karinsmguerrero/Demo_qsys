@@ -101,11 +101,11 @@
    type="VERILOG"
    library="audio_pll" />
  <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu.v"
-   type="VERILOG"
+   path="simulation/submodules/reloj_soc_NIOSII_cpu.sdc"
+   type="SDC"
    library="cpu" />
  <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"
+   path="simulation/submodules/reloj_soc_NIOSII_cpu.v"
    type="VERILOG"
    library="cpu" />
  <file
@@ -117,7 +117,7 @@
    type="VERILOG"
    library="cpu" />
  <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v"
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_debug_slave_wrapper.v"
    type="VERILOG"
    library="cpu" />
  <file
@@ -125,44 +125,44 @@
    type="OTHER"
    library="cpu" />
  <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu.sdc"
-   type="SDC"
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.dat"
+   type="DAT"
    library="cpu" />
  <file
    path="simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.hex"
    type="HEX"
    library="cpu" />
  <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.dat"
-   type="DAT"
-   library="cpu" />
- <file
    path="simulation/submodules/reloj_soc_NIOSII_cpu_ociram_default_contents.mif"
    type="MIF"
-   library="cpu" />
- <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif"
-   type="MIF"
-   library="cpu" />
- <file
-   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex"
-   type="HEX"
    library="cpu" />
  <file
    path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.dat"
    type="DAT"
    library="cpu" />
  <file
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.hex"
+   type="HEX"
+   library="cpu" />
+ <file
    path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_a.mif"
    type="MIF"
+   library="cpu" />
+ <file
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.dat"
+   type="DAT"
+   library="cpu" />
+ <file
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.hex"
+   type="HEX"
+   library="cpu" />
+ <file
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_rf_ram_b.mif"
+   type="MIF"
+   library="cpu" />
+ <file
+   path="simulation/submodules/reloj_soc_NIOSII_cpu_test_bench.v"
+   type="VERILOG"
    library="cpu" />
  <file
    path="simulation/submodules/altera_reset_controller.v"

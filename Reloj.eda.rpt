@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Reloj
-Fri Jun 13 19:02:43 2025
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Mon Jun 16 20:31:02 2025
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Jun 13 19:02:43 2025 ;
+; EDA Netlist Writer Status ; Successful - Mon Jun 16 20:31:02 2025 ;
 ; Revision Name             ; Reloj                                 ;
 ; Top-level Entity Name     ; reloj_soc                             ;
 ; Family                    ; Cyclone V                             ;
@@ -66,13 +66,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Simulation Generated Files                                          ;
-+---------------------------------------------------------------------+
-; Generated Files                                                     ;
-+---------------------------------------------------------------------+
-; /home/tefa/Documents/GitHub/Demo_qsys/simulation/modelsim/Reloj.svo ;
-+---------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                               ;
++------------------------------------------------------------------------------------------+
+; Generated Files                                                                          ;
++------------------------------------------------------------------------------------------+
+; C:/Users/steph/OneDrive/Documentos/GitHub/CE1113-Proyecto2/simulation/modelsim/Reloj.svo ;
++------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,16 +80,16 @@ refer to the applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Jun 13 19:02:41 2025
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Mon Jun 16 20:30:59 2025
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Reloj -c Reloj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file Reloj.svo in folder "/home/tefa/Documents/GitHub/Demo_qsys/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Reloj.svo in folder "C:/Users/steph/OneDrive/Documentos/GitHub/CE1113-Proyecto2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1252 megabytes
-    Info: Processing ended: Fri Jun 13 19:02:43 2025
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4893 megabytes
+    Info: Processing ended: Mon Jun 16 20:31:02 2025
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
