@@ -1,14 +1,17 @@
 #include <fcntl.h>
-#include <sys/mman.h>
 #include <unistd.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "lib/HPS.h"
+#include <sys/mman.h>
+#include <string.h>
 
 #define HW_REGS_BASE 0x00000000
 #define HW_REGS_SPAN 0x00200000
+#define HPS_FPGA_LW_BASE 0xff200000
+#define HPS_FPGA_LW_SPAN 0x00001000
 
 volatile uint32_t *fifo_ptr;
 
@@ -22,11 +25,22 @@ typedef struct
 
 sound_t song;
 
+#define MAX_METADATA_LEN 128
+
+typedef struct {
+	char artist[MAX_METADATA_LEN];
+	char title[MAX_METADATA_LEN];
+	char album[MAX_METADATA_LEN];
+	char comment[MAX_METADATA_LEN];
+} wav_metadata_t;
+
+void ReadWavMetadata(const char *filename, wav_metadata_t *metadata);
 bool LoadWav(const char *filename, sound_t *sound);
 
 #define SAMPLING_RATE 44100
-#define CHUNK_SIZE 2000
-int16_t chunks[2][CHUNK_SIZE] = {0};
+#define CHUNK_SIZE 256
+
+int16_t chunks[2][CHUNK_SIZE] = {{0}};
 bool chunk_swap = false;
 int16_t *to;
 bool quit = false;
@@ -47,7 +61,7 @@ int main(int argc, char **argv)
 	}
 
 	// Leer y mostrar metadatos
-	wav_metadata_t metadata = {0};
+	wav_metadata_t metadata = {{0}};
 	ReadWavMetadata(audio_path, &metadata);
 	printf("Metadata:\n");
 	printf("  Artist:  %s\n", metadata.artist);
@@ -75,25 +89,20 @@ int main(int argc, char **argv)
 
 	fifo_ptr = (uint32_t *)((char *)virtual_base + FIFO_BASE);
 
-	// Escribir datos al FIFO
-	/*for (int i = 0; i < 10; i++) {
-		fifo_ptr[0] = 0xA0000000 | i;
-		printf("Dato escrito: 0x%08X\n", 0xA0000000 | i);
-	}*/
-
 	static uint32_t sound_position = 0;
-	static uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
+	uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
 
 	for (int i = 0; i < chunk_quantity; i++)
 	{
 		for (int j = 0; j < CHUNK_SIZE; ++j)
 		{
 			sound_position = j + i*CHUNK_SIZE; 
+
 			if (sound_position < song.samples)
 			{
 				int16_t value = song.data[sound_position];
 				fifo_ptr[0] = value;
-				//printf("Value: %d \n", value);
+				printf("Value: %d \n", value);
 			}
 		}
 	}

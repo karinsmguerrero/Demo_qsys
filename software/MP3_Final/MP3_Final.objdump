@@ -31,47 +31,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC, SMALL_DATA
   6 .RAM          00000000  00003edc  00003edc  00001c5c  2**0
                   CONTENTS
-  7 .comment      00000023  00000000  00000000  00001c5c  2**0
+  7 .comment      00000046  00000000  00000000  00001c5c  2**0
                   CONTENTS, READONLY
-  8 .debug_aranges 00000388  00000000  00000000  00001c80  2**3
+  8 .debug_aranges 00000388  00000000  00000000  00001ca8  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   00003d68  00000000  00000000  00002008  2**0
+  9 .debug_info   00003d05  00000000  00000000  00002030  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 000017b5  00000000  00000000  00005d70  2**0
+ 10 .debug_abbrev 000017b5  00000000  00000000  00005d35  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   0000187e  00000000  00000000  00007525  2**0
+ 11 .debug_line   0000187c  00000000  00000000  000074ea  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  000003e8  00000000  00000000  00008da4  2**2
+ 12 .debug_frame  000003e8  00000000  00000000  00008d68  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    0000165d  00000000  00000000  0000918c  2**0
+ 13 .debug_str    0000166d  00000000  00000000  00009150  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00000c00  00000000  00000000  0000a7e9  2**0
+ 14 .debug_loc    00000c00  00000000  00000000  0000a7bd  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  0000b3ec  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  0000b3c0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000260  00000000  00000000  0000b400  2**3
+ 16 .debug_ranges 00000260  00000000  00000000  0000b3d0  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  0000c9ce  2**0
+ 17 .thread_model 00000003  00000000  00000000  0000c99e  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000006  00000000  00000000  0000c9d1  2**0
+ 18 .cpu          00000006  00000000  00000000  0000c9a1  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  0000c9d7  2**0
+ 19 .qsys         00000001  00000000  00000000  0000c9a7  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  0000c9d8  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  0000c9a8  2**0
                   CONTENTS, READONLY
- 21 .stderr_dev   00000004  00000000  00000000  0000c9d9  2**0
+ 21 .stderr_dev   00000004  00000000  00000000  0000c9a9  2**0
                   CONTENTS, READONLY
- 22 .stdin_dev    00000004  00000000  00000000  0000c9dd  2**0
+ 22 .stdin_dev    00000004  00000000  00000000  0000c9ad  2**0
                   CONTENTS, READONLY
- 23 .stdout_dev   00000004  00000000  00000000  0000c9e1  2**0
+ 23 .stdout_dev   00000004  00000000  00000000  0000c9b1  2**0
                   CONTENTS, READONLY
- 24 .sopc_system_name 00000009  00000000  00000000  0000c9e5  2**0
+ 24 .sopc_system_name 00000009  00000000  00000000  0000c9b5  2**0
                   CONTENTS, READONLY
- 25 .quartus_project_dir 0000003a  00000000  00000000  0000c9ee  2**0
+ 25 .quartus_project_dir 00000019  00000000  00000000  0000c9be  2**0
                   CONTENTS, READONLY
- 26 .jdi          00004667  00000000  00000000  0000ca28  2**0
+ 26 .jdi          00004669  00000000  00000000  0000c9d7  2**0
                   CONTENTS, READONLY
- 27 .sopcinfo     0004f99f  00000000  00000000  0001108f  2**0
+ 27 .sopcinfo     002ad907  00000000  00000000  00011040  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00002000 l    d  .entry	00000000 .entry
@@ -586,9 +586,9 @@ alt_after_alt_main:
     21b8:	003fff06 	br	21b8 <_gp+0xffff7588>
 
 000021bc <beep>:
-volatile int playing = 1;  // Ya inicia activo para que suene
+volatile int playing = 1;
 
-// Función que genera una muestra y la envía al audio si hay espacio
+// Función que genera una muestra
 void beep() {
     volatile int* audio_ptr = (int*) AUDIO_BASE;
     int fifospace = *(audio_ptr + 1);
@@ -610,9 +610,9 @@ void beep() {
     21ec:	18c00017 	ldw	r3,0(r3)
 
 // Bandera para indicar que el beep está activo
-volatile int playing = 1;  // Ya inicia activo para que suene
+volatile int playing = 1;
 
-// Función que genera una muestra y la envía al audio si hay espacio
+// Función que genera una muestra
 void beep() {
     21f0:	deffff04 	addi	sp,sp,-4
     21f4:	dfc00015 	stw	ra,0(sp)
@@ -652,7 +652,7 @@ void beep() {
 
 0000223c <timer_isr_handler>:
 
-// ISR del timer: limpia interrupción y llama a beep()
+
 void timer_isr_handler(void* context) {
     volatile int* timer_status = (int*) TIMER_BASE;
     *timer_status = 0x0;  // limpiar interrupción
@@ -706,7 +706,7 @@ int main() {
     2270:	00c003c4 	movi	r3,15
     2274:	00901004 	movi	r2,16448
 
-    // Construcción de la onda sawtooth
+    // onda sawtooth
     int period = SAMPLE_RATE / FREQUENCY;
     for (int i = 0; i < BUF_SIZE; i++) {
         data_buffer[i] = (int)((i % period) * 2 * AMPLITUDE / period) - AMPLITUDE;
@@ -720,7 +720,7 @@ int main() {
     *leds_ptr = 0xF;
     2280:	10c00015 	stw	r3,0(r2)
 
-    // Construcción de la onda sawtooth
+    // onda sawtooth
     int period = SAMPLE_RATE / FREQUENCY;
     for (int i = 0; i < BUF_SIZE; i++) {
     2284:	0021883a 	mov	r16,zero
@@ -730,7 +730,7 @@ int main() {
     printf("Hello from Nios II!\n");
     *leds_ptr = 0xF;
 
-    // Construcción de la onda sawtooth
+    // onda sawtooth
     int period = SAMPLE_RATE / FREQUENCY;
     for (int i = 0; i < BUF_SIZE; i++) {
     2290:	0480fa04 	movi	r18,1000
@@ -753,7 +753,7 @@ int main() {
     printf("Hello from Nios II!\n");
     *leds_ptr = 0xF;
 
-    // Construcción de la onda sawtooth
+    // onda sawtooth
     int period = SAMPLE_RATE / FREQUENCY;
     for (int i = 0; i < BUF_SIZE; i++) {
     22d0:	84000044 	addi	r16,r16,1
@@ -761,7 +761,7 @@ int main() {
         data_buffer[i] = (int)((i % period) * 2 * AMPLITUDE / period) - AMPLITUDE;
     }
 
-    // Configurar Timer para interrupción cada 1 ms
+
     *timer_base_ptr = 0x1;                  // reset timer status
     22d8:	00c00044 	movi	r3,1
     22dc:	00900804 	movi	r2,16416
@@ -772,7 +772,7 @@ int main() {
         data_buffer[i] = (int)((i % period) * 2 * AMPLITUDE / period) - AMPLITUDE;
     }
 
-    // Configurar Timer para interrupción cada 1 ms
+
     *timer_base_ptr = 0x1;                  // reset timer status
     *timer_period_ptr = 50000 - 1;          // 50 MHz / 1000 = 1 ms
     22e8:	00f0d3d4 	movui	r3,49999
@@ -788,7 +788,7 @@ int main() {
     2308:	00c001c4 	movi	r3,7
     230c:	10c00015 	stw	r3,0(r2)
 
-    // Bucle principal solo actualiza LEDs con el índice del buffer
+    // Bucle principal solo actualiza LEDs
     while (1) {
         *leds_ptr = buffer_index;
     2310:	00901004 	movi	r2,16448
@@ -1157,24 +1157,12 @@ int alt_irq_register (alt_u32 id,
     274c:	f800283a 	ret
 
 00002750 <alt_load>:
- * there is no bootloader, so this application is responsible for loading to
- * RAM any sections that are required.
- */  
-
-void alt_load (void)
-{
     2750:	deffff04 	addi	sp,sp,-4
     2754:	01000034 	movhi	r4,0
     2758:	01400034 	movhi	r5,0
     275c:	dfc00015 	stw	ra,0(sp)
     2760:	210aa604 	addi	r4,r4,10904
     2764:	294b1704 	addi	r5,r5,11356
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     2768:	2140061e 	bne	r4,r5,2784 <alt_load+0x34>
     276c:	01000034 	movhi	r4,0
     2770:	01400034 	movhi	r5,0
@@ -1186,11 +1174,7 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     2788:	18cb1704 	addi	r3,r3,11356
     278c:	1907c83a 	sub	r3,r3,r4
     2790:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     2794:	10fff526 	beq	r2,r3,276c <_gp+0xffff7b3c>
-    {
-      *to++ = *from++;
     2798:	114f883a 	add	r7,r2,r5
     279c:	39c00017 	ldw	r7,0(r7)
     27a0:	110d883a 	add	r6,r2,r4
@@ -1201,62 +1185,28 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     27b4:	01400034 	movhi	r5,0
     27b8:	210a9104 	addi	r4,r4,10820
     27bc:	294a9104 	addi	r5,r5,10820
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     27c0:	2140101e 	bne	r4,r5,2804 <alt_load+0xb4>
     27c4:	00000b06 	br	27f4 <alt_load+0xa4>
     27c8:	00c00034 	movhi	r3,0
     27cc:	18c86004 	addi	r3,r3,8576
     27d0:	1907c83a 	sub	r3,r3,r4
     27d4:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     27d8:	10fff526 	beq	r2,r3,27b0 <_gp+0xffff7b80>
-    {
-      *to++ = *from++;
     27dc:	114f883a 	add	r7,r2,r5
     27e0:	39c00017 	ldw	r7,0(r7)
     27e4:	110d883a 	add	r6,r2,r4
     27e8:	10800104 	addi	r2,r2,4
     27ec:	31c00015 	stw	r7,0(r6)
     27f0:	003ff906 	br	27d8 <_gp+0xffff7ba8>
-  
-  /*
-   * Now ensure that the caches are in synch.
-   */
-  
-  alt_dcache_flush_all();
     27f4:	000294c0 	call	294c <alt_dcache_flush_all>
-  alt_icache_flush_all();
-}
     27f8:	dfc00017 	ldw	ra,0(sp)
     27fc:	dec00104 	addi	sp,sp,4
-  /*
-   * Now ensure that the caches are in synch.
-   */
-  
-  alt_dcache_flush_all();
-  alt_icache_flush_all();
     2800:	00029c41 	jmpi	29c4 <alt_icache_flush_all>
     2804:	00c00034 	movhi	r3,0
     2808:	18caa604 	addi	r3,r3,10904
     280c:	1907c83a 	sub	r3,r3,r4
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     2810:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     2814:	18bff726 	beq	r3,r2,27f4 <_gp+0xffff7bc4>
-    {
-      *to++ = *from++;
     2818:	114f883a 	add	r7,r2,r5
     281c:	39c00017 	ldw	r7,0(r7)
     2820:	110d883a 	add	r6,r2,r4
@@ -1443,6 +1393,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
     2900:	800b883a 	mov	r5,r16
     2904:	210ade04 	addi	r4,r4,11128
     ALTERA_AVALON_TIMER_INIT ( TIMER, TIMER);
+    ALTERA_AVALON_FIFO_INIT ( FIFO, FIFO);
     ALTERA_AVALON_JTAG_UART_INIT ( UART, UART);
     ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG_INIT ( AUDIO_AND_VIDEO_CONFIG_0, audio_and_video_config_0);
     ALTERA_UP_AVALON_AUDIO_INIT ( AUDIO_0, audio_0);
@@ -1516,91 +1467,31 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
     2954:	f800283a 	ret
 
 00002958 <alt_dev_llist_insert>:
-{
-  /*
-   * check that the device exists, and that it has a valid name.
-   */
-
-  if (!dev || !dev->name)
     2958:	20000226 	beq	r4,zero,2964 <alt_dev_llist_insert+0xc>
     295c:	20800217 	ldw	r2,8(r4)
     2960:	1000101e 	bne	r2,zero,29a4 <alt_dev_llist_insert+0x4c>
     2964:	d0a00a17 	ldw	r2,-32728(gp)
     2968:	10000926 	beq	r2,zero,2990 <alt_dev_llist_insert+0x38>
-/*
- *
- */
-
-int alt_dev_llist_insert (alt_dev_llist* dev, alt_llist* list)
-{
     296c:	deffff04 	addi	sp,sp,-4
     2970:	dfc00015 	stw	ra,0(sp)
     2974:	103ee83a 	callr	r2
-   * check that the device exists, and that it has a valid name.
-   */
-
-  if (!dev || !dev->name)
-  {
-    ALT_ERRNO = EINVAL;
     2978:	00c00584 	movi	r3,22
     297c:	10c00015 	stw	r3,0(r2)
-    return -EINVAL;
     2980:	00bffa84 	movi	r2,-22
-   */
-  
-  alt_llist_insert(list, &dev->llist);
-
-  return 0;  
-}
     2984:	dfc00017 	ldw	ra,0(sp)
     2988:	dec00104 	addi	sp,sp,4
     298c:	f800283a 	ret
     2990:	d0a07d04 	addi	r2,gp,-32268
-   * check that the device exists, and that it has a valid name.
-   */
-
-  if (!dev || !dev->name)
-  {
-    ALT_ERRNO = EINVAL;
     2994:	00c00584 	movi	r3,22
     2998:	10c00015 	stw	r3,0(r2)
-    return -EINVAL;
     299c:	00bffa84 	movi	r2,-22
-   */
-  
-  alt_llist_insert(list, &dev->llist);
-
-  return 0;  
-}
     29a0:	f800283a 	ret
-
-static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list, 
-                alt_llist* entry)
-{
-  entry->previous = list;
-  entry->next     = list->next;
     29a4:	28800017 	ldw	r2,0(r5)
- */
-
-static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list, 
-                alt_llist* entry)
-{
-  entry->previous = list;
     29a8:	21400115 	stw	r5,4(r4)
-  entry->next     = list->next;
     29ac:	20800015 	stw	r2,0(r4)
-
-  list->next->previous = entry;
     29b0:	28800017 	ldw	r2,0(r5)
     29b4:	11000115 	stw	r4,4(r2)
-  list->next           = entry;
     29b8:	29000015 	stw	r4,0(r5)
-   * register the device.
-   */
-  
-  alt_llist_insert(list, &dev->llist);
-
-  return 0;  
     29bc:	0005883a 	mov	r2,zero
     29c0:	f800283a 	ret
 

@@ -1,4 +1,4 @@
-/* Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition */
+/* Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/steph/OneDrive/Documentos/GitHub/CE1113-Proyecto2/") File("Reloj.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/TEC/2025/Quartus/Reloj/") File("Reloj.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -21,15 +21,48 @@
  */
 
 /*
+ * Macros for device 'RAM', class 'altera_avalon_onchip_memory2'
+ * The macros are prefixed with 'RAM_'.
+ * The prefix is the slave descriptor.
+ */
+#define RAM_COMPONENT_TYPE altera_avalon_onchip_memory2
+#define RAM_COMPONENT_NAME RAM
+#define RAM_BASE 0x0
+#define RAM_SPAN 8192
+#define RAM_END 0x1fff
+#define RAM_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
+#define RAM_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
+#define RAM_CONTENTS_INFO ""
+#define RAM_DUAL_PORT 1
+#define RAM_GUI_RAM_BLOCK_TYPE AUTO
+#define RAM_INIT_CONTENTS_FILE reloj_soc_RAM
+#define RAM_INIT_MEM_CONTENT 1
+#define RAM_INSTANCE_ID NONE
+#define RAM_NON_DEFAULT_INIT_FILE_ENABLED 0
+#define RAM_RAM_BLOCK_TYPE AUTO
+#define RAM_READ_DURING_WRITE_MODE DONT_CARE
+#define RAM_SINGLE_CLOCK_OP 0
+#define RAM_SIZE_MULTIPLE 1
+#define RAM_SIZE_VALUE 8192
+#define RAM_WRITABLE 1
+#define RAM_MEMORY_INFO_DAT_SYM_INSTALL_DIR SIM_DIR
+#define RAM_MEMORY_INFO_GENERATE_DAT_SYM 1
+#define RAM_MEMORY_INFO_GENERATE_HEX 1
+#define RAM_MEMORY_INFO_HAS_BYTE_LANE 0
+#define RAM_MEMORY_INFO_HEX_INSTALL_DIR QPF_DIR
+#define RAM_MEMORY_INFO_MEM_INIT_DATA_WIDTH 32
+#define RAM_MEMORY_INFO_MEM_INIT_FILENAME reloj_soc_RAM
+
+/*
  * Macros for device 'FIFO', class 'altera_avalon_fifo'
  * The macros are prefixed with 'FIFO_'.
  * The prefix is the slave descriptor.
  */
 #define FIFO_COMPONENT_TYPE altera_avalon_fifo
 #define FIFO_COMPONENT_NAME FIFO
-#define FIFO_BASE 0x5000
+#define FIFO_BASE 0x10000
 #define FIFO_SPAN 4
-#define FIFO_END 0x5003
+#define FIFO_END 0x10003
 #define FIFO_AVALONMM_AVALONMM_DATA_WIDTH 32
 #define FIFO_AVALONMM_AVALONST_DATA_WIDTH 32
 #define FIFO_BITS_PER_SYMBOL 16
@@ -42,7 +75,7 @@
 #define FIFO_USE_AVALONMM_WRITE_SLAVE 1
 #define FIFO_USE_AVALONST_SINK 0
 #define FIFO_USE_AVALONST_SOURCE 0
-#define FIFO_USE_BACKPRESSURE 1
+#define FIFO_USE_BACKPRESSURE 0
 #define FIFO_USE_IRQ 1
 #define FIFO_USE_PACKET 1
 #define FIFO_USE_READ_CONTROL 0

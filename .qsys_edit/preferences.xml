@@ -5,15 +5,10 @@
   <columns>
    <connections preferredWidth="223" />
    <irq preferredWidth="34" />
-   <name preferredWidth="297" />
+   <name preferredWidth="200" />
   </columns>
  </systemtable>
-<<<<<<< HEAD
- <library expandedCategories="Project,Library" />
- <window width="1920" height="1032" x="0" y="0" />
-=======
- <library expandedCategories="Library,Project" />
- <window width="1920" height="1020" x="0" y="0" />
->>>>>>> c55547a6f564b08b382625230a765e3672128cc3
- <generation simulation="VERILOG" />
+ <library
+   expandedCategories="Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Project,Library/DSP,Library/Basic Functions/Simulation; Debug and Verification/Verification,Library/Processors and Peripherals,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions,Library/Basic Functions/Configuration and Programming,Library/Interface Protocols/PCI Express/QSYS Example Designs,Library/Qsys Interconnect,Library/Qsys Interconnect/Memory-Mapped,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Interface Protocols/PCI Express,Library/Interface Protocols,Library,Library/DSP/Video and Image Processing,Library/Processors and Peripherals/Peripherals,Library/Basic Functions/Bridges and Adaptors" />
+ <window width="2182" height="1390" x="-11" y="-11" />
 </preferences>

@@ -175,7 +175,6 @@ wire    [  5: 0] wrclk_control_slave_status_register;
 reg              wrclk_control_slave_status_underflow_q;
 wire             wrclk_control_slave_status_underflow_signal;
 wire    [  8: 0] wrclk_control_slave_threshold_writedata;
-wire             wrreq_valid;
   //the_scfifo, which is an e_instance
   reloj_soc_FIFO_single_clock_fifo the_scfifo
     (
@@ -187,13 +186,12 @@ wire             wrreq_valid;
       .q     (q),
       .rdreq (rdreq),
       .usedw (usedw),
-      .wrreq (wrreq_valid)
+      .wrreq (wrreq)
     );
 
   assign level = {full,
     usedw};
 
-  assign wrreq_valid = wrreq & ~full;
   assign overflow = wrreq & full;
   assign underflow = rdreq & empty;
   assign wrclk_control_slave_threshold_writedata = (wrclk_control_slave_writedata < 1) ? 1 :
@@ -474,16 +472,12 @@ module reloj_soc_FIFO (
 
                         // outputs:
                          avalonmm_read_slave_readdata,
-                         avalonmm_read_slave_waitrequest,
-                         avalonmm_write_slave_waitrequest,
                          wrclk_control_slave_irq,
                          wrclk_control_slave_readdata
                       )
 ;
 
   output  [ 31: 0] avalonmm_read_slave_readdata;
-  output           avalonmm_read_slave_waitrequest;
-  output           avalonmm_write_slave_waitrequest;
   output           wrclk_control_slave_irq;
   output  [ 31: 0] wrclk_control_slave_readdata;
   input            avalonmm_read_slave_read;
@@ -498,8 +492,6 @@ module reloj_soc_FIFO (
 
 
 wire    [ 31: 0] avalonmm_read_slave_readdata;
-wire             avalonmm_read_slave_waitrequest;
-wire             avalonmm_write_slave_waitrequest;
 wire             clock;
 wire    [ 31: 0] data;
 wire             empty;
@@ -535,8 +527,6 @@ wire             wrreq;
   assign avalonmm_read_slave_readdata = q;
   assign rdreq = avalonmm_read_slave_read;
   assign clock = wrclock;
-  assign avalonmm_write_slave_waitrequest = (reset_n == 0) ? 1'b1 : full;
-  assign avalonmm_read_slave_waitrequest = empty;
   //in_csr, which is an e_avalon_slave
 
 endmodule

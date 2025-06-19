@@ -24,15 +24,9 @@
 // agreement for further details.
 
 
-<<<<<<< HEAD
 // $Id: //acds/rel/19.1std/ip/merlin/altera_merlin_slave_agent/altera_merlin_slave_agent.sv#1 $
 // $Revision: #1 $
 // $Date: 2018/11/07 $
-=======
-// $Id: //acds/rel/18.0std/ip/merlin/altera_merlin_slave_agent/altera_merlin_slave_agent.sv#1 $
-// $Revision: #1 $
-// $Date: 2018/01/31 $
->>>>>>> c55547a6f564b08b382625230a765e3672128cc3
 // $Author: psgswbuild $
 
 `timescale 1 ns / 1 ns

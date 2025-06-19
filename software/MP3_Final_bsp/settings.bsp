@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>16-Jun-2025 20:35:51</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1750127751373</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\steph\OneDrive\Documentos\GitHub\CE1113-Proyecto2\software\MP3_Final_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>18/06/2025 03:14:35 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1750281275184</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\TEC\2025\Quartus\Reloj\software\MP3_Final_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\reloj_soc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -902,6 +902,18 @@
                 <slaveDescriptor>audio_and_video_config_0</slaveDescriptor>
                 <addressRange>0x00000000 - 0x0000000F</addressRange>
                 <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>FIFO_out</slaveDescriptor>
+                <addressRange>0x00000010 - 0x00000013</addressRange>
+                <addressSpan>4</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>FIFO_in_csr</slaveDescriptor>
+                <addressRange>0x00000020 - 0x0000003F</addressRange>
+                <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>

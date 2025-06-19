@@ -24,15 +24,9 @@
 // agreement for further details.
 
 
-<<<<<<< HEAD:reloj_soc/synthesis/submodules/reloj_soc_mm_interconnect_1_cmd_mux.sv
 // $Id: //acds/rel/19.1std/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
 // $Date: 2018/11/07 $
-=======
-// $Id: //acds/rel/18.0std/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
-// $Revision: #1 $
-// $Date: 2018/01/31 $
->>>>>>> c55547a6f564b08b382625230a765e3672128cc3:reloj_soc/simulation/submodules/reloj_soc_mm_interconnect_0_cmd_mux_003.sv
 // $Author: psgswbuild $
 
 // ------------------------------------------
