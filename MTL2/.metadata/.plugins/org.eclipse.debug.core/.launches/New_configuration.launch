@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbtgui.launch.modelsim.Nios2ModelsimLaunchConfiguration">
+<stringAttribute key="elfFile" value="C:\Users\katharsis\Documents\GitHub\CE1113-Proyecto2\MTL2\software\MTL2\MTL2.elf"/>
+<stringAttribute key="modelSimPath" value="C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="MTL2.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="MTL2"/>
+<stringAttribute key="spdPath" value="C:\Users\katharsis\Documents\GitHub\CE1113-Proyecto2\MTL2\MTL2_tb.spd"/>
+</launchConfiguration>

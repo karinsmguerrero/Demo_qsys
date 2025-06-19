@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+int main() {
+    printf("Iniciando...\n");
+
+    // Use the actual device name from system.h
+    alt_up_char_buffer_dev *char_buf =
+        alt_up_char_buffer_open_dev("/dev/char_buffer");
+
+    if (char_buf == NULL) {
+            printf("Error: Could not open character buffer device\n");
+            return -1;
+        }
+
+	printf("Character buffer opened successfully!\n");
+
+	// Initialize the character buffer - this was missing!
+	alt_up_char_buffer_init(char_buf);
+	printf("Character buffer initialized!\n");
+
+	// Clear the buffer
+	int result = alt_up_char_buffer_clear(char_buf);
+	if (result != 0) {
+		printf("Error clearing buffer\n");
+		return -1;
+	}
+	printf("Buffer cleared!\n");
+
+	// Draw the string
+	result = alt_up_char_buffer_string(char_buf, "Holap :3!", 5, 10);
+	if (result != 0) {
+		printf("Error drawing string\n");
+		return -1;
+	}
+
+	printf("String drawn successfully!\n");
+	printf("Check your MTL2 display now!\n");
+
+	return 0;
+    }

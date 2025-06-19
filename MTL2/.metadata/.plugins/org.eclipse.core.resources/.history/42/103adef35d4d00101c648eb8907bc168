@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+int main() {
+    printf("Starting Character Buffer Debug...\n");
+
+    alt_up_char_buffer_dev *char_buf = alt_up_char_buffer_open_dev(CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_NAME);
+
+    if (char_buf == NULL) {
+        printf("Error: Could not open character buffer device\n");
+        return -1;
+    }
+
+    printf("Character buffer opened successfully!\n");
+
+    // Initialize the character buffer
+    alt_up_char_buffer_init(char_buf);
+    printf("Character buffer initialized!\n");
+
+    // Clear the buffer first
+    printf("Clearing buffer...\n");
+    int result = alt_up_char_buffer_clear(char_buf);
+    if (result != 0) {
+        printf("Error clearing buffer: %d\n", result);
+    } else {
+        printf("Buffer cleared successfully!\n");
+    }
+
+    // Wait a moment for clear to complete
+    for(volatile int i = 0; i < 1000000; i++);
+
+    printf("Testing different positions and characters...\n");
+
+    // Test 1: Draw single characters at known safe positions
+    printf("Test 1: Single characters at corners and center\n");
+    alt_up_char_buffer_draw(char_buf, 'A', 0, 0);     // Top-left
+    alt_up_char_buffer_draw(char_buf, 'B', 1, 0);     // Next to A
+    alt_up_char_buffer_draw(char_buf, 'C', 0, 1);     // Below A
+    alt_up_char_buffer_draw(char_buf, 'D', 10, 5);    // Center area
+
+    // Wait and check
+    printf("Single characters drawn. Check display for A, B, C, D\n");
+    for(volatile int i = 0; i < 2000000; i++);
+
+    // Test 2: Try a simple string at position (0,0)
+    printf("Test 2: String at origin\n");
+    result = alt_up_char_buffer_string(char_buf, "HELLO", 0, 0);
+    if (result != 0) {
+        printf("Error drawing string at (0,0): %d\n", result);
+    } else {
+        printf("String 'HELLO' drawn at (0,0)\n");
+    }
+
+    // Wait and check
+    for(volatile int i = 0; i < 2000000; i++);
+
+    // Test 3: Try different positions
+    printf("Test 3: Multiple strings at different positions\n");
+    alt_up_char_buffer_string(char_buf, "LINE1", 0, 2);
+    alt_up_char_buffer_string(char_buf, "LINE2", 0, 3);
+    alt_up_char_buffer_string(char_buf, "LINE3", 0, 4);
+
+    printf("Multiple lines drawn. Check display now.\n");
+
+    // Test 4: Fill more of the screen to see the active area
+    printf("Test 4: Filling screen pattern\n");
+    for(int y = 0; y < 10; y++) {
+        for(int x = 0; x < 20; x++) {
+            char ch = '0' + (x + y) % 10;
+            alt_up_char_buffer_draw(char_buf, ch, x, y);
+        }
+    }
+
+    printf("Pattern filled. You should see numbers in a grid pattern.\n");
+    printf("If you see flashing or no characters, there may be:\n");
+    printf("1. Video timing issues\n");
+    printf("2. Clock domain problems\n");
+    printf("3. Resolution mismatch\n");
+    printf("4. Character buffer/VGA controller sync issues\n");
+
+    return 0;
+}

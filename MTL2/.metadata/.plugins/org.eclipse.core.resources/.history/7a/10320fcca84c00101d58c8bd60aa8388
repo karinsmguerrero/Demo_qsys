@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+int main() {
+    // Use the #define from system.h
+    alt_up_char_buffer_dev *char_buf =
+        alt_up_char_buffer_open_dev(CHAR_BUFFER_AVALON_CHAR_CONTROL_SLAVE_NAME);
+
+    if (char_buf == NULL) {
+        printf("Error: Could not open character buffer device\n");
+        return -1;
+    }
+
+    printf("Character buffer opened successfully!\n");
+    alt_up_char_buffer_clear(char_buf);
+    alt_up_char_buffer_string(char_buf, "Holap!", 5, 10);
+
+    return 0;
+}
