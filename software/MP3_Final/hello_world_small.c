@@ -11,7 +11,15 @@
 #define SAMPLE_RATE  48000
 #define FREQUENCY    333
 #define AMPLITUDE    35000
+//                                                                        ________________________
+//_______________________________________________________________________/Poner direccion correcta
+#define MUSIC_FIFO_BASE 0xdashdba
+
 unsigned int data_buffer[BUF_SIZE];
+
+
+
+
 volatile int buffer_index = 0;
 
 // Bandera para indicar que el beep está activo
@@ -21,15 +29,23 @@ volatile int playing = 1;
 volatile int music_playing = 0;     // 0 = pausa, 1 = reproduciendo
 volatile int change_music = 0;    // 0 = siguiente, 1 = anterior
 
-// Función que genera una muestra
+//                                                    __________________________________________________
+//___________________________________________________/ajuste de beep() para que lea el fifo
+
 void beep() {
     volatile int* audio_ptr = (int*) AUDIO_BASE;
+    volatile int* music_fifo_ptr = (int*) MUSIC_FIFO_BASE;
+
+
     int fifospace = *(audio_ptr + 1);
 
     if (playing && (fifospace & 0x00FF0000)) {
-        *(audio_ptr + 2) = data_buffer[buffer_index]; // canal izquierdo
-        *(audio_ptr + 3) = data_buffer[buffer_index]; // canal derecho
-        buffer_index = (buffer_index + 1) % BUF_SIZE;
+
+    	int sample = *music_fifo_ptr;  // Leer muestra de FIFO
+
+        *(audio_ptr + 2) = sample; // canal izquierdo
+        *(audio_ptr + 3) = sample; // canal derecho
+        //buffer_index = (buffer_index + 1) % BUF_SIZE;
     }
 }
 
@@ -70,9 +86,8 @@ int main() {
     volatile int* timer_ctrl_ptr   = timer_base_ptr + 1;
     volatile int* timer_period_ptr = timer_base_ptr + 2;
     volatile int* button_ptr = (int*) BUTTON_BASE;
+
     int prev_state = *button_ptr;  // Leer estado inicial (liberado)
-
-
 
     printf("Hello from Nios II!\n");
     *leds_ptr = 0xF;
