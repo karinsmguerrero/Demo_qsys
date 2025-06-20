@@ -166,9 +166,9 @@
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
- <parameter name="device" value="5CSTFD5D5F31I7" />
+ <parameter name="device" value="5CSEMA5F31C6" />
  <parameter name="deviceFamily" value="Cyclone V" />
- <parameter name="deviceSpeedGrade" value="7_H5" />
+ <parameter name="deviceSpeedGrade" value="6" />
  <parameter name="fabricMode" value="QSYS" />
  <parameter name="generateLegacySim" value="false" />
  <parameter name="generationId" value="0" />
@@ -221,8 +221,8 @@
  <module name="NIOSII" kind="altera_nios2_gen2" version="18.0" enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="2" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="2" />
-  <parameter name="AUTO_DEVICE" value="5CSTFD5D5F31I7" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H5" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
   <parameter name="breakSlave" value="None" />
@@ -522,8 +522,8 @@
    kind="altera_up_avalon_audio_pll"
    version="18.0"
    enabled="1">
-  <parameter name="AUTO_DEVICE" value="5CSTFD5D5F31I7" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7_H5" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="audio_clk_freq" value="12.288" />
   <parameter name="device_family" value="Cyclone V" />
   <parameter name="gui_refclk" value="50.0" />
@@ -1008,7 +1008,7 @@
   <parameter name="desired_sdmmc_clk_mhz" value="200.0" />
   <parameter name="desired_spi_m_clk_mhz" value="200.0" />
   <parameter name="desired_usb_mp_clk_mhz" value="200.0" />
-  <parameter name="device_name" value="5CSTFD5D5F31I7" />
+  <parameter name="device_name" value="5CSEMA5F31C6" />
   <parameter name="device_pll_info_manual">{320000000 1600000000} {320000000 1000000000} {800000000 400000000 400000000}</parameter>
   <parameter name="eosc1_clk_mhz" value="25.0" />
   <parameter name="eosc2_clk_mhz" value="25.0" />
