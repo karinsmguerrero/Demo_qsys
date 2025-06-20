@@ -35,43 +35,43 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   8 .debug_aranges 00000ae0  00000000  00000000  00007dd0  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   000192a3  00000000  00000000  000088b0  2**0
+  9 .debug_info   0001929f  00000000  00000000  000088b0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00006deb  00000000  00000000  00021b53  2**0
+ 10 .debug_abbrev 00006deb  00000000  00000000  00021b4f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00007586  00000000  00000000  0002893e  2**0
+ 11 .debug_line   00007586  00000000  00000000  0002893a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  000013e0  00000000  00000000  0002fec4  2**2
+ 12 .debug_frame  000013e0  00000000  00000000  0002fec0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00002a13  00000000  00000000  000312a4  2**0
+ 13 .debug_str    00002a13  00000000  00000000  000312a0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00006ed5  00000000  00000000  00033cb7  2**0
+ 14 .debug_loc    00006ed5  00000000  00000000  00033cb3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  0003ab8c  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  0003ab88  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000988  00000000  00000000  0003aba0  2**3
+ 16 .debug_ranges 00000988  00000000  00000000  0003ab98  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  0003daea  2**0
+ 17 .thread_model 00000003  00000000  00000000  0003dae2  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000006  00000000  00000000  0003daed  2**0
+ 18 .cpu          00000006  00000000  00000000  0003dae5  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  0003daf3  2**0
+ 19 .qsys         00000001  00000000  00000000  0003daeb  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  0003daf4  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  0003daec  2**0
                   CONTENTS, READONLY
- 21 .stderr_dev   00000009  00000000  00000000  0003daf5  2**0
+ 21 .stderr_dev   00000009  00000000  00000000  0003daed  2**0
                   CONTENTS, READONLY
- 22 .stdin_dev    00000009  00000000  00000000  0003dafe  2**0
+ 22 .stdin_dev    00000009  00000000  00000000  0003daf6  2**0
                   CONTENTS, READONLY
- 23 .stdout_dev   00000009  00000000  00000000  0003db07  2**0
+ 23 .stdout_dev   00000009  00000000  00000000  0003daff  2**0
                   CONTENTS, READONLY
- 24 .sopc_system_name 00000004  00000000  00000000  0003db10  2**0
+ 24 .sopc_system_name 00000004  00000000  00000000  0003db08  2**0
                   CONTENTS, READONLY
- 25 .quartus_project_dir 00000039  00000000  00000000  0003db14  2**0
+ 25 .quartus_project_dir 00000039  00000000  00000000  0003db0c  2**0
                   CONTENTS, READONLY
- 26 .jdi          0000452e  00000000  00000000  0003db4d  2**0
+ 26 .jdi          0000452e  00000000  00000000  0003db45  2**0
                   CONTENTS, READONLY
- 27 .sopcinfo     0004050d  00000000  00000000  0004207b  2**0
+ 27 .sopcinfo     0004050d  00000000  00000000  00042073  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00010000 l    d  .entry	00000000 .entry
@@ -794,34 +794,35 @@ int main() {
    101e4:	21148804 	addi	r4,r4,21024
    101e8:	00136280 	call	13628 <alt_printf>
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
 	char text_top_row[40] = "Arena x mis Venas - Rebe\0";
    101ec:	00800074 	movhi	r2,1
-	else
 		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
    101f0:	01000074 	movhi	r4,1
 	char text_top_row[40] = "Arena x mis Venas - Rebe\0";
    101f4:	10949604 	addi	r2,r2,21080
-	else
 		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
    101f8:	2114a004 	addi	r4,r4,21120
 	char text_top_row[40] = "Arena x mis Venas - Rebe\0";
    101fc:	12400017 	ldw	r9,0(r2)
-	else
 		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
    10200:	23400017 	ldw	r13,0(r4)
    10204:	23000117 	ldw	r12,4(r4)
@@ -837,11 +838,11 @@ int main() {
 	char text_bottom_row[40] = "Character Buffer\0";
    10228:	00c00074 	movhi	r3,1
    1022c:	18d4aa04 	addi	r3,r3,21160
-	else
 		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
    10230:	db401415 	stw	r13,80(sp)
    10234:	db001515 	stw	r12,84(sp)
@@ -855,11 +856,11 @@ int main() {
    10250:	d9400e15 	stw	r5,56(sp)
    10254:	d9000f15 	stw	r4,60(sp)
    10258:	d880100d 	sth	r2,64(sp)
-	else
 		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
    1025c:	d8001815 	stw	zero,96(sp)
    10260:	d8001915 	stw	zero,100(sp)
@@ -881,9 +882,9 @@ int main() {
    10298:	1880040b 	ldhu	r2,16(r3)
 	alt_up_char_buffer_clear(char_buf_dev);
    1029c:	8009883a 	mov	r4,r16
-
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
 	char text_top_row[40] = "Arena x mis Venas - Rebe\0";
 	char text_bottom_row[40] = "Character Buffer\0";
@@ -891,10 +892,10 @@ int main() {
    102a4:	d9c00115 	stw	r7,4(sp)
    102a8:	d9800215 	stw	r6,8(sp)
    102ac:	d9400315 	stw	r5,12(sp)
-		alt_printf("Opened character buffer device \n");
 
-	// Print some text to the screen
-	char text = 'X';
+	//800x480
+	//MTL2 Bounds: x: [0..29] & y:[0..29]
+	char text = 'S';
 	char text_rebe_row[40] = "Now Playing...\0";
 	char text_top_row[40] = "Arena x mis Venas - Rebe\0";
    102b0:	d800130d 	sth	zero,76(sp)
@@ -918,25 +919,25 @@ int main() {
    102ec:	8009883a 	mov	r4,r16
    102f0:	000f883a 	mov	r7,zero
    102f4:	000d883a 	mov	r6,zero
-   102f8:	01401604 	movi	r5,88
+   102f8:	014014c4 	movi	r5,83
    102fc:	00141380 	call	14138 <alt_up_char_buffer_draw>
-	alt_up_char_buffer_draw(char_buf_dev, text, 0, 59);
+	alt_up_char_buffer_draw(char_buf_dev, text, 0, 29);
    10300:	8009883a 	mov	r4,r16
-   10304:	01c00ec4 	movi	r7,59
+   10304:	01c00744 	movi	r7,29
    10308:	000d883a 	mov	r6,zero
-   1030c:	01401604 	movi	r5,88
+   1030c:	014014c4 	movi	r5,83
    10310:	00141380 	call	14138 <alt_up_char_buffer_draw>
-	alt_up_char_buffer_draw(char_buf_dev, text, 79, 0);
+	alt_up_char_buffer_draw(char_buf_dev, text, 49, 0);
    10314:	8009883a 	mov	r4,r16
    10318:	000f883a 	mov	r7,zero
-   1031c:	018013c4 	movi	r6,79
-   10320:	01401604 	movi	r5,88
+   1031c:	01800c44 	movi	r6,49
+   10320:	014014c4 	movi	r5,83
    10324:	00141380 	call	14138 <alt_up_char_buffer_draw>
-	alt_up_char_buffer_draw(char_buf_dev, text, 79, 59);
+	alt_up_char_buffer_draw(char_buf_dev, text, 49, 29);
    10328:	8009883a 	mov	r4,r16
-   1032c:	01c00ec4 	movi	r7,59
-   10330:	018013c4 	movi	r6,79
-   10334:	01401604 	movi	r5,88
+   1032c:	01c00744 	movi	r7,29
+   10330:	01800c44 	movi	r6,49
+   10334:	014014c4 	movi	r5,83
    10338:	00141380 	call	14138 <alt_up_char_buffer_draw>
 	alt_up_char_buffer_string(char_buf_dev, text_rebe_row, 5,15);
    1033c:	d9401404 	addi	r5,sp,80
@@ -950,9 +951,9 @@ int main() {
    10358:	01c00504 	movi	r7,20
    1035c:	01800144 	movi	r6,5
    10360:	00141880 	call	14188 <alt_up_char_buffer_string>
-	alt_up_char_buffer_string(char_buf_dev, text_bottom_row, 40,40);
-   10364:	01c00a04 	movi	r7,40
-   10368:	380d883a 	mov	r6,r7
+	alt_up_char_buffer_string(char_buf_dev, text_bottom_row, 14,28);
+   10364:	01c00704 	movi	r7,28
+   10368:	01800384 	movi	r6,14
    1036c:	d80b883a 	mov	r5,sp
    10370:	8009883a 	mov	r4,r16
    10374:	00141880 	call	14188 <alt_up_char_buffer_string>
