@@ -1,6 +1,6 @@
-15:15:23 **** Clean-only build of configuration Nios II for project MTL2_bsp ****
-make clean 
-[BSP clean complete]
+15:33:48 **** Build of configuration Nios II for project MTL2_bsp ****
+make all 
+[BSP build complete]
 
-15:15:23 Build Finished (took 263ms)
+15:33:49 Build Finished (took 717ms)
 

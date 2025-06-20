@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
       datum sopceditor_expanded
@@ -47,15 +47,23 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
+      }
+   }
+   element DUAL_CLK
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
       }
    }
    element JTAG_UART
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "3";
          type = "int";
       }
       datum sopceditor_expanded
@@ -76,12 +84,12 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "4";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -89,7 +97,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
       datum sopceditor_expanded
@@ -173,7 +181,7 @@
    kind="altera_up_avalon_video_character_buffer_with_dma"
    version="18.0"
    enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="33155216" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="color_bits" value="1-bit" />
   <parameter name="enable_transparency" value="false" />
@@ -185,6 +193,17 @@
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   name="DUAL_CLK"
+   kind="altera_up_avalon_video_dual_clock_buffer"
+   version="18.0"
+   enabled="1">
+  <parameter name="AUTO_CLOCK_STREAM_IN_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_CLOCK_STREAM_OUT_CLOCK_RATE" value="33155216" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="color_bits" value="10" />
+  <parameter name="color_planes" value="3" />
  </module>
  <module
    name="JTAG_UART"
@@ -506,21 +525,32 @@
    kind="avalon_streaming"
    version="18.1"
    start="CHAR_BUFFER.avalon_char_source"
+   end="DUAL_CLK.avalon_dc_buffer_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="18.1"
+   start="DUAL_CLK.avalon_dc_buffer_source"
    end="MTL2_DRIVER.avalon_vga_sink" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="NIOSII.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="JTAG_UART.clk" />
+ <connection kind="clock" version="18.1" start="CLK.clk" end="CHAR_BUFFER.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="RAM.clk1" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="CLK.clk"
+   end="DUAL_CLK.clock_stream_in" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="MTL2_CLK.ref_clk" />
  <connection
    kind="clock"
    version="18.1"
    start="MTL2_CLK.lcd_clk"
-   end="CHAR_BUFFER.clk" />
+   end="MTL2_DRIVER.clk" />
  <connection
    kind="clock"
    version="18.1"
    start="MTL2_CLK.lcd_clk"
-   end="MTL2_DRIVER.clk" />
+   end="DUAL_CLK.clock_stream_out" />
  <connection
    kind="interrupt"
    version="18.1"
@@ -543,6 +573,11 @@
  <connection
    kind="reset"
    version="18.1"
+   start="CLK.clk_reset"
+   end="DUAL_CLK.reset_stream_in" />
+ <connection
+   kind="reset"
+   version="18.1"
    start="MTL2_CLK.reset_source"
    end="CHAR_BUFFER.reset" />
  <connection
@@ -550,6 +585,11 @@
    version="18.1"
    start="MTL2_CLK.reset_source"
    end="MTL2_DRIVER.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="MTL2_CLK.reset_source"
+   end="DUAL_CLK.reset_stream_out" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

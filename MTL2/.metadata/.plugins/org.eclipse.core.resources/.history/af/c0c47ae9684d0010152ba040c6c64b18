@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+
+void write_char(int x, int y, char ch) {
+    if (x >= 0 && x < 80 && y >= 0 && y < 60) {
+        int offset = (y << 7) + x;  // y * 128 + x (128 bytes per row)
+        *(character_buffer + offset) = ch;
+    }
+}
+
+int main() {
+    alt_putstr("Starting Character Buffer Debug...\n");
+    volatile char* char_buf = (char *) 0x21000;
+
+
+
+    return 0;
+}

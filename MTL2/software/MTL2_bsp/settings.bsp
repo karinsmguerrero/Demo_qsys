@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>19-Jun-2025 16:37:49</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1750372669866</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>20-Jun-2025 15:30:17</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1750455017332</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\katharsis\Documents\GitHub\CE1113-Proyecto2\MTL2\software\MTL2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\MTL2.sopcinfo</SopcDesignFile>

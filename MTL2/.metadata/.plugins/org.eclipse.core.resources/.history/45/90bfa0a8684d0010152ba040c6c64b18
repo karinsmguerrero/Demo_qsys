@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+int main() {
+    alt_putstr("Starting Character Buffer Debug...\n");
+    volatile char* char_buffer_ptr = 0x21000
+
+    alt_up_char_buffer_dev *char_buf = alt_up_char_buffer_open_dev(CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_NAME);
+
+    if (char_buf == NULL) {
+    	alt_putstr("Error: Could not open character buffer device\n");
+        return -1;
+    }
+
+    printf("Character buffer opened successfully!\n");
+    // Initialize the character buffer
+    alt_up_char_buffer_init(char_buf);
+    alt_putstr("Character buffer initialized!\n");
+    alt_up_char_buffer_clear(char_buf);
+    alt_up_char_buffer_draw(char_buf, 'A', 0, 0);     // Top-left
+        alt_up_char_buffer_draw(char_buf, 'B', 1, 0);     // Next to A
+        alt_up_char_buffer_draw(char_buf, 'C', 0, 1);     // Below A
+        alt_up_char_buffer_draw(char_buf, 'D', 10, 5);    // Center area
+
+    return 0;
+}

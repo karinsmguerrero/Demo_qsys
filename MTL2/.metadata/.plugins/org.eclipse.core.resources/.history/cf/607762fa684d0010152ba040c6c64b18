@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+
+void write_char(int x, int y, char ch) {
+    if (x >= 0 && x < 80 && y >= 0 && y < 60) {
+        int offset = (y << 7) + x;  // y * 128 + x (128 bytes per row)
+        *(character_buffer + offset) = ch;
+    }
+}
+
+
+// Function to write a string starting at position (x, y)
+void write_string(int x, int y, char* text) {
+    int start_x = x;
+    while (*text && x < 80 && y < 60) {
+        if (*text == '\n') {
+            // Handle newline
+            y++;
+            x = start_x;
+        } else {
+            write_char(x, y, *text);
+            x++;
+        }
+        text++;
+    }
+}
+
+// Function to clear the entire character buffer
+void clear_screen() {
+    for (int y = 0; y < 60; y++) {
+        for (int x = 0; x < 80; x++) {
+            write_char(x, y, ' ');  // Fill with spaces
+        }
+    }
+}
+
+// Function to fill screen with a test pattern
+void test_pattern() {
+    for (int y = 0; y < 10; y++) {
+        for (int x = 0; x < 20; x++) {
+            char ch = '0' + ((x + y) % 10);
+            write_char(x, y, ch);
+        }
+    }
+}
+
+int main() {
+    alt_putstr("Starting Character Buffer Debug...\n");
+    volatile char* char_buf = (char *) 0x21000;
+
+
+
+    return 0;
+}

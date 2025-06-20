@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+volatile char* character_buffer = (char*) 0x21000
+void write_char(int x, int y, char ch) {
+    if (x >= 0 && x < 80 && y >= 0 && y < 60) {
+        int offset = (y << 7) + x;  // y * 128 + x (128 bytes per row)
+        *(character_buffer + offset) = ch;
+    }
+}
+
+
+// Function to write a string starting at position (x, y)
+void write_string(int x, int y, char* text) {
+    int start_x = x;
+    while (*text && x < 80 && y < 60) {
+        if (*text == '\n') {
+            // Handle newline
+            y++;
+            x = start_x;
+        } else {
+            write_char(x, y, *text);
+            x++;
+        }
+        text++;
+    }
+}
+
+// Function to clear the entire character buffer
+void clear_screen() {
+    for (int y = 0; y < 60; y++) {
+        for (int x = 0; x < 80; x++) {
+            write_char(x, y, ' ');  // Fill with spaces
+        }
+    }
+}
+
+// Function to fill screen with a test pattern
+void test_pattern() {
+    for (int y = 0; y < 10; y++) {
+        for (int x = 0; x < 20; x++) {
+            char ch = '0' + ((x + y) % 10);
+            write_char(x, y, ch);
+        }
+    }
+}
+
+int main() {
+    printf("Starting direct character buffer test...\n");
+
+    // Clear the screen first
+    printf("Clearing screen...\n");
+    clear_screen();
+
+    // Small delay
+    for(volatile int i = 0; i < 1000000; i++);
+
+    // Test 1: Simple string at top-left
+    printf("Writing 'Hello World!' at (0,0)\n");
+    write_string(0, 0, "Hello World!");
+
+    // Test 2: Multiple lines
+    printf("Writing multiple lines...\n");
+    write_string(0, 2, "Line 1: Testing MTL2");
+    write_string(0, 3, "Line 2: Character Buffer");
+    write_string(0, 4, "Line 3: Direct Memory Access");
+
+    // Test 3: Different positions
+    printf("Writing at different positions...\n");
+    write_string(10, 6, "Position (10,6)");
+    write_string(20, 8, "Position (20,8)");
+    write_string(30, 10, "Position (30,10)");
+
+    // Test 4: Test pattern
+    printf("Creating test pattern...\n");
+    test_pattern();
+
+    // Test 5: Border test
+    printf("Drawing border characters...\n");
+    // Top and bottom borders
+    for (int x = 0; x < 79; x++) {
+        write_char(x, 0, '-');
+        write_char(x, 59, '-');
+    }
+    // Left and right borders
+    for (int y = 0; y < 60; y++) {
+        write_char(0, y, '|');
+        write_char(79, y, '|');
+    }
+    // Corners
+    write_char(0, 0, '+');
+    write_char(79, 0, '+');
+    write_char(0, 59, '+');
+    write_char(79, 59, '+');
+
+    // Final message
+    write_string(25, 30, "MTL2 CHARACTER BUFFER TEST");
+    write_string(30, 31, "DIRECT MEMORY ACCESS");
+    write_string(35, 32, "SUCCESS!");}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <system.h>
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+int main() {
+    alt_putstr("Starting Character Buffer Debug...\n");
+    volatile char* char_buf = (char *) 0x21000;
+
+
+
+    return 0;
+}

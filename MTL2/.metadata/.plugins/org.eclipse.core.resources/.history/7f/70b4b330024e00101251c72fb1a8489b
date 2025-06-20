@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <system.h>
+#include "sys/alt_stdio.h"
+#include <altera_up_avalon_video_character_buffer_with_dma.h>
+
+
+
+int main() {
+	alt_up_char_buffer_dev* char_buf_dev;
+	char_buf_dev = alt_up_char_buffer_open_dev("/dev/CHAR_BUFFER");
+
+
+}
