@@ -8,13 +8,13 @@ CFLAGS = -g -Wall -D$(ALT_DEVICE_FAMILY) -I$(HWLIBS_ROOT)/include/$(ALT_DEVICE_F
 LDFLAGS =  -g -Wall 
 CC = $(CROSS_COMPILE)gcc
 ARCH= arm
-#OBJFILES = lib/wav_reader_methods.o main.o
+OBJFILES = read_test.c
 #OBJFILES = main.o
-OBJFILES = hps_fifo.o
+#OBJFILES = lib/HPS_FIFO.h hps_fifo.o
 
 build: $(TARGET)
 $(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o build/$(TARGET) $(OBJFILES) $(LDFLAGS)
 
 .PHONY: clean
 clean:

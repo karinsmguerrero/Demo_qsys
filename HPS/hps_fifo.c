@@ -1,49 +1,4 @@
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "lib/HPS.h"
-#include <sys/mman.h>
-#include <string.h>
-
-#define HW_REGS_BASE 0x00000000
-#define HW_REGS_SPAN 0x00200000
-#define HPS_FPGA_LW_BASE 0xff200000
-#define HPS_FPGA_LW_SPAN 0x00001000
-
-volatile uint32_t *fifo_ptr;
-
-#define PRINT_ERROR(a, args...) printf("ERROR %s() %s Line %d: " a "\n", __FUNCTION__, __FILE__, __LINE__, ##args);
-
-typedef struct
-{
-	uint32_t samples;
-	int16_t *data;
-} sound_t;
-
-sound_t song;
-
-#define MAX_METADATA_LEN 128
-
-typedef struct {
-	char artist[MAX_METADATA_LEN];
-	char title[MAX_METADATA_LEN];
-	char album[MAX_METADATA_LEN];
-	char comment[MAX_METADATA_LEN];
-} wav_metadata_t;
-
-void ReadWavMetadata(const char *filename, wav_metadata_t *metadata);
-bool LoadWav(const char *filename, sound_t *sound);
-
-#define SAMPLING_RATE 44100
-#define CHUNK_SIZE 256
-
-int16_t chunks[2][CHUNK_SIZE] = {{0}};
-bool chunk_swap = false;
-int16_t *to;
-bool quit = false;
+#include "lib/HPS_FIFO.h"
 
 int main(int argc, char **argv) 
 {
@@ -60,29 +15,20 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	// Leer y mostrar metadatos
-	wav_metadata_t metadata = {{0}};
-	ReadWavMetadata(audio_path, &metadata);
-	printf("Metadata:\n");
-	printf("  Artist:  %s\n", metadata.artist);
-	printf("  Title:   %s\n", metadata.title);
-	printf("  Album:   %s\n", metadata.album);
-	printf("  Comment: %s\n", metadata.comment);
-
 	int fd;
 	void *virtual_base;
 
 	fd = open("/dev/mem", O_RDWR | O_SYNC);
 	if (fd == -1)
 	{
-		perror("Error abriendo /dev/mem");
+		perror("Error opening /dev/mem");
 		return EXIT_FAILURE;
 	}
 
 	virtual_base = mmap(NULL, HW_REGS_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, HW_REGS_BASE);
 	if (virtual_base == MAP_FAILED)
 	{
-		perror("Error en mmap");
+		perror("Error in mmap");
 		close(fd);
 		return EXIT_FAILURE;
 	}
@@ -288,4 +234,14 @@ void ReadWavMetadata(const char *filename, wav_metadata_t *metadata) {
 	}
 
 	fclose(file);
+}
+
+void SendWavMetadata(char* audio_path){
+	wav_metadata_t metadata = {{0}};
+	ReadWavMetadata(audio_path, &metadata);
+	printf("Metadata:\n");
+	printf("  Artist:  %s\n", metadata.artist);
+	printf("  Title:   %s\n", metadata.title);
+	printf("  Album:   %s\n", metadata.album);
+	printf("  Comment: %s\n", metadata.comment);
 }
