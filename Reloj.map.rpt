@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Reloj
-Wed Jun 18 15:10:01 2025
+Sat Jun 21 21:27:37 2025
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -439,7 +439,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 18 15:10:01 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 21 21:27:37 2025       ;
 ; Quartus Prime Version           ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                   ; Reloj                                       ;
 ; Top-level Entity Name           ; reloj_soc                                   ;
@@ -10170,8 +10170,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------+--------------+
 ; Partition Name                     ; Elapsed Time ;
 +------------------------------------+--------------+
-; Top                                ; 00:00:07     ;
-; reloj_soc_HPS_hps_io_border:border ; 00:00:00     ;
+; Top                                ; 00:00:19     ;
+; reloj_soc_HPS_hps_io_border:border ; 00:00:01     ;
 +------------------------------------+--------------+
 
 
@@ -10181,7 +10181,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Wed Jun 18 15:06:08 2025
+    Info: Processing started: Sat Jun 21 21:18:24 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Reloj -c Reloj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -10860,7 +10860,7 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "alte
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_reset_controller.v Line: 220
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller_001" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/reloj_soc.v Line: 736
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.06.18.15:06:45 Progress: Loading sld95350957/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.06.21.21:20:05 Progress: Loading sld95350957/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -10912,10 +10912,10 @@ Info (21057): Implemented 3711 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21066): Implemented 1 delay-locked loops
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 5148 megabytes
-    Info: Processing ended: Wed Jun 18 15:10:02 2025
-    Info: Elapsed time: 00:03:54
-    Info: Total CPU time (on all processors): 00:04:17
+    Info: Peak virtual memory: 5129 megabytes
+    Info: Processing ended: Sat Jun 21 21:27:37 2025
+    Info: Elapsed time: 00:09:13
+    Info: Total CPU time (on all processors): 00:10:01
 
 
 +------------------------------------------+

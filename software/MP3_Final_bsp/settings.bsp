@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>18/06/2025 03:14:35 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1750281275184</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>21/06/2025 09:02:06 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1750561326859</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\TEC\2025\Quartus\Reloj\software\MP3_Final_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\reloj_soc.sopcinfo</SopcDesignFile>

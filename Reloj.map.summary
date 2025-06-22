@@ -1,17 +1,17 @@
-Analysis & Synthesis Status : Successful - Wed Jun 18 15:10:01 2025
+Analysis & Synthesis Status : Successful - Sat Jun 21 22:05:14 2025
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : Reloj
 Top-level Entity Name : reloj_soc
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A
-Total registers : 1936
-Total pins : 109
-Total virtual pins : 0
-Total block memory bits : 89,088
-Total DSP Blocks : 0
-Total HSSI RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
-Total PLLs : 1
-Total DLLs : 1
+Logic utilization (in ALMs) : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total block memory bits : N/A until Partition Merge
+Total DSP Blocks : N/A until Partition Merge
+Total HSSI RX PCSs : N/A until Partition Merge
+Total HSSI PMA RX Deserializers : N/A until Partition Merge
+Total HSSI TX PCSs : N/A until Partition Merge
+Total HSSI PMA TX Serializers : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+Total DLLs : N/A until Partition Merge

@@ -6,9 +6,10 @@
    <connections preferredWidth="223" />
    <irq preferredWidth="34" />
    <name preferredWidth="200" />
+   <description preferredWidth="240" />
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Project,Library/DSP,Library/Basic Functions/Simulation; Debug and Verification/Verification,Library/Processors and Peripherals,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions,Library/Basic Functions/Configuration and Programming,Library/Interface Protocols/PCI Express/QSYS Example Designs,Library/Qsys Interconnect,Library/Qsys Interconnect/Memory-Mapped,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Interface Protocols/PCI Express,Library/Interface Protocols,Library,Library/DSP/Video and Image Processing,Library/Processors and Peripherals/Peripherals,Library/Basic Functions/Bridges and Adaptors" />
+   expandedCategories="Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library,Library/Qsys Interconnect/Memory-Mapped,Library/Processors and Peripherals,Library/Interface Protocols/PCI Express,Project,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification,Library/Processors and Peripherals/Peripherals,Library/Qsys Interconnect,Library/Basic Functions/Simulation; Debug and Verification/Verification,Library/Interface Protocols,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions/Simulation; Debug and Verification/Simulation" />
  <window width="2182" height="1390" x="-11" y="-11" />
 </preferences>
