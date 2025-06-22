@@ -8,9 +8,9 @@ CFLAGS = -g -Wall -D$(ALT_DEVICE_FAMILY) -I$(HWLIBS_ROOT)/include/$(ALT_DEVICE_F
 LDFLAGS =  -g -Wall 
 CC = $(CROSS_COMPILE)gcc
 ARCH= arm
-#OBJFILES = read_test.c
+OBJFILES = read_test.c
 #OBJFILES = main.o
-OBJFILES = lib/HPS_FIFO.h hps_fifo.o
+#OBJFILES = lib/HPS_FIFO.h hps_fifo.o
 
 build: $(TARGET)
 $(TARGET): $(OBJFILES)
