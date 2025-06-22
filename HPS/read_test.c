@@ -5,17 +5,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define HW_REGS_BASE          0xFF200000
-#define HW_REGS_SPAN          0x1FFFFF
-#define FIFO_BASE_OFFSET      0x00010000  // Dirección que asignaste al FIFO
+#define HW_REGS_BASE          0xFF400000
+#define HW_REGS_SPAN          0x80000
+#define FIFO_BASE_OFFSET      0x00000000  // Dirección que asignaste al FIFO
 #define FIFO_ADDR             (HW_REGS_BASE + FIFO_BASE_OFFSET)
 
 /// lw_bus; FIFO status address
-#define FIFO_CSRREGS_BASE     0x20
+#define FIFO_CSRREGS_BASE     0x00000020
 #define FIFO_CSRREGS_SPAN     32
 
 // main bus; FIFO write address
-#define FIFO_BASE            0x00010000
+#define FIFO_BASE            0x00000000
 #define FIFO_SPAN            4
 
 #define FIFO_WRITE		     (*(FIFO_write_ptr))
@@ -70,7 +70,7 @@ int main() {
 	FIFO_read_status_ptr = (unsigned int *)(h2p_lw_virtual_base + FIFO_CSRREGS_SPAN);
 
 
-    	// FIFO write addr
+    // FIFO write addr
 	h2p_virtual_base = mmap( NULL, FIFO_SPAN, ( PROT_READ | PROT_WRITE ), MAP_SHARED, fd, FIFO_BASE);
 
 	if( h2p_virtual_base == MAP_FAILED ) {
@@ -82,7 +82,7 @@ int main() {
 	FIFO_write_ptr =(unsigned int *)(h2p_virtual_base);
 	FIFO_read_ptr = (unsigned int *)(h2p_virtual_base + FIFO_SPAN);
 
-    /*printf("=====================\n\r");
+    printf("=====================\n\r");
  	printf("fill levels before block write\n\r");
  	printf("write=%d read=%d\n\r", WRITE_FIFO_FILL_LEVEL, READ_FIFO_FILL_LEVEL);
 
@@ -94,10 +94,10 @@ int main() {
     }
 
     printf("fill levels before block read\n\r");
- 	printf("write=%d read=%d\n\r", WRITE_FIFO_FILL_LEVEL, READ_FIFO_FILL_LEVEL);*/
+ 	printf("write=%d read=%d\n\r", WRITE_FIFO_FILL_LEVEL, READ_FIFO_FILL_LEVEL);
 
     // Escribir datos al FIFO
-    for (int i = 0; i < 10; i++) {
+    /*for (int i = 0; i < 300; i++) {
         fifo_ptr[0] = 0xA0000000 | i;  // Escribe datos distintos
         printf("Dato escrito: 0x%08X\n", 0xA0000000 | i);
     }
@@ -105,7 +105,7 @@ int main() {
     uint32_t status = fifo_status_ptr[1];  // Suponiendo que el registro de estado está en offset 4 bytes
     printf("Antes del status\n");
     printf("Status: %d \n", status);
-    printf("Status fill: %d", ((*(fifo_status_ptr+1))& 1 ));
+    printf("Status fill: %d \n", ((*(fifo_status_ptr+1))& 1 ));*/
 
     munmap(h2p_lw_virtual_base, FIFO_CSRREGS_BASE);
     munmap(h2p_virtual_base, FIFO_SPAN);

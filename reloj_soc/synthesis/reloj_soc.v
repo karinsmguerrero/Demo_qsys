@@ -35,7 +35,7 @@ module reloj_soc (
 	wire  [31:0] niosii_data_master_readdata;                                                   // mm_interconnect_0:NIOSII_data_master_readdata -> NIOSII:d_readdata
 	wire         niosii_data_master_waitrequest;                                                // mm_interconnect_0:NIOSII_data_master_waitrequest -> NIOSII:d_waitrequest
 	wire         niosii_data_master_debugaccess;                                                // NIOSII:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:NIOSII_data_master_debugaccess
-	wire  [14:0] niosii_data_master_address;                                                    // NIOSII:d_address -> mm_interconnect_0:NIOSII_data_master_address
+	wire  [16:0] niosii_data_master_address;                                                    // NIOSII:d_address -> mm_interconnect_0:NIOSII_data_master_address
 	wire   [3:0] niosii_data_master_byteenable;                                                 // NIOSII:d_byteenable -> mm_interconnect_0:NIOSII_data_master_byteenable
 	wire         niosii_data_master_read;                                                       // NIOSII:d_read -> mm_interconnect_0:NIOSII_data_master_read
 	wire         niosii_data_master_write;                                                      // NIOSII:d_write -> mm_interconnect_0:NIOSII_data_master_write
@@ -136,13 +136,6 @@ module reloj_soc (
 	wire         hps_h2f_lw_axi_master_rvalid;                                                  // mm_interconnect_1:HPS_h2f_lw_axi_master_rvalid -> HPS:h2f_lw_RVALID
 	wire         mm_interconnect_1_fifo_in_write;                                               // mm_interconnect_1:FIFO_in_write -> FIFO:avalonmm_write_slave_write
 	wire  [31:0] mm_interconnect_1_fifo_in_writedata;                                           // mm_interconnect_1:FIFO_in_writedata -> FIFO:avalonmm_write_slave_writedata
-	wire         mm_interconnect_1_ram_s2_chipselect;                                           // mm_interconnect_1:RAM_s2_chipselect -> RAM:chipselect2
-	wire  [31:0] mm_interconnect_1_ram_s2_readdata;                                             // RAM:readdata2 -> mm_interconnect_1:RAM_s2_readdata
-	wire  [10:0] mm_interconnect_1_ram_s2_address;                                              // mm_interconnect_1:RAM_s2_address -> RAM:address2
-	wire   [3:0] mm_interconnect_1_ram_s2_byteenable;                                           // mm_interconnect_1:RAM_s2_byteenable -> RAM:byteenable2
-	wire         mm_interconnect_1_ram_s2_write;                                                // mm_interconnect_1:RAM_s2_write -> RAM:write2
-	wire  [31:0] mm_interconnect_1_ram_s2_writedata;                                            // mm_interconnect_1:RAM_s2_writedata -> RAM:writedata2
-	wire         mm_interconnect_1_ram_s2_clken;                                                // mm_interconnect_1:RAM_s2_clken -> RAM:clken2
 	wire         irq_mapper_receiver0_irq;                                                      // FIFO:wrclk_control_slave_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                                      // audio_0:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                                      // TIMER:irq -> irq_mapper:receiver2_irq
@@ -385,13 +378,13 @@ module reloj_soc (
 		.byteenable  (mm_interconnect_0_ram_s1_byteenable), //       .byteenable
 		.reset       (rst_controller_reset_out_reset),      // reset1.reset
 		.reset_req   (rst_controller_reset_out_reset_req),  //       .reset_req
-		.address2    (mm_interconnect_1_ram_s2_address),    //     s2.address
-		.chipselect2 (mm_interconnect_1_ram_s2_chipselect), //       .chipselect
-		.clken2      (mm_interconnect_1_ram_s2_clken),      //       .clken
-		.write2      (mm_interconnect_1_ram_s2_write),      //       .write
-		.readdata2   (mm_interconnect_1_ram_s2_readdata),   //       .readdata
-		.writedata2  (mm_interconnect_1_ram_s2_writedata),  //       .writedata
-		.byteenable2 (mm_interconnect_1_ram_s2_byteenable), //       .byteenable
+		.address2    (),                                    //     s2.address
+		.chipselect2 (),                                    //       .chipselect
+		.clken2      (),                                    //       .clken
+		.write2      (),                                    //       .write
+		.readdata2   (),                                    //       .readdata
+		.writedata2  (),                                    //       .writedata
+		.byteenable2 (),                                    //       .byteenable
 		.clk2        (clk_clk),                             //   clk2.clk
 		.reset2      (rst_controller_reset_out_reset),      // reset2.reset
 		.reset_req2  (rst_controller_reset_out_reset_req),  //       .reset_req
@@ -589,14 +582,7 @@ module reloj_soc (
 		.FIFO_reset_in_reset_bridge_in_reset_reset                         (rst_controller_reset_out_reset),      //                         FIFO_reset_in_reset_bridge_in_reset.reset
 		.HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),  // HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		.FIFO_in_write                                                     (mm_interconnect_1_fifo_in_write),     //                                                     FIFO_in.write
-		.FIFO_in_writedata                                                 (mm_interconnect_1_fifo_in_writedata), //                                                            .writedata
-		.RAM_s2_address                                                    (mm_interconnect_1_ram_s2_address),    //                                                      RAM_s2.address
-		.RAM_s2_write                                                      (mm_interconnect_1_ram_s2_write),      //                                                            .write
-		.RAM_s2_readdata                                                   (mm_interconnect_1_ram_s2_readdata),   //                                                            .readdata
-		.RAM_s2_writedata                                                  (mm_interconnect_1_ram_s2_writedata),  //                                                            .writedata
-		.RAM_s2_byteenable                                                 (mm_interconnect_1_ram_s2_byteenable), //                                                            .byteenable
-		.RAM_s2_chipselect                                                 (mm_interconnect_1_ram_s2_chipselect), //                                                            .chipselect
-		.RAM_s2_clken                                                      (mm_interconnect_1_ram_s2_clken)       //                                                            .clken
+		.FIFO_in_writedata                                                 (mm_interconnect_1_fifo_in_writedata)  //                                                            .writedata
 	);
 
 	reloj_soc_irq_mapper irq_mapper (
