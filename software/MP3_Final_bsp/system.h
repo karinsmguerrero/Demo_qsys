@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOSII' in SOPC Builder design 'reloj_soc'
  * SOPC Builder design path: ../../reloj_soc.sopcinfo
  *
- * Generated: Wed Jun 18 15:14:36 CST 2025
+ * Generated: Sun Jun 22 12:58:05 CST 2025
  */
 
 /*
@@ -68,7 +68,7 @@
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0xf
+#define ALT_CPU_DATA_ADDR_WIDTH 0x11
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
@@ -105,7 +105,7 @@
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0xf
+#define NIOS2_DATA_ADDR_WIDTH 0x11
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
@@ -183,7 +183,7 @@
 #define ALT_MODULE_CLASS_FIFO_out altera_avalon_fifo
 #define FIFO_OUT_AVALONMM_AVALONMM_DATA_WIDTH 32
 #define FIFO_OUT_AVALONMM_AVALONST_DATA_WIDTH 32
-#define FIFO_OUT_BASE 0x10
+#define FIFO_OUT_BASE 0x10000
 #define FIFO_OUT_BITS_PER_SYMBOL 16
 #define FIFO_OUT_CHANNEL_WIDTH 8
 #define FIFO_OUT_ERROR_WIDTH 8

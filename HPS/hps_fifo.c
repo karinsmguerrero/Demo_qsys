@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
-	fifo_ptr = (uint32_t *)((char *)virtual_base + FIFO_BASE);
+	fifo_in_ptr = (uint32_t *)((char *)virtual_base +  ((FIFO_IN_BASE) & (HW_REGS_MASK)));
 
 	static uint32_t sound_position = 0;
 	uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 			if (sound_position < song.samples)
 			{
 				int16_t value = song.data[sound_position];
-				fifo_ptr[0] = value;
+				fifo_in_ptr[0] = value;
 				printf("Value: %d \n", value);
 			}
 		}

@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2025.06.22.11:28:26</td>
+    <td class="l">2025.06.22.13:49:38</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -173,19 +173,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slavem">out&#160;</td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00010000</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff210000</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff210000</td>
     <td class="addr"><span style="color:#989898">0x</span>00010000</td>
     <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavem">in_csr&#160;</td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00000020</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff200020</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff200020</td>
+    <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -1327,17 +1327,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
-      <td class="neighbor" rowspan="6">
+      <td class="neighbor" rowspan="4">
        <a href="#module_NIOSII">NIOSII</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="14">FIFO</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;in_csr</td>
-     </tr>
-     <tr>
-      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="16">FIFO</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;out</td>
@@ -1352,13 +1346,25 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="2">
+      <td class="neighbor" rowspan="6">
        <a href="#module_HPS_bridges">HPS_bridges</a>
       </td>
       <td class="from">h2f_lw&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;in</td>
+     </tr>
+     <tr>
+      <td class="from">h2f_lw&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in_csr</td>
+     </tr>
+     <tr>
+      <td class="from">h2f_lw&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;out</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -20653,7 +20659,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_HPS_clk_0">HPS_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="141">HPS_bridges</td>
+      <td class="main" rowspan="145">HPS_bridges</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -21350,7 +21356,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="from">h2f_lw&#160;&#160;</td>
-      <td class="neighbor" rowspan="2">
+      <td class="neighbor" rowspan="6">
        <a href="#module_FIFO">FIFO</a>
       </td>
      </tr>
@@ -21358,6 +21364,26 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;in</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">h2f_lw&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in_csr</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">h2f_lw&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;out</td>
      </tr>
     </table>
    </div>
@@ -29022,7 +29048,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_CLK">CLK</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="39">NIOSII</td>
+      <td class="main" rowspan="37">NIOSII</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -29105,19 +29131,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
+      <td class="neighbor" rowspan="4">
        <a href="#module_FIFO">FIFO</a>
       </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;in_csr</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
      </tr>
      <tr>
       <td></td>
@@ -29133,32 +29149,6 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;in_irq</td>
-     </tr>
-     <tr style="height:6px">
-      <td></td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">data_master&#160;&#160;</td>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_RAM">RAM</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;s1</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">instruction_master&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;s1</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -29212,6 +29202,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="neighbor" rowspan="2">
        <a href="#module_REG_BUTTON">REG_BUTTON</a>
       </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_RAM">RAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
      </tr>
      <tr>
       <td></td>
@@ -29917,7 +29933,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x0' end='0x10' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /&gt;&lt;slave name='FIFO.in_csr' start='0x20' end='0x40' type='altera_avalon_fifo.in_csr' /&gt;&lt;slave name='RAM.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='audio_0.avalon_audio_slave' start='0x4000' end='0x4010' type='altera_up_avalon_audio.avalon_audio_slave' /&gt;&lt;slave name='REG_BUTTON.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /&gt;&lt;slave name='TIMER.s1' start='0x4020' end='0x4040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='REG_LEDS.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /&gt;&lt;slave name='UART.avalon_jtag_slave' start='0x4050' end='0x4058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='NIOSII.debug_mem_slave' start='0x5000' end='0x5800' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='FIFO.out' start='0x10000' end='0x10004' type='altera_avalon_fifo.out' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x0' end='0x10' type='altera_up_avalon_audio_and_video_config.avalon_av_config_slave' /&gt;&lt;slave name='RAM.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='audio_0.avalon_audio_slave' start='0x4000' end='0x4010' type='altera_up_avalon_audio.avalon_audio_slave' /&gt;&lt;slave name='REG_BUTTON.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /&gt;&lt;slave name='TIMER.s1' start='0x4020' end='0x4040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='REG_LEDS.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /&gt;&lt;slave name='UART.avalon_jtag_slave' start='0x4050' end='0x4058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='NIOSII.debug_mem_slave' start='0x5000' end='0x5800' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='FIFO.out' start='0x10000' end='0x10004' type='altera_avalon_fifo.out' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -31462,8 +31478,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.02 seconds</td>
-    <td class="r">rendering took 0.34 seconds</td>
+    <td class="l">generation took 0.04 seconds</td>
+    <td class="r">rendering took 1.19 seconds</td>
    </tr>
   </table>
  </body>

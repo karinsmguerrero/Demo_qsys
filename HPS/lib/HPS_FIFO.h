@@ -10,15 +10,16 @@
 #include <sys/mman.h>
 #include <string.h>
 
-#define HW_REGS_BASE 0x00000000
-#define HW_REGS_SPAN 0x00200000
+#define HW_REGS_BASE          	0xFF200000
+#define HW_REGS_SPAN			0x80000
+#define HW_REGS_MASK 			(HW_REGS_SPAN - 1)
 
-#define HPS_FPGA_LW_BASE 0xff200000
-#define HPS_FPGA_LW_SPAN 0x00001000
+#define HPS_FPGA_LW_BASE 		0xff200000
+#define HPS_FPGA_LW_SPAN 		0x00080000
 
-#define FIFO_BASE 0x10000
-#define FIFO_SPAN 4
-#define FIFO_END 0x10003
+#define FIFO_IN_BASE            	0x00000000
+#define FIFO_IN_SPAN            	4
+#define FIFO_END 				0x10003
 
 
 #define PRINT_ERROR(a, args...) printf("ERROR %s() %s Line %d: " a "\n", __FUNCTION__, __FILE__, __LINE__, ##args);
@@ -38,7 +39,7 @@ int16_t chunks[2][CHUNK_SIZE] = {{0}};
 bool chunk_swap = false;
 int16_t *to;
 bool quit = false;
-volatile uint32_t *fifo_ptr;
+volatile uint32_t *fifo_in_ptr;
 
 typedef struct {
 	char artist[MAX_METADATA_LEN];

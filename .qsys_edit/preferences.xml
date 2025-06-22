@@ -10,7 +10,6 @@
    <export preferredWidth="93" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Interface Protocols/Ethernet,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Basic Functions/Bridges and Adaptors/Clock,Library/Qsys Interconnect,Library/Basic Functions/Bridges and Adaptors,Library/University Program/Clock,Library,Library/University Program/Audio &amp; Video,Library/Interface Protocols/Ethernet/Reference Design Components,Library/Interface Protocols/Audio &amp; Video,Library/University Program/Audio &amp; Video/Video,Library/DSP,Project,Library/Basic Functions/Clocks; PLLs and Resets,Library/Basic Functions/Configuration and Programming,Library/University Program,Library/Basic Functions/On Chip Memory,Library/Basic Functions,Library/Interface Protocols,Library/Qsys Interconnect/Interrupt,Library/Basic Functions/Simulation; Debug and Verification,Library/Qsys Interconnect/Memory-Mapped Alpha,Library/DSP/Video and Image Processing,Library/Basic Functions/Bridges and Adaptors/Memory Mapped" />
+ <library expandedCategories="Project,Library" />
  <window width="2160" height="1368" x="0" y="0" />
 </preferences>
