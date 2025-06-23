@@ -8,59 +8,55 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	const char* audio_path = argv[1];
-
-	if (!LoadWav(audio_path, &song)) {
-		PRINT_ERROR("Failed to load %s", audio_path);
+	int res = init_system();
+	if(res){
+		printf("Could not initialize system \n");
 		return -1;
 	}
 
-	int fd;
-	void *virtual_base;
+	const char* audio_path = argv[1];
 
-	fd = open("/dev/mem", O_RDWR | O_SYNC);
-	if (fd == -1)
-	{
-		perror("Error opening /dev/mem");
-		return EXIT_FAILURE;
+	if (!loadWav(audio_path, &song)) {
+		PRINT_ERROR("Failed to load %s", audio_path);
+		return -1;
+	}
+	else {
+		printf("Sucessfully loaded song \n");
 	}
 
-	virtual_base = mmap(NULL, HW_REGS_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, HW_REGS_BASE);
-	if (virtual_base == MAP_FAILED)
-	{
-		perror("Error in mmap");
-		close(fd);
-		return EXIT_FAILURE;
-	}
-
-	fifo_in_ptr = (uint32_t *)((char *)virtual_base +  ((FIFO_IN_BASE) & (HW_REGS_MASK)));
-
-	static uint32_t sound_position = 0;
-	uint32_t chunk_quantity = song.samples / CHUNK_SIZE;
-
-	for (int i = 0; i < chunk_quantity; i++)
-	{
-		for (int j = 0; j < CHUNK_SIZE; ++j)
-		{
-			sound_position = j + i*CHUNK_SIZE; 
-
-			if (sound_position < song.samples)
-			{
-				int16_t value = song.data[sound_position];
-				fifo_in_ptr[0] = value;
-				printf("Value: %d \n", value);
-			}
-		}
-	}
-
-	munmap(virtual_base, HW_REGS_SPAN);
-	close(fd);
+	sendWavSamples();
 
 	return EXIT_SUCCESS;
 }
 
-// Loads ONLY 16-bit 1-channel PCM .WAV files. Allocates sound->data and fills with the pcm data. Fills sound->samples with the number of ELEMENTS in sound->data. EG for 2-bytes per sample single channel, sound->samples = HALF of the number of bytes in sound->data.
-bool LoadWav(const char *filename, sound_t *sound)
+int init_system(){
+
+	int fd = open("/dev/mem", O_RDWR | O_SYNC);
+    if (fd == -1)
+    {
+        perror("Error opening /dev/mem");
+        return EXIT_FAILURE;
+    }
+
+    h2f_lw_virtual_base = mmap(NULL, HW_REGS_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, HW_REGS_BASE);
+    if (h2f_lw_virtual_base == MAP_FAILED)
+    {
+        perror("Error in mmap");
+        close(fd);
+        return EXIT_FAILURE;
+    }
+
+    FIFO_SONG_status_ptr = (uint32_t *)((char *)h2f_lw_virtual_base + ((FIFO_SONG_CSRREGS_BASE) & (HW_REGS_MASK)));
+    FIFO_SONG_write_ptr = (uint32_t *)((char *)h2f_lw_virtual_base + ((FIFO_SONG_IN_BASE) & (HW_REGS_MASK)));
+    FIFO_SONG_read_ptr = (uint32_t *)((char *)h2f_lw_virtual_base + ((FIFO_SONG_IN_BASE) & (HW_REGS_MASK)));
+
+	printf("Sucessfully initialized system \n");
+	return 0;
+}
+// Loads ONLY 16-bit 1-channel PCM .WAV files. Allocates sound->data and fills with the pcm data. 
+//Fills sound->samples with the number of ELEMENTS in sound->data. 
+//EG for 2-bytes per sample single channel, sound->samples = HALF of the number of bytes in sound->data.
+bool loadWav(const char *filename, sound_t *sound)
 {
 	bool return_value = true;
 	FILE *file;
@@ -126,9 +122,9 @@ bool LoadWav(const char *filename, sound_t *sound)
 	}
 
 	fread(&sample_rate, 4, 1, file);
-	if (sample_rate != 44100)
+	if (sample_rate != 44100 && sample_rate != 48000)
 	{
-		PRINT_ERROR("%s Sample rate should be 44100, is %d", filename, sample_rate);
+		PRINT_ERROR("%s Sample rate should be 44100 or 48000, is %d", filename, sample_rate);
 		return_value = false;
 		goto CLOSE_FILE;
 	}
@@ -177,7 +173,13 @@ CLOSE_FILE:
 	return return_value;
 }
 
-void ReadWavMetadata(const char *filename, wav_metadata_t *metadata) {
+void sendWavSamples() {
+    for (uint32_t i = 0; i < song.samples; ++i) {
+        FIFO_WRITE_BLOCK(song.data[i]);
+    }
+}
+
+void readWavMetadata(const char *filename, wav_metadata_t *metadata) {
 	FILE *file = fopen(filename, "rb");
 	if (!file) {
 		PRINT_ERROR("Cannot open file for metadata: %s", filename);
@@ -236,9 +238,9 @@ void ReadWavMetadata(const char *filename, wav_metadata_t *metadata) {
 	fclose(file);
 }
 
-void SendWavMetadata(char* audio_path){
+void sendMetadata(char* audio_path){
 	wav_metadata_t metadata = {{0}};
-	ReadWavMetadata(audio_path, &metadata);
+	readWavMetadata(audio_path, &metadata);
 	printf("Metadata:\n");
 	printf("  Artist:  %s\n", metadata.artist);
 	printf("  Title:   %s\n", metadata.title);

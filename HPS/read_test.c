@@ -54,6 +54,13 @@ volatile unsigned int *FIFO_SONG_status_ptr = NULL;
 volatile unsigned int *FIFO_SONG_write_ptr = NULL;
 volatile unsigned int *FIFO_SONG_read_ptr = NULL;
 
+#define BUF_SIZE     256
+#define SAMPLE_RATE  48000
+#define FREQUENCY    333
+#define AMPLITUDE    35000
+unsigned int data_buffer[BUF_SIZE];
+volatile int buffer_index = 0;
+
 int main()
 {
     int fd;
@@ -96,29 +103,30 @@ int main()
      printf("fill levels before block read\n\r");
      printf("write=%d read=%d\n\r", WRITE_FIFO_FILL_LEVEL, READ_FIFO_FILL_LEVEL);*/
 
+    // onda sawtooth
+    int period = SAMPLE_RATE / FREQUENCY;
+    for (int i = 0; i < BUF_SIZE; i++) {
+        data_buffer[i] = (int)((i % period) * 2 * AMPLITUDE / period) - AMPLITUDE;
+    }
+
     // Escribir datos al FIFO
-    for (int i = 0; i < 300; i++)
+    for (int i = 0; i < BUF_SIZE; i++)
     {
         if(!FIFO_SONG_FULL)
-            FIFO_SONG_write_ptr[0] = 0xA0000000 | i; // Escribe datos distintos
+            FIFO_SONG_write_ptr[0] = data_buffer[i]; // Escribe datos distintos
+            
         else
             printf("Skipping write due to full fifo \n");
         // printf("Dato escrito: 0x%08X\n", 0xA0000000 | i);
     }
 
+    FIFO_SONG_write_ptr[0] = 0;
+
+
+
     printf("----------------------------------------------- \n");
 
-    /*int retdata[10];
-    int i=0;
-    int N = 9;
-        while (!READ_FIFO_EMPTY) {
-            retdata[i] = FIFO_READ;
-            if (i>N) i=N;
-            // print array from FIFO read port
-            printf("return=%d %d %d\n\r", retdata[i], WRITE_FIFO_FILL_LEVEL, READ_FIFO_FILL_LEVEL) ;
-            i++;
-        }*/
-    uint32_t status = fifo_status_ptr[1]; // Suponiendo que el registro de estado está en offset 4 bytes
+    /*uint32_t status = fifo_status_ptr[1]; // Suponiendo que el registro de estado está en offset 4 bytes
     printf("Antes del read\n");
     printf("Status: %d \n", (status & ALTERA_AVALON_FIFO_STATUS_ALL));
     printf("Status fill: %d \n", FIFO_SONG_FULL);
@@ -132,7 +140,7 @@ int main()
     printf("Last value read: 0x%08X \n", value);
     printf("Despues del read\n");
     printf("Status: %d \n", (status & ALTERA_AVALON_FIFO_STATUS_ALL));
-    printf("Status fill: %d \n", FIFO_SONG_FULL);
+    printf("Status fill: %d \n", FIFO_SONG_FULL);*/
 
     munmap(h2f_lw_virtual_base, HW_REGS_SPAN);
     close(fd);

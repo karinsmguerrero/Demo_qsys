@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="reloj_soc" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2025.06.22.13:52:55 -->
+ <!-- 2025.06.22.21:42:59 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1750621773</value>
+  <value>1750650094</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -51972,7 +51972,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="board">
    <type>java.lang.String</type>
-   <value>DE1-SoC</value>
+   <value>DE10-Standard</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -52686,7 +52686,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="audio_clk_freq">
    <type>double</type>
-   <value>12.288</value>
+   <value>0.768</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -52839,7 +52839,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>12288135</value>
+    <value>1535988</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -61640,5 +61640,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 646</reportVersion>
- <uniqueIdentifier>48F17F634C4A000001979930ECB6</uniqueIdentifier>
+ <uniqueIdentifier>48F17F634C4A000001979AE0B411</uniqueIdentifier>
 </EnsembleReport>

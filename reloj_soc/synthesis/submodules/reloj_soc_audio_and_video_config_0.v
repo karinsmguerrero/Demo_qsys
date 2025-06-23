@@ -415,7 +415,7 @@ defparam
 	AV_Config_Auto_Init.AW			= AIAW,
 	AV_Config_Auto_Init.DW			= DW;
 
-altera_up_av_config_auto_init_ob_de1_soc Auto_Init_OB_Devices_ROM (
+altera_up_av_config_auto_init_ob_de10_standard Auto_Init_OB_Devices_ROM (
 	// Inputs
 	.rom_address			(rom_address),
 

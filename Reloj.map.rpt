@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Reloj
-Sun Jun 22 14:06:55 2025
+Sun Jun 22 21:53:20 2025
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -133,9 +133,9 @@ Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 125. Parameter Settings for User Entity Instance: reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO
 126. Parameter Settings for User Entity Instance: reloj_soc_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
 127. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init
-128. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM
-129. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
-130. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
+128. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM
+129. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
+130. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
 131. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller
 132. Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator
 133. Parameter Settings for User Entity Instance: reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i
@@ -471,7 +471,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 22 14:06:55 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 22 21:53:20 2025       ;
 ; Quartus Prime Version           ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                   ; Reloj                                       ;
 ; Top-level Entity Name           ; reloj_soc                                   ;
@@ -645,7 +645,7 @@ https://fpgasoftware.intel.com/eula.
 ; reloj_soc/synthesis/submodules/altera_up_av_config_serial_bus_controller.v                      ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_serial_bus_controller.v                      ; reloj_soc   ;
 ; reloj_soc/synthesis/submodules/altera_up_slow_clock_generator.v                                 ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_slow_clock_generator.v                                 ; reloj_soc   ;
 ; reloj_soc/synthesis/submodules/altera_up_av_config_auto_init.v                                  ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init.v                                  ; reloj_soc   ;
-; reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v                       ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v                       ; reloj_soc   ;
+; reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v                 ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v                 ; reloj_soc   ;
 ; reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v                         ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v                         ; reloj_soc   ;
 ; reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v                       ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v                       ; reloj_soc   ;
 ; reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v                             ; yes             ; User Verilog HDL File                        ; C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v                             ; reloj_soc   ;
@@ -750,14 +750,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 1744          ;
+; Estimate of Logic utilization (ALMs needed) ; 1745          ;
 ;                                             ;               ;
 ; Combinational ALUT usage for logic          ; 2831          ;
 ;     -- 7 input functions                    ; 31            ;
-;     -- 6 input functions                    ; 402           ;
+;     -- 6 input functions                    ; 404           ;
 ;     -- 5 input functions                    ; 563           ;
 ;     -- 4 input functions                    ; 544           ;
-;     -- <=3 input functions                  ; 1291          ;
+;     -- <=3 input functions                  ; 1289          ;
 ;                                             ;               ;
 ; Dedicated logic registers                   ; 2381          ;
 ;                                             ;               ;
@@ -774,7 +774,7 @@ https://fpgasoftware.intel.com/eula.
 ; Total DLLs                                  ; 1             ;
 ; Maximum fan-out node                        ; clk_clk~input ;
 ; Maximum fan-out                             ; 2416          ;
-; Total fan-out                               ; 23473         ;
+; Total fan-out                               ; 23480         ;
 ; Average fan-out                             ; 3.97          ;
 +---------------------------------------------+---------------+
 
@@ -920,9 +920,9 @@ https://fpgasoftware.intel.com/eula.
 ;       |altera_up_clock_edge:DAC_Left_Right_Clock_Edges|                                                                                 ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_0:audio_0|altera_up_clock_edge:DAC_Left_Right_Clock_Edges                                                                                                                                                                                                                                                                         ; altera_up_clock_edge                              ; reloj_soc    ;
 ;    |reloj_soc_audio_and_video_config_0:audio_and_video_config_0|                                                                        ; 186 (54)            ; 159 (51)                  ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0                                                                                                                                                                                                                                                                                       ; reloj_soc_audio_and_video_config_0                ; reloj_soc    ;
 ;       |altera_up_av_config_auto_init:AV_Config_Auto_Init|                                                                               ; 13 (13)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init                                                                                                                                                                                                                                     ; altera_up_av_config_auto_init                     ; reloj_soc    ;
-;       |altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|                                                               ; 18 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM                                                                                                                                                                                                                     ; altera_up_av_config_auto_init_ob_de1_soc          ; reloj_soc    ;
-;          |altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM|                                                                 ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM                                                                                                                                                        ; altera_up_av_config_auto_init_ob_adv7180          ; reloj_soc    ;
-;          |altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM|                                                                   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM                                                                                                                                                          ; altera_up_av_config_auto_init_ob_audio            ; reloj_soc    ;
+;       |altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|                                                         ; 18 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM                                                                                                                                                                                                               ; altera_up_av_config_auto_init_ob_de10_standard    ; reloj_soc    ;
+;          |altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM|                                                                 ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM                                                                                                                                                  ; altera_up_av_config_auto_init_ob_adv7180          ; reloj_soc    ;
+;          |altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM|                                                                   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM                                                                                                                                                    ; altera_up_av_config_auto_init_ob_audio            ; reloj_soc    ;
 ;       |altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|                                                                 ; 101 (85)            ; 81 (67)                   ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller                                                                                                                                                                                                                       ; altera_up_av_config_serial_bus_controller         ; reloj_soc    ;
 ;          |altera_up_slow_clock_generator:Serial_Config_Clock_Generator|                                                                 ; 16 (16)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator                                                                                                                                                          ; altera_up_slow_clock_generator                    ; reloj_soc    ;
 ;    |reloj_soc_audio_pll_0:audio_pll_0|                                                                                                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |reloj_soc|reloj_soc_audio_pll_0:audio_pll_0                                                                                                                                                                                                                                                                                                                 ; reloj_soc_audio_pll_0                             ; reloj_soc    ;
@@ -2619,7 +2619,7 @@ Encoding Type:  One-Hot
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][0]                           ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[1]              ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[1]                      ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 68 LEs               ; 20 LEs                 ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[1]                      ;
 ; 28:1               ; 4 bits    ; 72 LEs        ; 52 LEs               ; 20 LEs                 ; Yes        ; |reloj_soc|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -4704,97 +4704,97 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM ;
-+-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name  ; Value     ; Type                                                                                                                                         ;
-+-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; AUD_LINE_IN_LC  ; 000011010 ; Unsigned Binary                                                                                                                              ;
-; AUD_LINE_IN_RC  ; 000011010 ; Unsigned Binary                                                                                                                              ;
-; AUD_LINE_OUT_LC ; 001111011 ; Unsigned Binary                                                                                                                              ;
-; AUD_LINE_OUT_RC ; 001111011 ; Unsigned Binary                                                                                                                              ;
-; AUD_ADC_PATH    ; 010010101 ; Unsigned Binary                                                                                                                              ;
-; AUD_DAC_PATH    ; 000000110 ; Unsigned Binary                                                                                                                              ;
-; AUD_POWER       ; 000000000 ; Unsigned Binary                                                                                                                              ;
-; AUD_DATA_FORMAT ; 001001001 ; Unsigned Binary                                                                                                                              ;
-; AUD_SAMPLE_CTRL ; 000000000 ; Unsigned Binary                                                                                                                              ;
-; AUD_SET_ACTIVE  ; 000000001 ; Unsigned Binary                                                                                                                              ;
-+-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM ;
++-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name  ; Value     ; Type                                                                                                                                               ;
++-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; AUD_LINE_IN_LC  ; 000011010 ; Unsigned Binary                                                                                                                                    ;
+; AUD_LINE_IN_RC  ; 000011010 ; Unsigned Binary                                                                                                                                    ;
+; AUD_LINE_OUT_LC ; 001111011 ; Unsigned Binary                                                                                                                                    ;
+; AUD_LINE_OUT_RC ; 001111011 ; Unsigned Binary                                                                                                                                    ;
+; AUD_ADC_PATH    ; 010010101 ; Unsigned Binary                                                                                                                                    ;
+; AUD_DAC_PATH    ; 000000110 ; Unsigned Binary                                                                                                                                    ;
+; AUD_POWER       ; 000000000 ; Unsigned Binary                                                                                                                                    ;
+; AUD_DATA_FORMAT ; 001001001 ; Unsigned Binary                                                                                                                                    ;
+; AUD_SAMPLE_CTRL ; 000000000 ; Unsigned Binary                                                                                                                                    ;
+; AUD_SET_ACTIVE  ; 000000001 ; Unsigned Binary                                                                                                                                    ;
++-----------------+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM ;
-+-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name  ; Value     ; Type                                                                                                                                                                                                    ;
-+-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; AUD_LINE_IN_LC  ; 000011010 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_LINE_IN_RC  ; 000011010 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_LINE_OUT_LC ; 001111011 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_LINE_OUT_RC ; 001111011 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_ADC_PATH    ; 010010101 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_DAC_PATH    ; 000000110 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_POWER       ; 000000000 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_DATA_FORMAT ; 001001001 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_SAMPLE_CTRL ; 000000000 ; Unsigned Binary                                                                                                                                                                                         ;
-; AUD_SET_ACTIVE  ; 000000001 ; Unsigned Binary                                                                                                                                                                                         ;
-+-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM ;
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name  ; Value     ; Type                                                                                                                                                                                                          ;
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; AUD_LINE_IN_LC  ; 000011010 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_LINE_IN_RC  ; 000011010 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_LINE_OUT_LC ; 001111011 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_LINE_OUT_RC ; 001111011 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_ADC_PATH    ; 010010101 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_DAC_PATH    ; 000000110 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_POWER       ; 000000000 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_DATA_FORMAT ; 001001001 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_SAMPLE_CTRL ; 000000000 ; Unsigned Binary                                                                                                                                                                                               ;
+; AUD_SET_ACTIVE  ; 000000001 ; Unsigned Binary                                                                                                                                                                                               ;
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM ;
-+-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name        ; Value            ; Type                                                                                                                                                                                         ;
-+-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; INPUT_CTRL            ; 0000000000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; VIDEO_SELECTION       ; 0000000111001000 ; Unsigned Binary                                                                                                                                                                              ;
-; OUTPUT_CTRL           ; 0000001100001100 ; Unsigned Binary                                                                                                                                                                              ;
-; EXT_OUTPUT_CTRL       ; 0000010001000101 ; Unsigned Binary                                                                                                                                                                              ;
-; AUTODETECT            ; 0000011101111111 ; Unsigned Binary                                                                                                                                                                              ;
-; BRIGHTNESS            ; 0000101000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; HUE                   ; 0000101100000000 ; Unsigned Binary                                                                                                                                                                              ;
-; DEFAULT_VALUE_Y       ; 0000110000110110 ; Unsigned Binary                                                                                                                                                                              ;
-; DEFAULT_VALUE_C       ; 0000110101111100 ; Unsigned Binary                                                                                                                                                                              ;
-; POWER_MGMT            ; 0000111100000000 ; Unsigned Binary                                                                                                                                                                              ;
-; ANALOG_CLAMP_CTRL     ; 0001010000010010 ; Unsigned Binary                                                                                                                                                                              ;
-; DIGITAL_CLAMP_CTRL    ; 0001010100000000 ; Unsigned Binary                                                                                                                                                                              ;
-; SHAPING_FILTER_CTRL_1 ; 0001011100000001 ; Unsigned Binary                                                                                                                                                                              ;
-; SHAPING_FILTER_CTRL_2 ; 0001100010010011 ; Unsigned Binary                                                                                                                                                                              ;
-; COMB_FILTER_CTRL_2    ; 0001100111110001 ; Unsigned Binary                                                                                                                                                                              ;
-; PIXEL_DELAY_CTRL      ; 0010011101011000 ; Unsigned Binary                                                                                                                                                                              ;
-; MISC_GAIN_CTRL        ; 0010101111100001 ; Unsigned Binary                                                                                                                                                                              ;
-; AGC_MODE_CTRL         ; 0010110010101110 ; Unsigned Binary                                                                                                                                                                              ;
-; CHROMA_GAIN_CTRL_1    ; 0010110111110100 ; Unsigned Binary                                                                                                                                                                              ;
-; CHROMA_GAIN_CTRL_2    ; 0010111000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; LUMA_GAIN_CTRL_1      ; 0010111111110000 ; Unsigned Binary                                                                                                                                                                              ;
-; LUMA_GAIN_CTRL_2      ; 0011000000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; VSYNC_FIELD_CTRL_1    ; 0011000100010010 ; Unsigned Binary                                                                                                                                                                              ;
-; VSYNC_FIELD_CTRL_2    ; 0011001001000001 ; Unsigned Binary                                                                                                                                                                              ;
-; VSYNC_FIELD_CTRL_3    ; 0011001110000100 ; Unsigned Binary                                                                                                                                                                              ;
-; HSYNC_FIELD_CTRL_1    ; 0011010000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; HSYNC_FIELD_CTRL_2    ; 0011010100000010 ; Unsigned Binary                                                                                                                                                                              ;
-; HSYNC_FIELD_CTRL_3    ; 0011011000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; POLARITY              ; 0011011100000001 ; Unsigned Binary                                                                                                                                                                              ;
-; NTSC_COMB_CTRL        ; 0011100010000000 ; Unsigned Binary                                                                                                                                                                              ;
-; PAL_COMB_CTRL         ; 0011100111000000 ; Unsigned Binary                                                                                                                                                                              ;
-; ADC_CTRL              ; 0011101000010000 ; Unsigned Binary                                                                                                                                                                              ;
-; MANUAL_WINDOW_CTRL    ; 0011110110110010 ; Unsigned Binary                                                                                                                                                                              ;
-; RESAMPLE_CONTROL      ; 0100000100000001 ; Unsigned Binary                                                                                                                                                                              ;
-; CRC                   ; 1011001000011100 ; Unsigned Binary                                                                                                                                                                              ;
-; ADC_SWITCH_1          ; 1100001100000000 ; Unsigned Binary                                                                                                                                                                              ;
-; ADC_SWITCH_2          ; 1100010000000000 ; Unsigned Binary                                                                                                                                                                              ;
-; LETTERBOX_CTRL_1      ; 1101110010101100 ; Unsigned Binary                                                                                                                                                                              ;
-; LETTERBOX_CTRL_2      ; 1101110101001100 ; Unsigned Binary                                                                                                                                                                              ;
-; NTSC_V_BIT_BEGIN      ; 1110010100100101 ; Unsigned Binary                                                                                                                                                                              ;
-; NTSC_V_BIT_END        ; 1110011000000100 ; Unsigned Binary                                                                                                                                                                              ;
-; NTSC_F_BIT_TOGGLE     ; 1110011101100011 ; Unsigned Binary                                                                                                                                                                              ;
-; PAL_V_BIT_BEGIN       ; 1110100001100101 ; Unsigned Binary                                                                                                                                                                              ;
-; PAL_V_BIT_END         ; 1110100100010100 ; Unsigned Binary                                                                                                                                                                              ;
-; PAL_F_BIT_TOGGLE      ; 1110101001100011 ; Unsigned Binary                                                                                                                                                                              ;
-; VBLANK_CTRL_1         ; 1110101101010101 ; Unsigned Binary                                                                                                                                                                              ;
-; VBLANK_CTRL_2         ; 1110110001010101 ; Unsigned Binary                                                                                                                                                                              ;
-+-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM ;
++-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name        ; Value            ; Type                                                                                                                                                                                               ;
++-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; INPUT_CTRL            ; 0000000000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; VIDEO_SELECTION       ; 0000000111001000 ; Unsigned Binary                                                                                                                                                                                    ;
+; OUTPUT_CTRL           ; 0000001100001100 ; Unsigned Binary                                                                                                                                                                                    ;
+; EXT_OUTPUT_CTRL       ; 0000010001000101 ; Unsigned Binary                                                                                                                                                                                    ;
+; AUTODETECT            ; 0000011101111111 ; Unsigned Binary                                                                                                                                                                                    ;
+; BRIGHTNESS            ; 0000101000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; HUE                   ; 0000101100000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; DEFAULT_VALUE_Y       ; 0000110000110110 ; Unsigned Binary                                                                                                                                                                                    ;
+; DEFAULT_VALUE_C       ; 0000110101111100 ; Unsigned Binary                                                                                                                                                                                    ;
+; POWER_MGMT            ; 0000111100000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; ANALOG_CLAMP_CTRL     ; 0001010000010010 ; Unsigned Binary                                                                                                                                                                                    ;
+; DIGITAL_CLAMP_CTRL    ; 0001010100000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; SHAPING_FILTER_CTRL_1 ; 0001011100000001 ; Unsigned Binary                                                                                                                                                                                    ;
+; SHAPING_FILTER_CTRL_2 ; 0001100010010011 ; Unsigned Binary                                                                                                                                                                                    ;
+; COMB_FILTER_CTRL_2    ; 0001100111110001 ; Unsigned Binary                                                                                                                                                                                    ;
+; PIXEL_DELAY_CTRL      ; 0010011101011000 ; Unsigned Binary                                                                                                                                                                                    ;
+; MISC_GAIN_CTRL        ; 0010101111100001 ; Unsigned Binary                                                                                                                                                                                    ;
+; AGC_MODE_CTRL         ; 0010110010101110 ; Unsigned Binary                                                                                                                                                                                    ;
+; CHROMA_GAIN_CTRL_1    ; 0010110111110100 ; Unsigned Binary                                                                                                                                                                                    ;
+; CHROMA_GAIN_CTRL_2    ; 0010111000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; LUMA_GAIN_CTRL_1      ; 0010111111110000 ; Unsigned Binary                                                                                                                                                                                    ;
+; LUMA_GAIN_CTRL_2      ; 0011000000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; VSYNC_FIELD_CTRL_1    ; 0011000100010010 ; Unsigned Binary                                                                                                                                                                                    ;
+; VSYNC_FIELD_CTRL_2    ; 0011001001000001 ; Unsigned Binary                                                                                                                                                                                    ;
+; VSYNC_FIELD_CTRL_3    ; 0011001110000100 ; Unsigned Binary                                                                                                                                                                                    ;
+; HSYNC_FIELD_CTRL_1    ; 0011010000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; HSYNC_FIELD_CTRL_2    ; 0011010100000010 ; Unsigned Binary                                                                                                                                                                                    ;
+; HSYNC_FIELD_CTRL_3    ; 0011011000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; POLARITY              ; 0011011100000001 ; Unsigned Binary                                                                                                                                                                                    ;
+; NTSC_COMB_CTRL        ; 0011100010000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; PAL_COMB_CTRL         ; 0011100111000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; ADC_CTRL              ; 0011101000010000 ; Unsigned Binary                                                                                                                                                                                    ;
+; MANUAL_WINDOW_CTRL    ; 0011110110110010 ; Unsigned Binary                                                                                                                                                                                    ;
+; RESAMPLE_CONTROL      ; 0100000100000001 ; Unsigned Binary                                                                                                                                                                                    ;
+; CRC                   ; 1011001000011100 ; Unsigned Binary                                                                                                                                                                                    ;
+; ADC_SWITCH_1          ; 1100001100000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; ADC_SWITCH_2          ; 1100010000000000 ; Unsigned Binary                                                                                                                                                                                    ;
+; LETTERBOX_CTRL_1      ; 1101110010101100 ; Unsigned Binary                                                                                                                                                                                    ;
+; LETTERBOX_CTRL_2      ; 1101110101001100 ; Unsigned Binary                                                                                                                                                                                    ;
+; NTSC_V_BIT_BEGIN      ; 1110010100100101 ; Unsigned Binary                                                                                                                                                                                    ;
+; NTSC_V_BIT_END        ; 1110011000000100 ; Unsigned Binary                                                                                                                                                                                    ;
+; NTSC_F_BIT_TOGGLE     ; 1110011101100011 ; Unsigned Binary                                                                                                                                                                                    ;
+; PAL_V_BIT_BEGIN       ; 1110100001100101 ; Unsigned Binary                                                                                                                                                                                    ;
+; PAL_V_BIT_END         ; 1110100100010100 ; Unsigned Binary                                                                                                                                                                                    ;
+; PAL_F_BIT_TOGGLE      ; 1110101001100011 ; Unsigned Binary                                                                                                                                                                                    ;
+; VBLANK_CTRL_1         ; 1110101101010101 ; Unsigned Binary                                                                                                                                                                                    ;
+; VBLANK_CTRL_2         ; 1110110001010101 ; Unsigned Binary                                                                                                                                                                                    ;
++-----------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4825,7 +4825,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------------------+------------------------+----------------------------------------------------------------------------------+
 ; Parameter Name                       ; Value                  ; Type                                                                             ;
 +--------------------------------------+------------------------+----------------------------------------------------------------------------------+
-; reference_clock_frequency            ; 50.0 MHz               ; String                                                                           ;
+; reference_clock_frequency            ; 100.0 MHz              ; String                                                                           ;
 ; fractional_vco_multiplier            ; false                  ; String                                                                           ;
 ; pll_type                             ; General                ; String                                                                           ;
 ; pll_subtype                          ; General                ; String                                                                           ;
@@ -4834,7 +4834,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; deserialization_factor               ; 4                      ; Signed Integer                                                                   ;
 ; data_rate                            ; 0                      ; Signed Integer                                                                   ;
 ; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                                                   ;
-; output_clock_frequency0              ; 12.288135 MHz          ; String                                                                           ;
+; output_clock_frequency0              ; 1.535988 MHz           ; String                                                                           ;
 ; phase_shift0                         ; 0 ps                   ; String                                                                           ;
 ; duty_cycle0                          ; 50                     ; Signed Integer                                                                   ;
 ; output_clock_frequency1              ; 0 MHz                  ; String                                                                           ;
@@ -11050,11 +11050,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 112                                      ;
 ;         0 data inputs ; 1                                        ;
 ;         1 data inputs ; 4                                        ;
-;         2 data inputs ; 26                                       ;
-;         3 data inputs ; 19                                       ;
+;         2 data inputs ; 25                                       ;
+;         3 data inputs ; 18                                       ;
 ;         4 data inputs ; 15                                       ;
 ;         5 data inputs ; 25                                       ;
-;         6 data inputs ; 22                                       ;
+;         6 data inputs ; 24                                       ;
 ; boundary_port         ; 141                                      ;
 ;                       ;                                          ;
 ; Max LUT depth         ; 3.00                                     ;
@@ -11067,9 +11067,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------+--------------+
 ; Partition Name                     ; Elapsed Time ;
 +------------------------------------+--------------+
-; Top                                ; 00:00:38     ;
-; sld_hub:auto_hub                   ; 00:00:03     ;
-; reloj_soc_HPS_hps_io_border:border ; 00:00:03     ;
+; Top                                ; 00:00:09     ;
+; sld_hub:auto_hub                   ; 00:00:00     ;
+; reloj_soc_HPS_hps_io_border:border ; 00:00:00     ;
 +------------------------------------+--------------+
 
 
@@ -11079,7 +11079,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Sun Jun 22 13:58:09 2025
+    Info: Processing started: Sun Jun 22 21:49:11 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Reloj -c Reloj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -11615,9 +11615,9 @@ Info (12128): Elaborating entity "cntr_i2b" for hierarchy "reloj_soc_audio_0:aud
 Info (12128): Elaborating entity "reloj_soc_audio_and_video_config_0" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/reloj_soc.v Line: 464
 Info (12128): Elaborating entity "altera_up_av_config_auto_init" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v Line: 412
 Warning (10230): Verilog HDL assignment warning at altera_up_av_config_auto_init.v(137): truncated value with size 32 to match size of target (6) File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init.v Line: 137
-Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_de1_soc" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v Line: 427
-Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_audio" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v Line: 116
-Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_adv7180" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v Line: 137
+Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_de10_standard" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v Line: 427
+Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_audio" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v Line: 116
+Info (12128): Elaborating entity "altera_up_av_config_auto_init_ob_adv7180" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v Line: 137
 Info (12128): Elaborating entity "altera_up_av_config_serial_bus_controller" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_and_video_config_0.v Line: 464
 Warning (10230): Verilog HDL assignment warning at altera_up_av_config_serial_bus_controller.v(241): truncated value with size 32 to match size of target (5) File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_serial_bus_controller.v Line: 241
 Info (12128): Elaborating entity "altera_up_slow_clock_generator" for hierarchy "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_serial_bus_controller.v Line: 294
@@ -11629,10 +11629,10 @@ Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup
 Info (12130): Elaborated megafunction instantiation "reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_pll_0_audio_pll.v Line: 85
 Info (12133): Instantiated megafunction "reloj_soc_audio_pll_0:audio_pll_0|reloj_soc_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i" with the following parameter: File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/reloj_soc_audio_pll_0_audio_pll.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
-    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "reference_clock_frequency" = "100.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
     Info (12134): Parameter "number_of_clocks" = "1"
-    Info (12134): Parameter "output_clock_frequency0" = "12.288135 MHz"
+    Info (12134): Parameter "output_clock_frequency0" = "1.535988 MHz"
     Info (12134): Parameter "phase_shift0" = "0 ps"
     Info (12134): Parameter "duty_cycle0" = "50"
     Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
@@ -11759,7 +11759,7 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "alte
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_reset_controller.v Line: 220
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera_reset_controller:rst_controller_001" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/reloj_soc.v Line: 717
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.06.22.14:00:08 Progress: Loading sld95350957/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.06.22.21:50:05 Progress: Loading sld95350957/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -11783,7 +11783,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld95350957/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/TEC/2025/Quartus/Reloj/db/ip/sld95350957/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM|Ram0" is uninferred due to inappropriate RAM size File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v Line: 142
+    Info (276004): RAM logic "reloj_soc_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de10_standard:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM|Ram0" is uninferred due to inappropriate RAM size File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v Line: 142
 Warning (12241): 37 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "memory_mem_dq[0]~synth" File: C:/TEC/2025/Quartus/Reloj/reloj_soc/synthesis/reloj_soc.v Line: 26
@@ -11812,10 +11812,10 @@ Info (21057): Implemented 4731 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21066): Implemented 1 delay-locked loops
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 5134 megabytes
-    Info: Processing ended: Sun Jun 22 14:06:55 2025
-    Info: Elapsed time: 00:08:46
-    Info: Total CPU time (on all processors): 00:09:30
+    Info: Peak virtual memory: 5162 megabytes
+    Info: Processing ended: Sun Jun 22 21:53:20 2025
+    Info: Elapsed time: 00:04:09
+    Info: Total CPU time (on all processors): 00:04:12
 
 
 +------------------------------------------+

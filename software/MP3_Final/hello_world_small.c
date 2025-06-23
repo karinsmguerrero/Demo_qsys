@@ -11,8 +11,6 @@
 #define SAMPLE_RATE  44100
 #define FREQUENCY    333
 #define AMPLITUDE    35000
-//                                                                        ________________________
-//_______________________________________________________________________/Poner direccion correcta
 #define MUSIC_FIFO_BASE 0x00010000
 
 unsigned int data_buffer[BUF_SIZE];
@@ -59,21 +57,21 @@ void timer_isr_handler(void* context) {
 void mp3_state(int state){
 	if(state == 2){
 		change_music = 1;
-		printf("Canci�n Anterior\n");
+		printf("Canción Anterior\n");
 	}else{
 		change_music = 0;
-		printf("Canci�n Siguiente\n");
+		printf("Canción Siguiente\n");
 	}
 }
 
 void repro(){
 	if(music_playing == 1 ){
 		music_playing = 0;
-		printf("m�sica en pausa\n");
+		printf("música en pausa\n");
 
 	}else{
 		music_playing = 1;
-		printf("reproduciendo m�sica\n");
+		printf("reproduciendo música\n");
 	}
 
 
@@ -119,7 +117,7 @@ int main() {
                         mp3_state(0);  // Bot�n 0: Siguiente
                         break;
                     case 1:
-                        printf("Bot�n pausa/reproducir\n");
+                        printf("Boton pausa/reproducir\n");
                         repro();       // Bot�n 1: Pausar/Reproducir
                         break;
                     case 2:
