@@ -24,7 +24,9 @@ int main(int argc, char **argv)
 		printf("Sucessfully loaded song \n");
 	}
 
+	sendMetadata();
 	sendWavSamples();
+
 
 	return EXIT_SUCCESS;
 }
@@ -241,9 +243,17 @@ void readWavMetadata(const char *filename, wav_metadata_t *metadata) {
 void sendMetadata(char* audio_path){
 	wav_metadata_t metadata = {{0}};
 	readWavMetadata(audio_path, &metadata);
-	printf("Metadata:\n");
-	printf("  Artist:  %s\n", metadata.artist);
-	printf("  Title:   %s\n", metadata.title);
-	printf("  Album:   %s\n", metadata.album);
-	printf("  Comment: %s\n", metadata.comment);
+
+	char data[32] ="";
+	data = "Artist: ";
+	strcat(data, metadata.artist);
+	FIFO_WRITE_BLOCK(data);
+
+	data = "Title: ";
+    strcat(data, metadata.title);
+	FIFO_WRITE_BLOCK(data);
+
+	data = "Album: ";
+    strcat(data, metadata.album);
+	FIFO_WRITE_BLOCK(data);
 }

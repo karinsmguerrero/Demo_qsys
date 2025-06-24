@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Reloj
-Sun Jun 22 21:56:35 2025
+Mon Jun 23 20:03:39 2025
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Jun 22 21:56:35 2025 ;
+; EDA Netlist Writer Status ; Successful - Mon Jun 23 20:03:39 2025 ;
 ; Revision Name             ; Reloj                                 ;
 ; Top-level Entity Name     ; reloj_soc                             ;
 ; Family                    ; Cyclone V                             ;
@@ -82,15 +82,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Sun Jun 22 21:56:27 2025
+    Info: Processing started: Mon Jun 23 20:03:31 2025
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Reloj -c Reloj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
 Info (204019): Generated file Reloj.svo in folder "C:/TEC/2025/Quartus/Reloj/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4949 megabytes
-    Info: Processing ended: Sun Jun 22 21:56:35 2025
+    Info: Peak virtual memory: 4945 megabytes
+    Info: Processing ended: Mon Jun 23 20:03:39 2025
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

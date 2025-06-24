@@ -135,14 +135,14 @@ module reloj_soc_mm_interconnect_0_router_002
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h4 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h40 - 64'h20); 
-    localparam PAD2 = log2ceil(64'h10004 - 64'h10000); 
+    localparam PAD1 = log2ceil(64'h14 - 64'h10); 
+    localparam PAD2 = log2ceil(64'h40 - 64'h20); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h10004;
+    localparam ADDR_RANGE = 64'h40;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -198,21 +198,21 @@ module reloj_soc_mm_interconnect_0_router_002
         // --------------------------------------------------
 
     // ( 0x0 .. 0x4 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 17'h0  && write_transaction  ) begin
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 6'h0  && write_transaction  ) begin
             src_channel = 11'b010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
-    // ( 0x20 .. 0x40 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 17'h20   ) begin
-            src_channel = 11'b100;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
-    end
-
-    // ( 0x10000 .. 0x10004 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 17'h10000  && read_transaction  ) begin
+    // ( 0x10 .. 0x14 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 6'h10  && read_transaction  ) begin
             src_channel = 11'b001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
+    end
+
+    // ( 0x20 .. 0x40 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 6'h20   ) begin
+            src_channel = 11'b100;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 
 end

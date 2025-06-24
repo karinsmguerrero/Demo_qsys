@@ -16,10 +16,10 @@ module  reloj_soc_audio_pll_0_audio_pll(
 
 	altera_pll #(
 		.fractional_vco_multiplier("false"),
-		.reference_clock_frequency("100.0 MHz"),
+		.reference_clock_frequency("50.0 MHz"),
 		.operation_mode("direct"),
 		.number_of_clocks(1),
-		.output_clock_frequency0("1.535988 MHz"),
+		.output_clock_frequency0("12.288135 MHz"),
 		.phase_shift0("0 ps"),
 		.duty_cycle0(50),
 		.output_clock_frequency1("0 MHz"),

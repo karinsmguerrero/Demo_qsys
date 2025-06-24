@@ -119,8 +119,8 @@ VCCA_FPLL                    : AA8       : power  :                   : 2.5V    
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 2.5V    : 3A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-buttons_export[26]           : AA12      : input  : 2.5 V             :         : 3A        : N              
-buttons_export[11]           : AA13      : input  : 2.5 V             :         : 3B        : N              
+leds_export[23]              : AA12      : output : 2.5 V             :         : 3A        : N              
+leds_export[12]              : AA13      : output : 2.5 V             :         : 3B        : N              
 buttons_export[2]            : AA14      : input  : 2.5 V             :         : 3B        : Y              
 reset_reset_n                : AA15      : input  : 2.5 V             :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4A        :                
@@ -149,10 +149,10 @@ nCSO, DATA4                  : AB8       :        :                   :         
 altera_reserved_tdo          : AB9       : output : 2.5 V             :         : 3A        : N              
 VCCPGM                       : AB10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCC_AUX                      : AB11      : power  :                   : 2.5V    :           :                
-buttons_export[7]            : AB12      : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 3A        :                
 leds_export[20]              : AB13      : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AB14      : power  :                   : 2.5V    : 3B        :                
-buttons_export[22]           : AB15      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[17]           : AB15      : input  : 2.5 V             :         : 3B        : N              
 VCC_AUX                      : AB16      : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4A        :                
 VCCPD3B4A                    : AB18      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -176,12 +176,12 @@ altera_reserved_tck          : AC5       : input  : 2.5 V             :         
 GND                          : AC6       : gnd    :                   :         :           :                
 AS_DATA3, DATA3              : AC7       :        :                   :         : 3A        :                
 GND                          : AC8       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC9       :        :                   :         : 3A        :                
+leds_export[0]               : AC9       : output : 2.5 V             :         : 3A        : N              
 VCCPD3A                      : AC10      : power  :                   : 2.5V    : 3A        :                
 VCCIO3A                      : AC11      : power  :                   : 2.5V    : 3A        :                
-leds_export[13]              : AC12      : output : 2.5 V             :         : 3A        : N              
+leds_export[19]              : AC12      : output : 2.5 V             :         : 3A        : N              
 VCCPD3B4A                    : AC13      : power  :                   : 2.5V    : 3B, 4A    :                
-buttons_export[15]           : AC14      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[29]           : AC14      : input  : 2.5 V             :         : 3B        : N              
 VCCPD3B4A                    : AC15      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -204,14 +204,14 @@ GXB_NC                       : AD3       :        :                   :         
 GXB_NC                       : AD4       :        :                   :         : B0L       :                
 GND                          : AD5       : gnd    :                   :         :           :                
 VREFB3AN0                    : AD6       : power  :                   :         : 3A        :                
-leds_export[26]              : AD7       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD7       :        :                   :         : 3A        :                
 VCCIO3A                      : AD8       : power  :                   : 2.5V    : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD9       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD10      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD11      :        :                   :         : 3A        :                
-leds_export[6]               : AD12      : output : 2.5 V             :         : 3A        : N              
+leds_export[31]              : AD12      : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AD13      : power  :                   : 2.5V    : 3B        :                
-leds_export[11]              : AD14      : output : 2.5 V             :         : 3B        : N              
+buttons_export[27]           : AD14      : input  : 2.5 V             :         : 3B        : N              
 DNU                          : AD15      :        :                   :         :           :                
 VCCPD3B4A                    : AD16      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :         : 4A        :                
@@ -240,11 +240,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE9       :        :                   :      
 GND                          : AE10      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE11      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :         : 3A        :                
-leds_export[8]               : AE13      : output : 2.5 V             :         : 3B        : N              
-leds_export[12]              : AE14      : output : 2.5 V             :         : 3B        : N              
+leds_export[13]              : AE13      : output : 2.5 V             :         : 3B        : N              
+leds_export[17]              : AE14      : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AE15      : power  :                   : 2.5V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4A        :                
+buttons_export[28]           : AE16      : input  : 2.5 V             :         : 4A        : N              
+buttons_export[5]            : AE17      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE19      :        :                   :         : 4A        :                
 GND                          : AE20      : gnd    :                   :         :           :                
@@ -254,29 +254,29 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4A        :                
 VCCIO4A                      : AE25      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5A        :                
-buttons_export[3]            : AE27      : input  : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE29      :        :                   :         : 5B        :                
 VCCIO5B                      : AE30      : power  :                   : 2.5V    : 5B        :                
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-buttons_export[12]           : AF4       : input  : 2.5 V             :         : 3A        : N              
-buttons_export[23]           : AF5       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3A        :                
 VCCIO3A                      : AF7       : power  :                   : 2.5V    : 3A        :                
-leds_export[31]              : AF8       : output : 2.5 V             :         : 3A        : N              
-leds_export[1]               : AF9       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3A        :                
-buttons_export[9]            : AF11      : input  : 2.5 V             :         : 3B        : N              
+leds_export[10]              : AF11      : output : 2.5 V             :         : 3B        : N              
 GND                          : AF12      : gnd    :                   :         :           :                
-leds_export[24]              : AF13      : output : 2.5 V             :         : 3B        : N              
+leds_export[9]               : AF13      : output : 2.5 V             :         : 3B        : N              
 clk_clk                      : AF14      : input  : 2.5 V             :         : 3B        : Y              
-buttons_export[16]           : AF15      : input  : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4A        :                
+buttons_export[9]            : AF15      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[4]            : AF16      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AF17      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
-leds_export[28]              : AF19      : output : 2.5 V             :         : 4A        : N              
+buttons_export[30]           : AF18      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4A        :                
 VCCIO4A                      : AF22      : power  :                   : 2.5V    : 4A        :                
@@ -289,23 +289,23 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF28      :        :                   :      
 audio_0_external_interface_DACDAT : AF29      : output : 2.5 V             :         : 5A        : Y              
 audio_0_external_interface_BCLK : AF30      : input  : 2.5 V             :         : 5A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG1       :        :                   :         : 3A        :                
-leds_export[23]              : AG2       : output : 2.5 V             :         : 3A        : N              
+leds_export[22]              : AG2       : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3A        :                
 VCCIO3A                      : AG4       : power  :                   : 2.5V    : 3A        :                
-leds_export[18]              : AG5       : output : 2.5 V             :         : 3A        : N              
-buttons_export[28]           : AG6       : input  : 2.5 V             :         : 3A        : N              
-leds_export[29]              : AG7       : output : 2.5 V             :         : 3A        : N              
-buttons_export[10]           : AG8       : input  : 2.5 V             :         : 3A        : N              
+leds_export[3]               : AG5       : output : 2.5 V             :         : 3A        : N              
+leds_export[25]              : AG6       : output : 2.5 V             :         : 3A        : N              
+leds_export[27]              : AG7       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
-leds_export[27]              : AG10      : output : 2.5 V             :         : 3B        : N              
-leds_export[4]               : AG11      : output : 2.5 V             :         : 3B        : N              
-leds_export[15]              : AG12      : output : 2.5 V             :         : 3B        : N              
-leds_export[7]               : AG13      : output : 2.5 V             :         : 3B        : N              
+buttons_export[31]           : AG10      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 3B        :                
+leds_export[14]              : AG12      : output : 2.5 V             :         : 3B        : N              
+leds_export[15]              : AG13      : output : 2.5 V             :         : 3B        : N              
 GND                          : AG14      : gnd    :                   :         :           :                
-buttons_export[31]           : AG15      : input  : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG16      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4A        :                
+buttons_export[18]           : AG15      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[23]           : AG16      : input  : 2.5 V             :         : 4A        : N              
+leds_export[24]              : AG17      : output : 2.5 V             :         : 4A        : N              
+buttons_export[24]           : AG18      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AG19      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4A        :                
@@ -319,20 +319,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG28      :        :                   :      
 VCCIO5A                      : AG29      : power  :                   : 2.5V    : 5A        :                
 audio_0_external_interface_DACLRCK : AG30      : input  : 2.5 V             :         : 5A        : Y              
 GND                          : AH1       : gnd    :                   :         :           :                
-buttons_export[27]           : AH2       : input  : 2.5 V             :         : 3A        : N              
-leds_export[5]               : AH3       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3A        :                
+leds_export[1]               : AH3       : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 3A        :                
-buttons_export[14]           : AH5       : input  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH5       :        :                   :         : 3A        :                
 GND                          : AH6       : gnd    :                   :         :           :                
-buttons_export[5]            : AH7       : input  : 2.5 V             :         : 3B        : N              
-buttons_export[6]            : AH8       : input  : 2.5 V             :         : 3B        : N              
-leds_export[30]              : AH9       : output : 2.5 V             :         : 3B        : N              
-buttons_export[18]           : AH10      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[19]           : AH7       : input  : 2.5 V             :         : 3B        : N              
+buttons_export[26]           : AH8       : input  : 2.5 V             :         : 3B        : N              
+buttons_export[25]           : AH9       : input  : 2.5 V             :         : 3B        : N              
+buttons_export[10]           : AH10      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AH11      : gnd    :                   :         :           :                
-buttons_export[30]           : AH12      : input  : 2.5 V             :         : 3B        : N              
-leds_export[0]               : AH13      : output : 2.5 V             :         : 3B        : N              
-buttons_export[25]           : AH14      : input  : 2.5 V             :         : 3B        : N              
-buttons_export[29]           : AH15      : input  : 2.5 V             :         : 3B        : N              
+leds_export[5]               : AH12      : output : 2.5 V             :         : 3B        : N              
+buttons_export[14]           : AH13      : input  : 2.5 V             :         : 3B        : N              
+leds_export[16]              : AH14      : output : 2.5 V             :         : 3B        : N              
+buttons_export[22]           : AH15      : input  : 2.5 V             :         : 3B        : N              
 VCCIO4A                      : AH16      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4A        :                
@@ -348,20 +348,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH28      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH29      :        :                   :         : 5A        :                
 audio_pll_0_audio_clk_clk    : AH30      : output : 2.5 V             :         : 5A        : Y              
-leds_export[10]              : AJ1       : output : 2.5 V             :         : 3A        : N              
-leds_export[25]              : AJ2       : output : 2.5 V             :         : 3A        : N              
+leds_export[11]              : AJ1       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ2       :        :                   :         : 3A        :                
 GND                          : AJ3       : gnd    :                   :         :           :                
 buttons_export[0]            : AJ4       : input  : 2.5 V             :         : 3B        : Y              
-leds_export[16]              : AJ5       : output : 2.5 V             :         : 3B        : N              
-leds_export[21]              : AJ6       : output : 2.5 V             :         : 3B        : N              
-leds_export[14]              : AJ7       : output : 2.5 V             :         : 3B        : N              
+leds_export[7]               : AJ5       : output : 2.5 V             :         : 3B        : N              
+leds_export[6]               : AJ6       : output : 2.5 V             :         : 3B        : N              
+leds_export[8]               : AJ7       : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AJ8       : power  :                   : 2.5V    : 3B        :                
-leds_export[9]               : AJ9       : output : 2.5 V             :         : 3B        : N              
-leds_export[2]               : AJ10      : output : 2.5 V             :         : 3B        : N              
-buttons_export[17]           : AJ11      : input  : 2.5 V             :         : 3B        : N              
-buttons_export[21]           : AJ12      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[12]           : AJ9       : input  : 2.5 V             :         : 3B        : N              
+leds_export[4]               : AJ10      : output : 2.5 V             :         : 3B        : N              
+buttons_export[21]           : AJ11      : input  : 2.5 V             :         : 3B        : N              
+buttons_export[15]           : AJ12      : input  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AJ13      : power  :                   : 2.5V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ14      :        :                   :         : 3B        :                
+buttons_export[6]            : AJ14      : input  : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : AJ15      : power  :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ16      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ17      :        :                   :         : 4A        :                
@@ -378,24 +378,24 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :      
 GND                          : AJ28      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ29      :        :                   :         : 5A        :                
 GND                          : AJ30      : gnd    :                   :         :           :                
-leds_export[19]              : AK2       : output : 2.5 V             :         : 3B        : N              
-leds_export[22]              : AK3       : output : 2.5 V             :         : 3B        : N              
+buttons_export[13]           : AK2       : input  : 2.5 V             :         : 3B        : N              
+leds_export[30]              : AK3       : output : 2.5 V             :         : 3B        : N              
 buttons_export[1]            : AK4       : input  : 2.5 V             :         : 3B        : Y              
 GND                          : AK5       : gnd    :                   :         :           :                
-buttons_export[13]           : AK6       : input  : 2.5 V             :         : 3B        : N              
-buttons_export[20]           : AK7       : input  : 2.5 V             :         : 3B        : N              
-buttons_export[24]           : AK8       : input  : 2.5 V             :         : 3B        : N              
-leds_export[17]              : AK9       : output : 2.5 V             :         : 3B        : N              
+leds_export[2]               : AK6       : output : 2.5 V             :         : 3B        : N              
+buttons_export[16]           : AK7       : input  : 2.5 V             :         : 3B        : N              
+buttons_export[11]           : AK8       : input  : 2.5 V             :         : 3B        : N              
+buttons_export[3]            : AK9       : input  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AK10      : power  :                   : 2.5V    : 3B        :                
-buttons_export[4]            : AK11      : input  : 2.5 V             :         : 3B        : N              
-buttons_export[19]           : AK12      : input  : 2.5 V             :         : 3B        : N              
-buttons_export[8]            : AK13      : input  : 2.5 V             :         : 3B        : N              
-leds_export[3]               : AK14      : output : 2.5 V             :         : 3B        : N              
+leds_export[29]              : AK11      : output : 2.5 V             :         : 3B        : N              
+buttons_export[8]            : AK12      : input  : 2.5 V             :         : 3B        : N              
+leds_export[21]              : AK13      : output : 2.5 V             :         : 3B        : N              
+buttons_export[7]            : AK14      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AK15      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK16      :        :                   :         : 4A        :                
 VREFB4AN0                    : AK17      : power  :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                
+leds_export[26]              : AK19      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AK20      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK21      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4A        :                
@@ -477,7 +477,7 @@ VCCIO8A                      : D8        : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 8A        :                
+leds_export[28]              : D12       : output : 2.5 V             :         : 8A        : N              
 GND                          : D13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7D        :                
@@ -930,7 +930,7 @@ GND                          : W11       : gnd    :                   :         
 VCC                          : W12       : power  :                   : 1.1V    :           :                
 GND                          : W13       : gnd    :                   :         :           :                
 VCC                          : W14       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 3B        :                
+leds_export[18]              : W15       : output : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4A        :                
 GND                          : W18       : gnd    :                   :         :           :                
@@ -961,7 +961,7 @@ GND                          : Y12       : gnd    :                   :         
 VCC                          : Y13       : power  :                   : 1.1V    :           :                
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 3B        :                
+buttons_export[20]           : Y16       : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y19       :        :                   :         : 4A        :                

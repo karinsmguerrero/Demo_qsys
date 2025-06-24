@@ -35,7 +35,7 @@ module reloj_soc (
 	wire  [31:0] niosii_data_master_readdata;                                                   // mm_interconnect_0:NIOSII_data_master_readdata -> NIOSII:d_readdata
 	wire         niosii_data_master_waitrequest;                                                // mm_interconnect_0:NIOSII_data_master_waitrequest -> NIOSII:d_waitrequest
 	wire         niosii_data_master_debugaccess;                                                // NIOSII:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:NIOSII_data_master_debugaccess
-	wire  [16:0] niosii_data_master_address;                                                    // NIOSII:d_address -> mm_interconnect_0:NIOSII_data_master_address
+	wire  [14:0] niosii_data_master_address;                                                    // NIOSII:d_address -> mm_interconnect_0:NIOSII_data_master_address
 	wire   [3:0] niosii_data_master_byteenable;                                                 // NIOSII:d_byteenable -> mm_interconnect_0:NIOSII_data_master_byteenable
 	wire         niosii_data_master_read;                                                       // NIOSII:d_read -> mm_interconnect_0:NIOSII_data_master_read
 	wire         niosii_data_master_write;                                                      // NIOSII:d_write -> mm_interconnect_0:NIOSII_data_master_write
@@ -110,11 +110,6 @@ module reloj_soc (
 	wire  [31:0] mm_interconnect_0_niosii_debug_mem_slave_writedata;                            // mm_interconnect_0:NIOSII_debug_mem_slave_writedata -> NIOSII:debug_mem_slave_writedata
 	wire  [31:0] mm_interconnect_0_fifo_out_readdata;                                           // FIFO:avalonmm_read_slave_readdata -> mm_interconnect_0:FIFO_out_readdata
 	wire         mm_interconnect_0_fifo_out_read;                                               // mm_interconnect_0:FIFO_out_read -> FIFO:avalonmm_read_slave_read
-	wire         mm_interconnect_0_reg_leds_s1_chipselect;                                      // mm_interconnect_0:REG_LEDS_s1_chipselect -> REG_LEDS:chipselect
-	wire  [31:0] mm_interconnect_0_reg_leds_s1_readdata;                                        // REG_LEDS:readdata -> mm_interconnect_0:REG_LEDS_s1_readdata
-	wire   [1:0] mm_interconnect_0_reg_leds_s1_address;                                         // mm_interconnect_0:REG_LEDS_s1_address -> REG_LEDS:address
-	wire         mm_interconnect_0_reg_leds_s1_write;                                           // mm_interconnect_0:REG_LEDS_s1_write -> REG_LEDS:write_n
-	wire  [31:0] mm_interconnect_0_reg_leds_s1_writedata;                                       // mm_interconnect_0:REG_LEDS_s1_writedata -> REG_LEDS:writedata
 	wire         mm_interconnect_0_timer_s1_chipselect;                                         // mm_interconnect_0:TIMER_s1_chipselect -> TIMER:chipselect
 	wire  [15:0] mm_interconnect_0_timer_s1_readdata;                                           // TIMER:readdata -> mm_interconnect_0:TIMER_s1_readdata
 	wire   [2:0] mm_interconnect_0_timer_s1_address;                                            // mm_interconnect_0:TIMER_s1_address -> TIMER:address
@@ -129,6 +124,11 @@ module reloj_soc (
 	wire         mm_interconnect_0_ram_s1_write;                                                // mm_interconnect_0:RAM_s1_write -> RAM:write
 	wire  [31:0] mm_interconnect_0_ram_s1_writedata;                                            // mm_interconnect_0:RAM_s1_writedata -> RAM:writedata
 	wire         mm_interconnect_0_ram_s1_clken;                                                // mm_interconnect_0:RAM_s1_clken -> RAM:clken
+	wire         mm_interconnect_0_reg_leds_s1_chipselect;                                      // mm_interconnect_0:REG_LEDS_s1_chipselect -> REG_LEDS:chipselect
+	wire  [31:0] mm_interconnect_0_reg_leds_s1_readdata;                                        // REG_LEDS:readdata -> mm_interconnect_0:REG_LEDS_s1_readdata
+	wire   [1:0] mm_interconnect_0_reg_leds_s1_address;                                         // mm_interconnect_0:REG_LEDS_s1_address -> REG_LEDS:address
+	wire         mm_interconnect_0_reg_leds_s1_write;                                           // mm_interconnect_0:REG_LEDS_s1_write -> REG_LEDS:write_n
+	wire  [31:0] mm_interconnect_0_reg_leds_s1_writedata;                                       // mm_interconnect_0:REG_LEDS_s1_writedata -> REG_LEDS:writedata
 	wire         mm_interconnect_0_fifo_in_write;                                               // mm_interconnect_0:FIFO_in_write -> FIFO:avalonmm_write_slave_write
 	wire  [31:0] mm_interconnect_0_fifo_in_writedata;                                           // mm_interconnect_0:FIFO_in_writedata -> FIFO:avalonmm_write_slave_writedata
 	wire  [31:0] mm_interconnect_0_fifo_in_csr_readdata;                                        // FIFO:wrclk_control_slave_readdata -> mm_interconnect_0:FIFO_in_csr_readdata

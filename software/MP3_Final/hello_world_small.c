@@ -11,7 +11,7 @@
 #define SAMPLE_RATE  44100
 #define FREQUENCY    333
 #define AMPLITUDE    35000
-#define MUSIC_FIFO_BASE 0x00010000
+#define MUSIC_FIFO_BASE 0x00000010
 
 unsigned int data_buffer[BUF_SIZE];
 
